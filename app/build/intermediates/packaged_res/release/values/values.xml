@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="gfgTheme">#FF2F8D46</color>
+    <color name="gfgThemeTwo">#FF098043</color>
+    <color name="gray">#808080</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="runOrange">#FFF3E0</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="textButton">#9CFFFFFF</color>
+    <color name="textInputLayout">#96ffffff</color>
+    <color name="text_Grey">#c1c1c2</color>
+    <color name="tmblack">#99000000</color>
+    <color name="touch">#F4F2FB</color>
+    <color name="transparent">#ECEFF1</color>
+    <color name="warn">#546E7A</color>
+    <color name="white">#FFFFFFFF</color>
+    <item name="statusbarutil_fake_status_bar_view" type="id"/>
+    <item name="statusbarutil_translucent_view" type="id"/>
+    <string name="app_name">nuoran</string>
+    <string name="fghj">  请输入内容</string>
+    <string name="hyfl">会员福利</string>
+    <string name="jrth">今日特惠</string>
+    <string name="l1">连接服务器</string>
+    <string name="l2">获取当前坐标</string>
+    <string name="l3">地形</string>
+    <string name="l4">命令执行</string>
+    <string name="l5">调用函数</string>
+    <string name="l6">最小化</string>
+    <string name="sh"><![CDATA[< 商店]]></string>
+    <string name="todo">TODO</string>
+    <string name="xshd">限时活动</string>
+    <string name="xycj">幸运抽奖</string>
+    <string name="zscz">钻石充值</string>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:fontFamily">@font/minecraft</item>
+    </style>
+    <style name="AppTheme.MCustom.FullScreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="EditScreenTextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/textInputLayout</item>
+        <item name="colorControlActivated">@color/textInputLayout</item>
+        <item name="colorControlHighlight">@color/textInputLayout</item>
+        <item name="colorAccent">@color/textInputLayout</item>
+        <item name="android:textColorHint">@color/textInputLayout</item>
+
+    </style>
+    <style name="Theme.Nuoran" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        
+    </style>
+    <style name="XFC" parent="Theme.AppCompat.DayNight.NoActionBar">
+        
+        <item name="android:fontFamily">@font/minecraft</item>
+    </style>
+</resources>

@@ -1,0 +1,177 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.minecraft.mcustom"
+4    android:versionCode="2"
+5    android:versionName="0.8" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+11-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:6:5-80
+11-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:6:22-77
+12    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+12-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:7:5-77
+12-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:7:22-75
+13    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+13-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:8:5-75
+13-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:8:22-72
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:9:5-80
+14-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:9:22-77
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:10:5-78
+15-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:10:22-76
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:11:5-76
+16-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:11:22-73
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:12:5-67
+17-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:12:22-64
+18    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+18-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:13:5-81
+18-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:13:22-78
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:14:5-16:40
+19-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:15:9-65
+20    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+20-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:17:5-19:47
+20-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:18:9-68
+21
+22    <application
+22-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:21:5-86:19
+23        android:allowBackup="true"
+23-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:22:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.7.0] C:\Users\Administrator\.gradle\caches\transforms-3\5586099dc2be2a001572cf14c2426ba8\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+25        android:dataExtractionRules="@xml/data_extraction_rules"
+25-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:23:9-65
+26        android:fullBackupContent="@xml/backup_rules"
+26-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:24:9-54
+27        android:icon="@drawable/com_microsoft_emmx"
+27-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:25:9-52
+28        android:label="@string/app_name"
+28-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:26:9-41
+29        android:networkSecurityConfig="@xml/network_security_config"
+29-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:32:9-69
+30        android:roundIcon="@drawable/com_microsoft_emmx"
+30-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:27:9-57
+31        android:supportsRtl="true"
+31-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:28:9-35
+32        android:theme="@style/XFC"
+32-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:29:9-35
+33        android:usesCleartextTraffic="true" >
+33-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:31:9-44
+34        <uses-library
+34-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:34:9-88
+35            android:name="org.apache.http.legacy"
+35-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:34:23-60
+36            android:required="false" />
+36-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:34:61-85
+37
+38        <activity
+38-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:36:9-48:20
+39            android:name="com.minecraft.mcustom.activity.MainActivity"
+39-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:37:9-46
+40            android:exported="true" >
+40-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:38:9-32
+41            <intent-filter>
+41-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:40:13-42:29
+42                <category android:name="android.intent.category.DEFAULT" />
+42-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:41:17-76
+42-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:41:27-73
+43            </intent-filter>
+44
+45            <meta-data
+45-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:44:13-46:36
+46                android:name="android.app.lib_name"
+46-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:45:17-52
+47                android:value="" />
+47-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:46:17-33
+48        </activity>
+49        <activity
+49-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:50:9-64:20
+50            android:name="com.minecraft.mcustom.activity.LoginActivity"
+50-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:51:9-47
+51            android:exported="true" >
+51-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:52:9-32
+52            <intent-filter>
+52-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:54:13-58:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:55:17-69
+53-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:55:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:56:17-77
+55-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:56:27-74
+56                <category android:name="android.intent.category.DEFAULT" />
+56-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:41:17-76
+56-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:41:27-73
+57            </intent-filter>
+58
+59            <meta-data
+59-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:44:13-46:36
+60                android:name="android.app.lib_name"
+60-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:45:17-52
+61                android:value="" />
+61-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:46:17-33
+62        </activity>
+63        <activity
+63-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:66:9-78:20
+64            android:name="com.minecraft.mcustom.activity.WebViewActivity"
+64-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:67:13-53
+65            android:exported="true" >
+65-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:68:13-36
+66            <intent-filter>
+66-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:40:13-42:29
+67                <category android:name="android.intent.category.DEFAULT" />
+67-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:41:17-76
+67-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:41:27-73
+68            </intent-filter>
+69
+70            <meta-data
+70-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:44:13-46:36
+71                android:name="android.app.lib_name"
+71-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:45:17-52
+72                android:value="" />
+72-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:46:17-33
+73        </activity>
+74
+75        <service
+75-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:80:9-84:41
+76            android:name="com.minecraft.mcustom.FloatingWindowService"
+76-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:81:13-50
+77            android:enabled="true"
+77-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:82:13-35
+78            android:exported="false"
+78-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:83:13-37
+79            android:permission="TODO" />
+79-->C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:84:13-38
+80
+81        <provider
+81-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+82            android:name="androidx.startup.InitializationProvider"
+82-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+83            android:authorities="com.minecraft.mcustom.androidx-startup"
+83-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+84            android:exported="false" >
+84-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+85            <meta-data
+85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+86                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+87                android:value="androidx.startup" />
+87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\5dbdaa682f4eeb76a4b98d88db77476b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+88            <meta-data
+88-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Administrator\.gradle\caches\transforms-3\567bfa830a03972b3944320e0a4a107e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+89                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+89-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Administrator\.gradle\caches\transforms-3\567bfa830a03972b3944320e0a4a107e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+90                android:value="androidx.startup" />
+90-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Administrator\.gradle\caches\transforms-3\567bfa830a03972b3944320e0a4a107e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+91        </provider>
+92    </application>
+93
+94</manifest>
