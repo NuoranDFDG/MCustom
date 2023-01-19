@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">nuoran</string>
+    <string name="l1">连接服务器</string>
+    <string name="l2">获取当前坐标</string>
+    <string name="l3">地形</string>
+    <string name="l4">命令执行</string>
+    <string name="l5">调用函数</string>
+    <string name="l6">最小化</string>
+    <string name="sh"><![CDATA[< 商店]]></string>
+    <string name="todo">TODO</string>
+    <string name="fghj">  请输入内容</string>
+    <string name="xshd">限时活动</string>
+    <string name="jrth">今日特惠</string>
+    <string name="hyfl">会员福利</string>
+    <string name="xycj">幸运抽奖</string>
+    <string name="zscz">钻石充值</string>
+</resources>

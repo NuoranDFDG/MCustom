@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_gravity="top|left"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="130dp"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded">
+
+    <!-- 悬浮窗的内容 -->
+    <Button
+        android:id="@+id/XFCbuttonn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/retouch_2022122214163714"
+        android:alpha="0.75"/>
+</LinearLayout>
