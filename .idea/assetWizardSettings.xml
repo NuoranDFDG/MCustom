@@ -62,13 +62,26 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="imagePath" value="C:\Users\Administrator\Downloads\imageonline-co-pixelated.png" />
+                                                <entry key="scalingPercent" value="63" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundClipArt">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="ffffff" />
-                                                <entry key="imagePath" value="C:\Users\Administrator\AppData\Local\Temp\2\baseline_article_24.xml" />
+                                                <entry key="color" value="bb94c2" />
+                                                <entry key="imagePath" value="C:\Users\Administrator\AppData\Local\Temp\2\baseline_backup_table_24.xml" />
+                                                <entry key="scalingPercent" value="58" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -79,7 +92,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="file:/$PROJECT_DIR$/../../../../Android/AndroidSDK/icons/material/materialicons/article/baseline_article_24.xml" />
+                                                <entry key="url" value="jar:file:/C:/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/backup_table/baseline_backup_table_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -91,8 +104,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Administrator\Downloads\com_microsoft_emmx.png" />
-                                                <entry key="scalingPercent" value="67" />
+                                                <entry key="imagePath" value="C:\Users\Administrator\Downloads\imageonline-co-pixelated.png" />
+                                                <entry key="scalingPercent" value="68" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -124,8 +137,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="b64b4b" />
+                                      <entry key="foregroundAssetType" value="CLIP_ART" />
                                       <entry key="outputName" value="ic_nuoran" />
                                     </map>
                                   </option>
