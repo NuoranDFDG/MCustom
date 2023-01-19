@@ -3,14 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:fontFamily">@font/minecraft</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
-    <style name="XFC" parent="Theme.AppCompat.NoActionBar">
+    <style name="XFC" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- 设置沉浸式状态栏 -->
         <item name="android:fontFamily">@font/minecraft</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="EditScreenTextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">

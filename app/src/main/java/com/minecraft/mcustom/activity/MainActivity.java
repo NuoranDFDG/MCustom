@@ -43,7 +43,6 @@ import com.minecraft.mcustom.R;
 
 import java.io.IOException;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private Context context;

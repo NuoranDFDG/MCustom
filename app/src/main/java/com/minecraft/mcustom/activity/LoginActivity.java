@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
 
         //login
         setContentView(R.layout.login_layout);
-        setStatusBarTranslucent();
         setTvLoginPrivacyPolicySpecialText();
         setVerificationSkipText();
         setForgetSkipText();
@@ -107,12 +106,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-    //    将StatusBar设置为透明
-    public void setStatusBarTranslucent() {
-        StatusBarUtil.setTranslucentForImageViewInFragment(this,
-                0, null);
-        StatusBarUtil.setLightMode(this);
     }
 
     private void setForgetSkipText() {
