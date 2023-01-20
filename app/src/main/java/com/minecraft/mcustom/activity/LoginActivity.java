@@ -182,6 +182,7 @@ public class LoginActivity extends AppCompatActivity {
         tvLoginPrivacyPolicy.append(clickString2);
         tvLoginPrivacyPolicy.setHighlightColor(Color.TRANSPARENT);
         tvLoginPrivacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
+
     }
 
 }

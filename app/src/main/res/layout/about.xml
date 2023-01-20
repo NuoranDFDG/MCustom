@@ -23,35 +23,124 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:cardCornerRadius="30dp">
+        app:cardCornerRadius="30dp" >
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/linerlayout_water_selector"
-            android:clickable="true"
-            android:focusable="true"
+
             android:paddingStart="26dp"
             android:paddingTop="26dp"
             android:paddingBottom="25dp"
+            android:paddingEnd="80dp"
+            android:clickable="true"
+            android:focusable="true"
+
             tools:ignore="RtlSymmetry">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/circle"
-                android:scaleType="center"
-                android:src="@drawable/mcustom_stopped" />
+                android:orientation="horizontal" >
 
-            <TextView
+                <androidx.cardview.widget.CardView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle"
+                        android:scaleType="center"
+                        android:src="@mipmap/ic_nuoran_round" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:fontFamily="@font/gotham"
+                        android:text="MCustom"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="left"
+                        android:fontFamily="@font/calibri"
+                        android:text="0.80.1r00cc000"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/github_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:fontFamily="@font/calibri"
+                        android:text=" "
+                        android:textColor="@color/gray"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/calibri"
-                android:text="MCustom 没有运行"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:fontFamily="@font/calibri"
+                    android:text="作者/特别感谢:"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="6dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="50dp" >
+
+                        <ImageView
+                            android:scaleType="fitXY"
+                            android:id="@+id/github_about1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@color/black" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nuoran"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 

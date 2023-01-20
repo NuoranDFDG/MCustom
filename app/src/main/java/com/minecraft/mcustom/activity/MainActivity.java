@@ -1,47 +1,17 @@
 package com.minecraft.mcustom.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.text.Html;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-import android.widget.Toast;
 
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
-import com.minecraft.mcustom.FloatingWindowService;
-import com.minecraft.mcustom.OkHttpUtils;
 import com.minecraft.mcustom.R;
-
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,27 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case R.id.action_about:
-                        PopupWindow popupWindow = new PopupWindow();
-                        View contentView = LayoutInflater.from(context).inflate(R.layout.about, null);
-                        popupWindow.setContentView(contentView);
-                        popupWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-                        popupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-
-//设置背景色
-                        popupWindow.setBackgroundDrawable(new ColorDrawable(0x7f000000));
-// 设置点击弹窗外部关闭弹窗
-                        popupWindow.setOutsideTouchable(true);
-                        popupWindow.setFocusable(true);
-
-// 设置圆角背景
-                        contentView.setBackground(getResources().getDrawable(R.drawable.popup_bg));
-
-// Get the View to which the popup window should be attached
-                        View rootView = findViewById(R.id.view_main);
-
-// Create and show the popup window
-                        popupWindow.showAsDropDown(rootView);
-
+                        Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 return true;
