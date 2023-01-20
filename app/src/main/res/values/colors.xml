@@ -24,4 +24,6 @@
     <color name="runOrange">#FFF3E0</color>
     <color name="aboutColor">#EAE9F7</color>
     <color name="github_color">#24292F</color>
+    <color name="progress_bar1">#00FFC4</color>
+    <color name="progress_bar2">#C2C9D1</color>
 </resources>

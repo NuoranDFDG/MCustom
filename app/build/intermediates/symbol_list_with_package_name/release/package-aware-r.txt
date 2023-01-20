@@ -1278,6 +1278,7 @@ color foreground_material_dark
 color foreground_material_light
 color gfgTheme
 color gfgThemeTwo
+color github_color
 color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
@@ -1757,6 +1758,8 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color progress_bar1
+color progress_bar2
 color purple_200
 color purple_500
 color purple_700
@@ -2468,6 +2471,7 @@ drawable cancel_icon
 drawable circle
 drawable circle2
 drawable circle3
+drawable custom_progress
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2475,6 +2479,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable divider_line
 drawable fillet_water
+drawable github_icon
 drawable guidebook
 drawable ic_clock_black_24dp
 drawable ic_email_white_24dp
@@ -2904,6 +2909,7 @@ id pin
 id pluginAbout
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id protocol
@@ -3008,9 +3014,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id text_Loading
-id text_beginLoading
-id text_endLoading
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3026,6 +3029,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbar_web
 id top
 id topPanel
 id touch_outside
@@ -3243,6 +3247,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu example_menu
 menu example_menu2
+menu menu_browser
 menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round

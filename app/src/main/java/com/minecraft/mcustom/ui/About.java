@@ -2,6 +2,7 @@ package com.minecraft.mcustom.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -26,6 +27,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.minecraft.mcustom.R;
+import com.minecraft.mcustom.activity.WebViewActivity;
 
 public class About extends DialogFragment {
 
@@ -82,8 +84,9 @@ public class About extends DialogFragment {
         clickString1.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                // Intent intent = new Intent(LoginActivity.this, ResetActivity.class);
-                // startActivity(intent);
+                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                intent.putExtra("extra_data", "https://github.com/nuoranDFDG");
+                startActivity(intent);
             }
             @Override
             public void updateDrawState(TextPaint ds) {
@@ -104,8 +107,9 @@ public class About extends DialogFragment {
         clickString2.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                // Intent intent = new Intent(LoginActivity.this, ResetActivity.class);
-                // startActivity(intent);
+                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                intent.putExtra("extra_data", "https://github.com/RikkaApps");
+                startActivity(intent);
             }
             @Override
             public void updateDrawState(TextPaint ds) {
@@ -126,8 +130,9 @@ public class About extends DialogFragment {
         clickString3.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                // Intent intent = new Intent(LoginActivity.this, ResetActivity.class);
-                // startActivity(intent);
+                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                intent.putExtra("extra_data", "https://github.com/babynanxi");
+                startActivity(intent);
             }
             @Override
             public void updateDrawState(TextPaint ds) {
@@ -145,7 +150,9 @@ public class About extends DialogFragment {
         clickString.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-
+                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                intent.putExtra("extra_data", "https://github.com/nuoranDFDG/MCustom");
+                startActivity(intent);
             }
             @Override
             public void updateDrawState(TextPaint ds) {

@@ -1,6 +1,7 @@
 package com.minecraft.mcustom.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -9,9 +10,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.minecraft.mcustom.R;
 
@@ -19,21 +22,23 @@ import com.minecraft.mcustom.R;
 public class WebViewActivity extends AppCompatActivity {
     WebView mWebview;
     WebSettings mWebSettings;
-    TextView beginLoading,endLoading,loading,mtitle;
+    TextView beginLoading,endLoading;
+
+    ProgressBar loading;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+        Toolbar toolbar = findViewById(R.id.toolbar_web);
+        toolbar.inflateMenu(R.menu.menu_browser);
 
-        mWebview = (WebView) findViewById(R.id.webView1);
-        beginLoading = (TextView) findViewById(R.id.text_beginLoading);
-        endLoading = (TextView) findViewById(R.id.text_endLoading);
-        loading = (TextView) findViewById(R.id.text_Loading);
-        mtitle = (TextView) findViewById(R.id.title);
+        mWebview = findViewById(R.id.webView1);
+        loading = findViewById(R.id.progressBar);
+        Intent intent = getIntent();
 
-        mWebview.loadUrl("http://124.222.157.95:7913/");
+        mWebview.loadUrl(intent.getStringExtra("extra_data"));
 
         mWebSettings = mWebview.getSettings();
 
@@ -46,27 +51,19 @@ public class WebViewActivity extends AppCompatActivity {
             }
         });
 
-        //设置WebChromeClient类
         mWebview.setWebChromeClient(new WebChromeClient() {
 
-
-            //获取网站标题
             @Override
             public void onReceivedTitle(WebView view, String title) {
-                System.out.println("标题在这里");
-                mtitle.setText(title);
+                toolbar.setTitle(title);
             }
 
-
-            //获取加载进度
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 if (newProgress < 100) {
-                    String progress = newProgress + "%";
-                    loading.setText(progress);
+                    loading.setProgress(newProgress);
                 } else if (newProgress == 100) {
-                    String progress = newProgress + "%";
-                    loading.setText(progress);
+                    loading.setProgress(newProgress);
                 }
             }
         });
@@ -77,15 +74,12 @@ public class WebViewActivity extends AppCompatActivity {
             //设置加载前的函数
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                System.out.println("开始加载了");
-                beginLoading.setText("开始加载了");
 
             }
 
             //设置结束加载函数
             @Override
             public void onPageFinished(WebView view, String url) {
-                endLoading.setText("结束加载了");
 
             }
         });

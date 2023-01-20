@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                intent.putExtra("extra_data", "http://124.222.157.95:7913");
                 startActivity(intent);
             }
         });
@@ -60,8 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK){
-            moveTaskToBack(true);
+        if(keyCode== KeyEvent.KEYCODE_BACK){
+            long time = 0;
+            if(System.currentTimeMillis()-time>2000){
+                time=System.currentTimeMillis();
+            }else{
+                moveTaskToBack(true);
+            }
             return true;
         }
         return super.onKeyDown(keyCode, event);

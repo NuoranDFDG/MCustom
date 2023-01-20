@@ -92,10 +92,6 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\drawable\\circle3.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_about.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/about.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\mipmap-xxxhdpi_ic_nuoran_round.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\mipmap-xxxhdpi\\ic_nuoran_round.png"
     },
@@ -142,6 +138,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable_mcustom_run.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\drawable\\mcustom_run.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable_github_icon.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\drawable\\github_icon.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable_mcustom_stopped.xml.flat",
@@ -216,12 +216,20 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\drawable\\divider_line.xml"
     },
     {
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_activity_web_view.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-27:/layout/activity_web_view.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-pngs-21:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_custom_progress.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-27:/drawable/custom_progress.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable-xhdpi_ic_launcher_foreground.png.flat",
@@ -286,6 +294,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable_fillet_water.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-27:\\drawable\\fillet_water.xml"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/menu_menu_browser.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-27:/menu/menu_browser.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-26:\\drawable_start_icon.xml.flat",
