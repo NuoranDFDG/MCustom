@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+color aboutColor
 color black
 color colorAccent
 color colorPrimary
@@ -29,7 +30,6 @@ drawable cancel_icon
 drawable circle
 drawable circle2
 drawable circle3
-drawable com_microsoft_emmx
 drawable divider_line
 drawable fillet_water
 drawable guidebook
@@ -37,6 +37,7 @@ drawable ic_email_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_lock_white_24dp
+drawable ic_nuoran_foreground
 drawable information_user
 drawable item_shape
 drawable linerlayout_water_selector
@@ -59,12 +60,14 @@ font calibri
 font gotham
 font minecraft
 id XFCbuttonn
+id about_view
 id action_about
 id action_run
 id action_setting
-id button
 id edit_text
 id forgetPassword
+id github_about1
+id github_main
 id linearLayout
 id login
 id pluginAbout
@@ -74,7 +77,6 @@ id shoppingback
 id statusbarutil_fake_status_bar_view
 id statusbarutil_translucent_view
 id test55
-id textView
 id text_Loading
 id text_beginLoading
 id text_endLoading
@@ -93,6 +95,9 @@ layout shopping
 menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_nuoran
+mipmap ic_nuoran_background
+mipmap ic_nuoran_round
 raw febec8f8
 raw main
 raw u1nz5_geywz

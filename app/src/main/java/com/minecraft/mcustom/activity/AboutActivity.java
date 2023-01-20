@@ -1,5 +1,6 @@
 package com.minecraft.mcustom.activity;
 
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,20 +21,27 @@ import com.minecraft.mcustom.R;
 
 public class AboutActivity extends AppCompatActivity {
 
-    private TextView tvLoginPrivacyPolicy;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         setContentView(R.layout.about);
         setTvLoginPrivacyPolicySpecialText();
         ImageView about1 = findViewById(R.id.github_about1);
-        Glide.with(this).load("https://avatars.githubusercontent.com/nuoranDFDG");
+        Glide.with(this).load("https://avatars.githubusercontent.com/nuoranDFDG").into(about1);
+        findViewById(R.id.about_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                overridePendingTransition(0, 0);
+            }
+        });
+
     }
 
     private void setTvLoginPrivacyPolicySpecialText() {
-        tvLoginPrivacyPolicy = findViewById(R.id.github_main);
+        TextView tvLoginPrivacyPolicy = findViewById(R.id.github_main);
         tvLoginPrivacyPolicy.setText("在 ");
         SpannableString clickString1 = new SpannableString("github");
         clickString1.setSpan(new ClickableSpan() {

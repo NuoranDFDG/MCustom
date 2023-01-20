@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.minecraft.mcustom.app-mergeReleaseResources-23:/values-ko/values-ko.xml",
+            "outputFile": "com.minecraft.mcustom.app-mergeReleaseResources-24:/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\5586099dc2be2a001572cf14c2426ba8\\transformed\\core-1.7.0\\res\\values-ko\\values-ko.xml",
