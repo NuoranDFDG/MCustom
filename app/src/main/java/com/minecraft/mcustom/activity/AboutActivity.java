@@ -9,11 +9,13 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.minecraft.mcustom.R;
 
 public class AboutActivity extends AppCompatActivity {
@@ -26,7 +28,8 @@ public class AboutActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.about);
         setTvLoginPrivacyPolicySpecialText();
-
+        ImageView about1 = findViewById(R.id.github_about1);
+        Glide.with(this).load("https://avatars.githubusercontent.com/nuoranDFDG");
     }
 
     private void setTvLoginPrivacyPolicySpecialText() {
