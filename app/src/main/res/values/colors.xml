@@ -23,4 +23,5 @@
     <color name="transparent">#ECEFF1</color>
     <color name="runOrange">#FFF3E0</color>
     <color name="aboutColor">#EAE9F7</color>
+    <color name="github_color">#24292F</color>
 </resources>
