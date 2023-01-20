@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.minecraft.mcustom.R;
+import com.minecraft.mcustom.ui.About;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case R.id.action_about:
-                        Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-                        startActivity(intent);
+                        About about = new About();
+                        about.setmActivity(MainActivity.this);
+                        about.show();
                         break;
                 }
                 return true;

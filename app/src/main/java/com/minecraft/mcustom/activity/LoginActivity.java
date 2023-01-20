@@ -19,9 +19,7 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.entity.Data;
@@ -34,7 +32,6 @@ import com.minecraft.mcustom.util.lisUtil;
 import com.minecraft.mcustom.util.getKey;
 
 import java.security.PrivateKey;
-import java.security.PublicKey;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -48,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+
         new Thread(new Runnable() {
             @Override
             public void run() {

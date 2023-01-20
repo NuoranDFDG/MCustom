@@ -576,6 +576,7 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
+    <color name="aboutColor">#EAE9F7</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
@@ -827,7 +828,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="test_color">#000</color>
-    <color name="textButton">#9CFFFFFF</color>
+    <color name="textButton">#9C8EAEAB</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="text_Grey">#c1c1c2</color>
     <color name="tmblack">#99000000</color>
@@ -1464,6 +1465,7 @@
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
+    <item name="glide_custom_view_target_tag" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="line1" type="id"/>
@@ -1745,8 +1747,6 @@
   </style>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:fontFamily">@font/minecraft</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <style name="AppTheme.MCustom.FullScreen" parent="Theme.AppCompat.NoActionBar">
         <item name="windowNoTitle">true</item>
@@ -4782,6 +4782,18 @@
 
     </style>
     <style name="EmptyTheme"/>
+    <style name="InputDialogStyle" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
     <style name="MaterialAlertDialog.Material3" parent="MaterialAlertDialog.MaterialComponents">
     <item name="enforceMaterialTheme">true</item>
     <item name="android:layout">@layout/m3_alert_dialog</item>
@@ -7898,10 +7910,9 @@
     <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
         <item name="statusBarBackground">#000000</item>
     </style>
-    <style name="XFC" parent="Theme.AppCompat.NoActionBar">
+    <style name="XFC" parent="Theme.AppCompat.DayNight.NoActionBar">
         
         <item name="android:fontFamily">@font/minecraft</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <declare-styleable name="ActionBar">
         

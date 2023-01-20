@@ -1203,6 +1203,7 @@ color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
 color abc_tint_switch_track
+color aboutColor
 color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
@@ -2468,7 +2469,6 @@ drawable cancel_icon
 drawable circle
 drawable circle2
 drawable circle3
-drawable com_microsoft_emmx
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2572,6 +2572,9 @@ id SYM
 id TOP_END
 id TOP_START
 id XFCbuttonn
+id about_name1
+id about_name2
+id about_name3
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2659,7 +2662,6 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2759,6 +2761,11 @@ id fragment_container_view_tag
 id frost
 id ghost_view
 id ghost_view_holder
+id github_about1
+id github_about2
+id github_about3
+id github_main
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -3002,7 +3009,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id text_Loading
 id text_beginLoading
 id text_endLoading
@@ -3242,7 +3248,7 @@ menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_nuoran
-mipmap ic_nuoran_foreground
+mipmap ic_nuoran_background
 mipmap ic_nuoran_round
 plurals mtrl_badge_content_description
 raw febec8f8
@@ -3674,6 +3680,7 @@ style CardView_Dark
 style CardView_Light
 style EditScreenTextInputLayoutStyle
 style EmptyTheme
+style InputDialogStyle
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Body_Text
 style MaterialAlertDialog_Material3_Body_Text_CenterStacked

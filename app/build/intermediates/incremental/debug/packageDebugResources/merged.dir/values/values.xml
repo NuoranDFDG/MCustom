@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="aboutColor">#EAE9F7</color>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="colorPrimary">#FFFFFF</color>
@@ -15,7 +16,7 @@
     <color name="runOrange">#FFF3E0</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="textButton">#9CFFFFFF</color>
+    <color name="textButton">#9C8EAEAB</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="text_Grey">#c1c1c2</color>
     <color name="tmblack">#99000000</color>
@@ -42,8 +43,6 @@
     <string name="zscz">钻石充值</string>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:fontFamily">@font/minecraft</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <style name="AppTheme.MCustom.FullScreen" parent="Theme.AppCompat.NoActionBar">
         <item name="windowNoTitle">true</item>
@@ -57,6 +56,18 @@
         <item name="android:textColorHint">@color/textInputLayout</item>
 
     </style>
+    <style name="InputDialogStyle" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
     <style name="Theme.Nuoran" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
@@ -64,9 +75,8 @@
         <item name="colorAccent">@color/teal_200</item>
         
     </style>
-    <style name="XFC" parent="Theme.AppCompat.NoActionBar">
+    <style name="XFC" parent="Theme.AppCompat.DayNight.NoActionBar">
         
         <item name="android:fontFamily">@font/minecraft</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
 </resources>

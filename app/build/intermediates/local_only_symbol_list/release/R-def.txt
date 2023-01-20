@@ -60,13 +60,17 @@ font calibri
 font gotham
 font minecraft
 id XFCbuttonn
-id about_view
+id about_name1
+id about_name2
+id about_name3
 id action_about
 id action_run
 id action_setting
 id edit_text
 id forgetPassword
 id github_about1
+id github_about2
+id github_about3
 id github_main
 id linearLayout
 id login
@@ -119,6 +123,7 @@ string zscz
 style AppTheme
 style AppTheme.MCustom.FullScreen
 style EditScreenTextInputLayoutStyle
+style InputDialogStyle
 style Theme.Nuoran
 style XFC
 xml backup_rules

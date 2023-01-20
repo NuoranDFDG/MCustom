@@ -2571,7 +2571,9 @@ id SYM
 id TOP_END
 id TOP_START
 id XFCbuttonn
-id about_view
+id about_name1
+id about_name2
+id about_name3
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2759,6 +2761,8 @@ id frost
 id ghost_view
 id ghost_view_holder
 id github_about1
+id github_about2
+id github_about3
 id github_main
 id glide_custom_view_target_tag
 id gone
@@ -3675,6 +3679,7 @@ style CardView_Dark
 style CardView_Light
 style EditScreenTextInputLayoutStyle
 style EmptyTheme
+style InputDialogStyle
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Body_Text
 style MaterialAlertDialog_Material3_Body_Text_CenterStacked

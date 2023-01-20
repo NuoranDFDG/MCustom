@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+color aboutColor
 color black
 color colorAccent
 color colorPrimary
@@ -30,7 +31,6 @@ drawable cancel_icon
 drawable circle
 drawable circle2
 drawable circle3
-drawable com_microsoft_emmx
 drawable divider_line
 drawable fillet_water
 drawable guidebook
@@ -61,12 +61,18 @@ font calibri
 font gotham
 font minecraft
 id XFCbuttonn
+id about_name1
+id about_name2
+id about_name3
 id action_about
 id action_run
 id action_setting
-id button
 id edit_text
 id forgetPassword
+id github_about1
+id github_about2
+id github_about3
+id github_main
 id linearLayout
 id login
 id pluginAbout
@@ -76,7 +82,6 @@ id shoppingback
 id statusbarutil_fake_status_bar_view
 id statusbarutil_translucent_view
 id test55
-id textView
 id text_Loading
 id text_beginLoading
 id text_endLoading
@@ -96,7 +101,7 @@ menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_nuoran
-mipmap ic_nuoran_foreground
+mipmap ic_nuoran_background
 mipmap ic_nuoran_round
 raw febec8f8
 raw main
@@ -119,6 +124,7 @@ string zscz
 style AppTheme
 style AppTheme.MCustom.FullScreen
 style EditScreenTextInputLayoutStyle
+style InputDialogStyle
 style Theme.Nuoran
 style XFC
 xml backup_rules

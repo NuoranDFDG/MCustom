@@ -15,7 +15,7 @@
     <color name="runOrange">#FFF3E0</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="textButton">#9CFFFFFF</color>
+    <color name="textButton">#9C8EAEAB</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="text_Grey">#c1c1c2</color>
     <color name="tmblack">#99000000</color>
@@ -54,6 +54,16 @@
         <item name="colorAccent">@color/textInputLayout</item>
         <item name="android:textColorHint">@color/textInputLayout</item>
 
+    </style>
+    <style name="InputDialogStyle" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="Theme.Nuoran" parent="Theme.AppCompat.Light.DarkActionBar">
         

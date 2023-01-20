@@ -1,346 +1,342 @@
 [
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_user_icon.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/user_icon.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_ic_email_white_24dp.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/ic_email_white_24dp.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/xml_data_extraction_rules.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/xml/data_extraction_rules.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_item_shape.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/item_shape.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_circle3.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/circle3.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/xml_network_security_config.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/xml/network_security_config.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-hdpi_ic_nuoran_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-hdpi/ic_nuoran_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-mdpi_ic_nuoran_background.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-mdpi/ic_nuoran_background.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/font_calibri.ttf.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/font/calibri.ttf"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-hdpi_ic_nuoran_background.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-hdpi/ic_nuoran_background.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_blue_button_ripple.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/blue_button_ripple.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_buttonshapewhitebg.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/buttonshapewhitebg.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-hdpi/ic_launcher_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/menu_menu_main.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/menu/menu_main.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/ic_launcher_background.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_password_icon.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/password_icon.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_information_user.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/information_user.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-v24_linerlayout_water_selector.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable-v24/linerlayout_water_selector.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_divider_line.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/divider_line.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_pin_button_com_neteas_x19.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/pin_button_com_neteas_x19.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-mdpi_ic_nuoran_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-mdpi/ic_nuoran_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_divider_line.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/divider_line.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_mailbox.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/mailbox.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_setting.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/setting.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-hdpi_ic_nuoran_round.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-hdpi/ic_nuoran_round.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-v24_retouch_2022122214163714.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable-v24/retouch_2022122214163714.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/layout_floating_window.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/floating_window.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-ldpi_ic_launcher_foreground.png.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-ldpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-mdpi_ic_nuoran_round.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-mdpi/ic_nuoran_round.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_shopping_com_netease_x19.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/shopping_com_netease_x19.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_about.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/layout/about.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_ic_email_white_24dp.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/ic_email_white_24dp.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/font_gotham.ttf.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/font/gotham.ttf"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_circle2.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/circle2.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-mdpi_ic_nuoran.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-mdpi/ic_nuoran.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_popup_bg.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/popup_bg.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xhdpi_ic_nuoran_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xhdpi/ic_nuoran_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_activity_main.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/layout/activity_main.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_password_icon.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/password_icon.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/xml_backup_rules.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-v24_retouch_2022122214163714.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable-v24/retouch_2022122214163714.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_circle.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/circle.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxhdpi_ic_nuoran_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xxhdpi/ic_nuoran_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_question.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/question.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_start_icon.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/start_icon.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_fillet_water.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/fillet_water.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_release_button_com_netease_x19.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/release_button_com_netease_x19.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_shopping.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/layout/shopping.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_linerlayout_water_selector.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/linerlayout_water_selector.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_mcustom_stopped.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/mcustom_stopped.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_mcustom_run.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/mcustom_run.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_circle3.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/circle3.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/raw_u1nz5_geywz.mp3.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/raw/u1nz5_geywz.mp3"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-v24_linerlayout_water_selector.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable-v24/linerlayout_water_selector.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xhdpi_ic_nuoran.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xhdpi/ic_nuoran.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_ic_nuoran_foreground.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/ic_nuoran_foreground.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_com_microsoft_emmx.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/com_microsoft_emmx.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/raw_febec8f8.mp4.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/raw/febec8f8.mp4"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxxhdpi_ic_nuoran_round.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xxxhdpi/ic_nuoran_round.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxxhdpi_ic_nuoran_round.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxxhdpi/ic_nuoran_round.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_item_shape.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/item_shape.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_start_icon.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/start_icon.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_buttonshapewhitebg.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/buttonshapewhitebg.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxhdpi_ic_nuoran_background.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxhdpi/ic_nuoran_background.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_ic_nuoran_foreground.xml.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/drawable/ic_nuoran_foreground.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_login_layout.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/layout/login_layout.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_information_user.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/information_user.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/menu_menu_main.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/menu/menu_main.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_guidebook.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/guidebook.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-mdpi/ic_launcher_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/xml_network_security_config.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/xml/network_security_config.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_blue_button_ripple.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/blue_button_ripple.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxxhdpi_ic_nuoran_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xxxhdpi/ic_nuoran_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_shopping_com_netease_x19.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/shopping_com_netease_x19.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_cancel_icon.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/cancel_icon.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-hdpi_ic_nuoran.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-hdpi/ic_nuoran.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxhdpi_ic_nuoran.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xxhdpi/ic_nuoran.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_circle2.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/circle2.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_pin_button_com_neteas_x19.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/pin_button_com_neteas_x19.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-hdpi_ic_nuoran_round.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-hdpi/ic_nuoran_round.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_setting.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/setting.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_activity_web_view.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/layout/activity_web_view.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/font_gotham.ttf.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/font/gotham.ttf"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-v24_retouch_2022122219030731.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable-v24/retouch_2022122219030731.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxxhdpi_ic_nuoran.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xxxhdpi/ic_nuoran.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxxhdpi_ic_nuoran_background.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxxhdpi/ic_nuoran_background.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-hdpi_ic_nuoran.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-hdpi/ic_nuoran.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/raw_main.mp3.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/raw/main.mp3"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/layout_activity_main.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/activity_main.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_backshopping.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/backshopping.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_fillet_water.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/fillet_water.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_ic_lock_white_24dp.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/ic_lock_white_24dp.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-xhdpi/ic_launcher_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_user_icon.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/user_icon.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xhdpi_ic_nuoran_round.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xhdpi/ic_nuoran_round.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_mcustom_run.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/mcustom_run.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-anydpi-v26_ic_nuoran_round.xml.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-anydpi-v26/ic_nuoran_round.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_popup_bg.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/popup_bg.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xhdpi_ic_nuoran.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xhdpi/ic_nuoran.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-mdpi_ic_nuoran_round.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-mdpi/ic_nuoran_round.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_backshopping.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/backshopping.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/raw_u1nz5_geywz.mp3.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/raw/u1nz5_geywz.mp3"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-mdpi_ic_nuoran.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-mdpi/ic_nuoran.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_mcustom_stopped.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/mcustom_stopped.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_mailbox.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/mailbox.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-v24_retouch_2022122219030731.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable-v24/retouch_2022122219030731.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxxhdpi_ic_nuoran.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxxhdpi/ic_nuoran.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-xxhdpi/ic_launcher_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_release_button_com_netease_x19.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/release_button_com_netease_x19.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/layout_shopping.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/shopping.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxhdpi_ic_nuoran.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxhdpi/ic_nuoran.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_cancel_icon.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/cancel_icon.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_login_background_img.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/login_background_img.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-anydpi-v26_ic_nuoran.xml.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-anydpi-v26/ic_nuoran.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/font_minecraft.ttf.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/font/minecraft.ttf"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_ic_lock_white_24dp.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/ic_lock_white_24dp.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-anydpi-v26_ic_nuoran_round.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-anydpi-v26/ic_nuoran_round.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-ldpi_ic_launcher_foreground.png.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-ldpi/ic_launcher_foreground.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/raw_main.mp3.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/raw/main.mp3"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/layout_floating_window.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/layout/floating_window.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_login_background_img.png.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/login_background_img.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/layout_about.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/about.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.minecraft.mcustom.app-pngs-21:/drawable-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/xml_backup_rules.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/xml/backup_rules.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/xml_data_extraction_rules.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/layout_login_layout.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/login_layout.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_linerlayout_water_selector.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/linerlayout_water_selector.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/raw_febec8f8.mp4.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/raw/febec8f8.mp4"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/font_calibri.ttf.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/font/calibri.ttf"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_circle.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/circle.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_question.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/question.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.minecraft.mcustom.app-pngs-20:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xhdpi_ic_nuoran_background.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xhdpi/ic_nuoran_background.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/layout_activity_web_view.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/layout/activity_web_view.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xxhdpi_ic_nuoran_round.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xxhdpi/ic_nuoran_round.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/mipmap-xxhdpi_ic_nuoran_round.png.flat",
-        "source": "com.minecraft.mcustom.app-debug-26:/mipmap-xxhdpi/ic_nuoran_round.png"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-anydpi-v26_ic_nuoran.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-anydpi-v26/ic_nuoran.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/font_minecraft.ttf.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/font/minecraft.ttf"
-    },
-    {
-        "merged": "com.minecraft.mcustom.app-merged_res-25:/drawable_guidebook.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-27:/drawable/guidebook.xml"
+        "merged": "com.minecraft.mcustom.app-merged_res-26:/mipmap-xhdpi_ic_nuoran_round.png.flat",
+        "source": "com.minecraft.mcustom.app-main-28:/mipmap-xhdpi/ic_nuoran_round.png"
     }
 ]
