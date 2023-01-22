@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shopping_list"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@drawable/release_button_com_netease_x19"
+    android:layout_marginBottom="6dp" />

@@ -304,8 +304,6 @@ public class OKHttpUtil {
                             e.printStackTrace();
                         }
                         result.add(res);
-                        Log.d("HttpUtil","post success");
-                        Log.d("请求对象",res);
                     }
                 }).start();
             }

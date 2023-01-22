@@ -223,6 +223,7 @@
                                 app:iconGravity="start" />
 
                             <com.google.android.material.button.MaterialButton
+                                android:id="@+id/start_mcustom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:clickable="true"

@@ -1,6 +1,11 @@
 package com.minecraft.mcustom;
 
-import com.minecraft.mcustom.WebSocketClient;
+import com.google.gson.Gson;
+import com.minecraft.mcustom.entity.ListData;
+import com.minecraft.mcustom.util.gson.JsonBean;
+import com.minecraft.mcustom.util.http.HttpUrl;
+import com.minecraft.mcustom.util.http.OKHttpUtil;
+
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +14,10 @@ import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.IBinder;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -19,9 +25,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class FloatingWindowService extends Service {
@@ -30,6 +38,8 @@ public class FloatingWindowService extends Service {
     private LinearLayout floatingWindow1;
     private FrameLayout floatingWindow2;
     private MediaPlayer player;
+
+    final private static Gson gson= JsonBean.getGson();
 
     public static boolean isFloatingWindowShowing = false;
     public static boolean isFloatingWindow2Showing = false;
@@ -43,36 +53,36 @@ public class FloatingWindowService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        // 创建 WebSocketClient 对象
-        WebSocketClient client = new WebSocketClient("ws://124.222.157.95:8000");
-
-// 设置回调
-        client.setOnOpenListener(new WebSocketClient.OnOpenListener() {
-            @Override
-            public void onOpen() {
-                // 连接成功时调用
-                client.send("Hello, WebSocket!");
-            }
-        });
-        client.setOnMessageListener(new WebSocketClient.OnMessageListener() {
-            @Override
-            public void onMessage(String message) {
-                // 接收到消息时调用
-                Log.d("WebSocket", "Received: " + message);
-            }
-        });
-        client.setOnCloseListener(new WebSocketClient.OnCloseListener() {
-            @Override
-            public void onClose() {
-                // 连接关闭时调用
-            }
-        });
-
-// 连接服务器
-        client.connect();
-
-// 关闭连接
-        client.close();
+//        // 创建 WebSocketClient 对象
+//        WebSocketClient client = new WebSocketClient("ws://124.222.157.95:8000");
+//
+//// 设置回调
+//        client.setOnOpenListener(new WebSocketClient.OnOpenListener() {
+//            @Override
+//            public void onOpen() {
+//                // 连接成功时调用
+//                client.send("Hello, WebSocket!");
+//            }
+//        });
+//        client.setOnMessageListener(new WebSocketClient.OnMessageListener() {
+//            @Override
+//            public void onMessage(String message) {
+//                // 接收到消息时调用
+//                Log.d("WebSocket", "Received: " + message);
+//            }
+//        });
+//        client.setOnCloseListener(new WebSocketClient.OnCloseListener() {
+//            @Override
+//            public void onClose() {
+//                // 连接关闭时调用
+//            }
+//        });
+//
+//// 连接服务器
+//        client.connect();
+//
+//// 关闭连接
+//        client.close();
 
         player = MediaPlayer.create(this, R.raw.u1nz5_geywz);
         startXFCMain();
@@ -192,7 +202,7 @@ public class FloatingWindowService extends Service {
             });
         }
     }
-    public static int getStatusBarHeight(Context context) {
+    public static int getStatusBarHeight(@NonNull Context context) {
         Resources resources = context.getResources();
         int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
         int height = resources.getDimensionPixelSize(resourceId);

@@ -31,6 +31,11 @@
         android:supportsRtl="true"
         android:theme="@style/XFC"
         android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.minecraft.mcustom.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
@@ -71,9 +76,25 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name="com.minecraft.mcustom.activity.SettingsActivity"
+            android:exported="true" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <service
             android:name="com.minecraft.mcustom.FloatingWindowService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="TODO" />
+        <service
+            android:name="com.minecraft.mcustom.say"
             android:enabled="true"
             android:exported="false"
             android:permission="TODO" />
@@ -89,6 +110,13 @@
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
     </application>
 
 </manifest>

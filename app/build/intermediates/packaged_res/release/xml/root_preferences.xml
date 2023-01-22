@@ -1,0 +1,38 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:theme="@style/PreferenceThemeOverlay" >
+
+    <PreferenceCategory android:title="插件设置">
+
+        <SwitchPreferenceCompat
+            app:key="plugin_total"
+            app:summary="这是一个实验功能,请加载与您服务器匹配的插件"
+            app:title="插件加载总开关" />
+
+        <EditTextPreference
+            app:dependency="plugin_total"
+            app:key="path_plugin"
+            app:title="插件路径"
+            app:defaultValue="/storage/emulated/0/MCustom/plugin/"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="界面外观">
+
+        <ListPreference
+            app:defaultValue="follow"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="follow"
+            app:title="深色模式"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:key="black"
+            app:title="黑色夜间主题"
+            app:summary="当夜间模式启用时使用纯黑色主题" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

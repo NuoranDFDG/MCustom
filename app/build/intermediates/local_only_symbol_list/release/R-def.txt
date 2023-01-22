@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+array reply_entries
+array reply_values
 color aboutColor
 color black
 color colorAccent
@@ -83,7 +85,11 @@ id pluginAbout
 id progressBar
 id protocol
 id pwd
+id sendStart
+id sendText
+id settings
 id shoppingback
+id start_mcustom
 id statusbarutil_fake_status_bar_view
 id statusbarutil_translucent_view
 id test55
@@ -97,7 +103,10 @@ layout about
 layout activity_main
 layout activity_web_view
 layout floating_window
+layout forget
 layout login_layout
+layout say
+layout settings_activity
 layout shopping
 menu menu_browser
 menu menu_main
@@ -110,6 +119,9 @@ raw febec8f8
 raw main
 raw u1nz5_geywz
 string app_name
+string attachment_summary_off
+string attachment_summary_on
+string attachment_title
 string fghj
 string hyfl
 string jrth
@@ -119,7 +131,13 @@ string l3
 string l4
 string l5
 string l6
+string messages_header
+string reply_title
 string sh
+string signature_title
+string sync_header
+string sync_title
+string title_activity_settings
 string todo
 string xshd
 string xycj
@@ -133,3 +151,4 @@ style XFC
 xml backup_rules
 xml data_extraction_rules
 xml network_security_config
+xml root_preferences

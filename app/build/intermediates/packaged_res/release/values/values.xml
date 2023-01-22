@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="reply_entries">
+        <item>跟随系统</item>
+        <item>总是开启</item>
+        <item>总是关闭</item>
+    </string-array>
+    <string-array name="reply_values">
+        <item>follow</item>
+        <item>open</item>
+        <item>close</item>
+    </string-array>
     <color name="aboutColor">#EAE9F7</color>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#FFFFFF</color>
@@ -29,6 +39,10 @@
     <item name="statusbarutil_fake_status_bar_view" type="id"/>
     <item name="statusbarutil_translucent_view" type="id"/>
     <string name="app_name">nuoran</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_title">Download incoming attachments</string>
     <string name="fghj">  请输入内容</string>
     <string name="hyfl">会员福利</string>
     <string name="jrth">今日特惠</string>
@@ -38,7 +52,13 @@
     <string name="l4">命令执行</string>
     <string name="l5">调用函数</string>
     <string name="l6">最小化</string>
+    <string name="messages_header">Messages</string>
+    <string name="reply_title">Default reply action</string>
     <string name="sh"><![CDATA[< 商店]]></string>
+    <string name="signature_title">Your signature</string>
+    <string name="sync_header">Sync</string>
+    <string name="sync_title">Sync email periodically</string>
+    <string name="title_activity_settings">SettingsActivity</string>
     <string name="todo">TODO</string>
     <string name="xshd">限时活动</string>
     <string name="xycj">幸运抽奖</string>

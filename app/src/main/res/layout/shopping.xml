@@ -53,6 +53,7 @@
         android:paddingRight="8dp">
 
         <LinearLayout
+            android:id="@+id/menu_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -63,35 +64,7 @@
                 android:layout_height="35dp"
                 android:background="@drawable/release_button_com_netease_x19"
                 android:layout_marginBottom="6dp"
-                android:text="@string/xshd" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/release_button_com_netease_x19"
-                android:layout_marginBottom="6dp"
-                android:text="@string/jrth" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/release_button_com_netease_x19"
-                android:layout_marginBottom="6dp"
-                android:text="@string/hyfl" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/release_button_com_netease_x19"
-                android:layout_marginBottom="6dp"
-                android:text="@string/xycj" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/release_button_com_netease_x19"
-                android:layout_marginBottom="6dp"
-                android:text="@string/zscz" />
+                android:text="shop" />
 
             <!-- More buttons -->
 

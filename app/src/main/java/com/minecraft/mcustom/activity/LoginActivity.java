@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         }).start();
 
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //login
         setContentView(R.layout.login_layout);
