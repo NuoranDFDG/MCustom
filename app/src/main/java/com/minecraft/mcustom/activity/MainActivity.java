@@ -17,9 +17,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.jakewharton.rxbinding3.view.RxView;
 import com.minecraft.mcustom.FloatingWindowService;
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.ui.About;
+
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,22 +70,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button start_button = this.findViewById(R.id.start_mcustom);
-        start_button.setOnTouchListener((view, motionEvent) -> {
-            if (!FloatingWindowService.isFloatingWindowShowing) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (!Settings.canDrawOverlays(this)) {
-                        Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT).show();
-                        startActivityForResult(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())), 0);
-                    } else {
-                        startService(new Intent(MainActivity.this, FloatingWindowService.class));
+        RxView.clicks(this.findViewById(R.id.start_mcustom))
+                .throttleFirst(1000L, TimeUnit.MILLISECONDS) // 1秒内只有第一次点击有效
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(x -> {
+                    if (!FloatingWindowService.isFloatingWindowShowing) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (!Settings.canDrawOverlays(this)) {
+                                Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT).show();
+                                startActivityForResult(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())), 0);
+                            } else {
+                                startService(new Intent(MainActivity.this, FloatingWindowService.class));
+                            }
+                        }
                     }
-                }
-            }
-            return true;
-        });
-
+                });
     }
 
     @Override
