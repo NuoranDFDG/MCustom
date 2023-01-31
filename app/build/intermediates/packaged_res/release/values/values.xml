@@ -38,7 +38,7 @@
     <color name="white">#FFFFFFFF</color>
     <item name="statusbarutil_fake_status_bar_view" type="id"/>
     <item name="statusbarutil_translucent_view" type="id"/>
-    <string name="app_name">nuoran</string>
+    <string name="app_name">MCustom</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>

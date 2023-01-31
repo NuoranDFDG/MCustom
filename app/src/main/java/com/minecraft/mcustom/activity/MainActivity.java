@@ -21,6 +21,7 @@ import com.jakewharton.rxbinding3.view.RxView;
 import com.minecraft.mcustom.FloatingWindowService;
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.ui.About;
+import com.minecraft.mcustom.util.websocket.SocketService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.action_run:
-
+                        runMCustom();
                         break;
                     case R.id.action_about:
                         About about = new About();
@@ -70,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        runMCustom();
+    }
+
+    @SuppressLint("CheckResult")
+    public void runMCustom() {
         RxView.clicks(this.findViewById(R.id.start_mcustom))
                 .throttleFirst(1000L, TimeUnit.MILLISECONDS) // 1秒内只有第一次点击有效
                 .observeOn(AndroidSchedulers.mainThread())
@@ -81,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                                 startActivityForResult(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())), 0);
                             } else {
                                 startService(new Intent(MainActivity.this, FloatingWindowService.class));
+                                Intent websocketServiceIntent = new Intent(this, SocketService.class);
+                                startService(websocketServiceIntent);
                             }
                         }
                     }

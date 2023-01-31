@@ -2560,6 +2560,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable divider_line
 drawable fillet_water
+drawable fy
 drawable github_icon
 drawable guidebook
 drawable ic_arrow_down_24dp
@@ -2627,6 +2628,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable password_icon
 drawable pin_button_com_neteas_x19
+drawable point_out
 drawable popup_bg
 drawable preference_list_divider_material
 drawable question
@@ -2923,6 +2925,7 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id menu_list
 id message
 id middle
 id mini
@@ -2994,6 +2997,7 @@ id peekHeight
 id percent
 id pin
 id pluginAbout
+id point_text
 id position
 id postLayout
 id preferences_detail
@@ -3041,11 +3045,11 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
-id sendStart
-id sendText
 id settings
 id sharedValueSet
 id sharedValueUnset
+id shop
+id shopping_list
 id shoppingback
 id shortcut
 id showCustom
@@ -3330,6 +3334,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout point_out
 layout preference
 layout preference_category
 layout preference_category_material
@@ -3346,7 +3351,6 @@ layout preference_widget_seekbar
 layout preference_widget_seekbar_material
 layout preference_widget_switch
 layout preference_widget_switch_compat
-layout say
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3381,6 +3385,7 @@ plurals mtrl_badge_content_description
 raw febec8f8
 raw main
 raw u1nz5_geywz
+raw xbox_live_notification
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -4772,6 +4777,7 @@ xml backup_rules
 xml data_extraction_rules
 xml network_security_config
 xml root_preferences
+xml shopping_list_button
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

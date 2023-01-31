@@ -153,7 +153,9 @@ public class LoginActivity extends AppCompatActivity {
         clickString1.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                Toast.makeText(LoginActivity.this, "跳转默认浏览器", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
+                intent.putExtra("extra_data", "noth");
+                startActivity(intent);
             }
             @Override
             public void updateDrawState(TextPaint ds) {
@@ -167,7 +169,9 @@ public class LoginActivity extends AppCompatActivity {
         clickString2.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                Toast.makeText(LoginActivity.this, "跳转默认浏览器", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
+                intent.putExtra("extra_data", "noth");
+                startActivity(intent);
             }
 
             @Override

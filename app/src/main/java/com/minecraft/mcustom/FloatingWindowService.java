@@ -6,6 +6,7 @@ import com.minecraft.mcustom.util.gson.JsonBean;
 import com.minecraft.mcustom.util.http.HttpUrl;
 import com.minecraft.mcustom.util.http.OKHttpUtil;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.content.res.Resources;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
 
 import androidx.annotation.NonNull;
@@ -28,7 +30,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 
+import org.java_websocket.handshake.ServerHandshake;
+
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 
 
@@ -44,6 +49,7 @@ public class FloatingWindowService extends Service {
     public static boolean isFloatingWindowShowing = false;
     public static boolean isFloatingWindow2Showing = false;
 
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -53,36 +59,8 @@ public class FloatingWindowService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-//        // 创建 WebSocketClient 对象
-//        WebSocketClient client = new WebSocketClient("ws://124.222.157.95:8000");
-//
-//// 设置回调
-//        client.setOnOpenListener(new WebSocketClient.OnOpenListener() {
-//            @Override
-//            public void onOpen() {
-//                // 连接成功时调用
-//                client.send("Hello, WebSocket!");
-//            }
-//        });
-//        client.setOnMessageListener(new WebSocketClient.OnMessageListener() {
-//            @Override
-//            public void onMessage(String message) {
-//                // 接收到消息时调用
-//                Log.d("WebSocket", "Received: " + message);
-//            }
-//        });
-//        client.setOnCloseListener(new WebSocketClient.OnCloseListener() {
-//            @Override
-//            public void onClose() {
-//                // 连接关闭时调用
-//            }
-//        });
-//
-//// 连接服务器
-//        client.connect();
-//
-//// 关闭连接
-//        client.close();
+
+
 
         player = MediaPlayer.create(this, R.raw.u1nz5_geywz);
         startXFCMain();
@@ -99,6 +77,7 @@ public class FloatingWindowService extends Service {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void startXFCMain() {
         // x50 y130
         isFloatingWindowShowing = true;
@@ -151,6 +130,7 @@ public class FloatingWindowService extends Service {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void startFloatingWindow2() {
         mService = this;
         isFloatingWindow2Showing = true;

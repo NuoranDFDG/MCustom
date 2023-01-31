@@ -38,6 +38,7 @@ drawable circle3
 drawable custom_progress
 drawable divider_line
 drawable fillet_water
+drawable fy
 drawable github_icon
 drawable guidebook
 drawable ic_email_white_24dp
@@ -54,6 +55,7 @@ drawable mcustom_run
 drawable mcustom_stopped
 drawable password_icon
 drawable pin_button_com_neteas_x19
+drawable point_out
 drawable popup_bg
 drawable question
 drawable release_button_com_netease_x19
@@ -81,13 +83,15 @@ id github_about3
 id github_main
 id linearLayout
 id login
+id menu_list
 id pluginAbout
+id point_text
 id progressBar
 id protocol
 id pwd
-id sendStart
-id sendText
 id settings
+id shop
+id shopping_list
 id shoppingback
 id start_mcustom
 id statusbarutil_fake_status_bar_view
@@ -105,7 +109,7 @@ layout activity_web_view
 layout floating_window
 layout forget
 layout login_layout
-layout say
+layout point_out
 layout settings_activity
 layout shopping
 menu menu_browser
@@ -118,6 +122,7 @@ mipmap ic_nuoran_round
 raw febec8f8
 raw main
 raw u1nz5_geywz
+raw xbox_live_notification
 string app_name
 string attachment_summary_off
 string attachment_summary_on
@@ -152,3 +157,4 @@ xml backup_rules
 xml data_extraction_rules
 xml network_security_config
 xml root_preferences
+xml shopping_list_button
