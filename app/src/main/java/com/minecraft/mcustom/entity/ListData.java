@@ -10,13 +10,13 @@ public class ListData implements Serializable {
 
     private static final long serialVersionUID = 2576L;
 
-    private ArrayList<ArrayList> data;
+    private ArrayList<List> data;
 
-    public ArrayList<ArrayList> getData() {
+    public ArrayList<List> getData() {
         return data;
     }
 
-    public ListData(ArrayList<ArrayList> data) {
+    public void setData(ArrayList<List> data) {
         this.data = data;
     }
 

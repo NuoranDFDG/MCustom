@@ -1,40 +1,41 @@
 package com.minecraft.mcustom;
 
 import com.google.gson.Gson;
-import com.minecraft.mcustom.entity.ListData;
 import com.minecraft.mcustom.util.gson.JsonBean;
-import com.minecraft.mcustom.util.http.HttpUrl;
-import com.minecraft.mcustom.util.http.OKHttpUtil;
+import com.minecraft.mcustom.play.getShop;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.os.Build;
-import android.os.Handler;
 import android.os.IBinder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-
-
-import org.java_websocket.handshake.ServerHandshake;
+import android.widget.ScrollView;
+import android.widget.Toast;
 
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FloatingWindowService extends Service {
@@ -44,10 +45,11 @@ public class FloatingWindowService extends Service {
     private FrameLayout floatingWindow2;
     private MediaPlayer player;
 
-    final private static Gson gson= JsonBean.getGson();
+    private int clickedButtonIndex = -1;
 
     public static boolean isFloatingWindowShowing = false;
     public static boolean isFloatingWindow2Showing = false;
+    private WindowManager windowManager1;
 
 
     @Nullable
@@ -61,7 +63,7 @@ public class FloatingWindowService extends Service {
         super.onCreate();
 
 
-
+        mService=this;
         player = MediaPlayer.create(this, R.raw.u1nz5_geywz);
         startXFCMain();
     }
@@ -119,10 +121,13 @@ public class FloatingWindowService extends Service {
                         e.printStackTrace();
                     }
                     player.start();
-                    if (isFloatingWindowShowing) {
-                        windowManager.removeView(floatingWindow1);
-                        isFloatingWindow2Showing = true;
-                        startFloatingWindow2();
+                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        // 当前是横屏
+                        if (isFloatingWindowShowing) {
+                            windowManager.removeView(floatingWindow1);
+                            isFloatingWindow2Showing = true;
+                            startFloatingWindow2();
+                        }
                     }
                 }
                 return false;
@@ -130,7 +135,7 @@ public class FloatingWindowService extends Service {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
     public void startFloatingWindow2() {
         mService = this;
         isFloatingWindow2Showing = true;
@@ -156,6 +161,40 @@ public class FloatingWindowService extends Service {
         if (windowManager.getDefaultDisplay() != null && windowManager.getDefaultDisplay().isValid()) {
             windowManager.addView(floatingWindow2, params);
         }
+        LinearLayout linearLayout = floatingWindow2.findViewById(R.id.menu_list);
+        linearLayout.post(() -> {
+            ArrayList<List> shopList = getShop.getShopList();
+            Button[] buttons = new Button[shopList.size()];
+            for (int i = 0; i < shopList.size(); i++) {
+                Button button = new Button(this);
+                button.setText((CharSequence) shopList.get(i).get(0));
+                button.setBackground(getResources().getDrawable(R.drawable.release_button_com_netease_x19));
+                ViewGroup.MarginLayoutParams layoutParams = new ViewGroup.MarginLayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                );
+                layoutParams.height=35;
+                layoutParams.bottomMargin=6;
+                button.setLayoutParams(layoutParams);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        clickedButtonIndex = (int) v.getTag();
+                        v.setEnabled(false);
+                        for (int j = 0; j < buttons.length; j++) {
+                            if (j != clickedButtonIndex) {
+                                buttons[j].setEnabled(true);
+                            }
+                        }
+                        // 开启指定的界面
+                        // ...
+                    }
+                });
+                button.setTag(i);
+                buttons[i] = button;
+                linearLayout.addView(button);
+            }
+        });
         // 显示悬浮窗
         if (isFloatingWindow2Showing) {
             Button button2 = floatingWindow2.findViewById(R.id.shoppingback);

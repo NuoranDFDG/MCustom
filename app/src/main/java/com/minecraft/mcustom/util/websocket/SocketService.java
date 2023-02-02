@@ -165,19 +165,17 @@ public class SocketService extends Service{
         windowManager.addView(floatingWindow1, params);
         TextView pointText = floatingWindow1.findViewById(R.id.point_text);
         pointText.setText(point);
-        floatingWindow1.post(new Runnable() {
-            public void run() {
-                try {
-                    player.prepare();
-                } catch (IllegalStateException | IOException e) {
-                    e.printStackTrace();
-                }
-                player.start();
-                ObjectAnimator animator = ObjectAnimator.ofFloat(floatingWindow1, "translationY", -100f, 0f);
-                animator.setDuration(500);
-                animator.start();
-                floatingWindow1.setAlpha(1);
+        floatingWindow1.post(() -> {
+            try {
+                player.prepare();
+            } catch (IllegalStateException | IOException e) {
+                e.printStackTrace();
             }
+            player.start();
+            ObjectAnimator animator = ObjectAnimator.ofFloat(floatingWindow1, "translationY", -100f, 0f);
+            animator.setDuration(500);
+            animator.start();
+            floatingWindow1.setAlpha(1);
         });
         new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) {}

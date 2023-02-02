@@ -4,6 +4,7 @@ ADDED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidMan
 INJECTED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:2:1-95:12
 INJECTED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:2:1-95:12
 INJECTED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml:2:1-95:12
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\11fd9c8135998e6b76aaf3aff9401834\transformed\jetified-library-2.1.4\AndroidManifest.xml:2:1-10:12
 MERGED from [com.jakewharton.rxbinding3:rxbinding:3.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bba196e99e628b0c61c07c869859b5b8\transformed\jetified-rxbinding-3.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.bumptech.glide:glide:4.14.2] C:\Users\Administrator\.gradle\caches\transforms-3\d659130d8734a64b8d2705fb06b90389\transformed\jetified-glide-4.14.2\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.preference:preference:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\f135425267c911d6dc1cd95dbb25d72d\transformed\preference-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -248,6 +249,8 @@ uses-sdk
 INJECTED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Administrator\StudioProjects\MCustom\app\src\main\AndroidManifest.xml
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\11fd9c8135998e6b76aaf3aff9401834\transformed\jetified-library-2.1.4\AndroidManifest.xml:6:5-8:41
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\11fd9c8135998e6b76aaf3aff9401834\transformed\jetified-library-2.1.4\AndroidManifest.xml:6:5-8:41
 MERGED from [com.jakewharton.rxbinding3:rxbinding:3.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bba196e99e628b0c61c07c869859b5b8\transformed\jetified-rxbinding-3.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton.rxbinding3:rxbinding:3.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bba196e99e628b0c61c07c869859b5b8\transformed\jetified-rxbinding-3.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.github.bumptech.glide:glide:4.14.2] C:\Users\Administrator\.gradle\caches\transforms-3\d659130d8734a64b8d2705fb06b90389\transformed\jetified-glide-4.14.2\AndroidManifest.xml:5:5-7:41
