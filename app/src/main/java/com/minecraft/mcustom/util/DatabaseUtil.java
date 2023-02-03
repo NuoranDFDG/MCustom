@@ -41,16 +41,12 @@ public class DatabaseUtil {
         jsonResult= OKHttpUtil.postAsyncRequest(baseUrl,jsonForm,args);
         if(jsonResult==null){//请求失败
             result.setWarn("发送请求错误！",null);
-        }else if(jsonResult.equals("500")){
-            result.setErr();
-        }else if(jsonResult.contains("429")){
-            result.setWarn("超出最大请求次数,请1小时后再试.",null);
-        }else{
+        } else {
             result=gson.fromJson(jsonResult,Result.class);
             if(result.getCode()==200){//
 
             }else if(result.getCode()==400){//
-
+                result.setWarn("账号或密码格式错误", null);
             }
         }
         return result;

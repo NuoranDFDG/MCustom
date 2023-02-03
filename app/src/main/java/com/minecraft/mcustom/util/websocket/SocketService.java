@@ -109,6 +109,7 @@ public class SocketService extends Service{
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+
                             startXFCMain(strread.replace("runSTRXFC ", ""));
                         }
                     });

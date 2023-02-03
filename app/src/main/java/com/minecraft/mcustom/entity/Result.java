@@ -40,17 +40,17 @@ public class Result {
 
     public void setSuccess(String msg, Object result){
         this.code=200;
-        this.msg="success-"+msg;
+        this.msg=msg;
         this.result=result;
     }
     public void setWarn(String msg, Object result){
         this.code=400;
-        this.msg="warning-"+msg;
+        this.msg=msg;
         this.result=result;
     }
     public void setErr(){
         this.code=500;
-        this.msg="error-服务器在忙，请稍后再试一试吧！";
+        this.msg="服务器在忙，请稍后再试一试吧！";
         this.result=null;
     }
 }

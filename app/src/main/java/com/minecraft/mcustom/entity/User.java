@@ -6,25 +6,16 @@ public class User implements Serializable {
 
 	private static final long serialVersionUID = 7912L;
 
-	private static String Aid;
-
 	private String id;
 
 	private String password;
 
-	public static String getAid() {
-		return Aid;
-	}
-
-	public static void setAid(String aid) {
-		User.Aid = aid;
-	}
-
-	public void Data(){};
+	private String hash;
 	
-	public void Data(String id, String password) {
+	public User(String id, String password, String hash) {
 		this.id = id;
 		this.password = password;
+		this.hash = hash;
 	}
 
 	public String getId() {
@@ -33,6 +24,14 @@ public class User implements Serializable {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
 	}
 
 	public String getPassword() {
