@@ -1,7 +1,6 @@
 package com.minecraft.mcustom;
 
-import com.google.gson.Gson;
-import com.minecraft.mcustom.util.gson.JsonBean;
+import com.minecraft.mcustom.util.ConvertUtil;
 import com.minecraft.mcustom.play.getShop;
 
 import android.annotation.SuppressLint;
@@ -10,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -18,20 +16,16 @@ import android.os.IBinder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,8 +43,6 @@ public class FloatingWindowService extends Service {
 
     public static boolean isFloatingWindowShowing = false;
     public static boolean isFloatingWindow2Showing = false;
-    private WindowManager windowManager1;
-
 
     @Nullable
     @Override
@@ -65,7 +57,9 @@ public class FloatingWindowService extends Service {
 
         mService=this;
         player = MediaPlayer.create(this, R.raw.u1nz5_geywz);
-        startXFCMain();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startXFCMain();
+        }
     }
 
     @Override
@@ -79,7 +73,8 @@ public class FloatingWindowService extends Service {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @SuppressLint({"ClickableViewAccessibility", "InflateParams", "RtlHardcoded"})
     public void startXFCMain() {
         // x50 y130
         isFloatingWindowShowing = true;
@@ -104,20 +99,14 @@ public class FloatingWindowService extends Service {
             Button button1 = floatingWindow1.findViewById(R.id.XFCbuttonn);
             button1.setOnTouchListener((view, motionEvent) -> {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                    // 按住按钮时的效果
                     button1.setBackgroundResource(R.drawable.retouch_2022122219030731);
                     button1.setAlpha(1.0f);
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-// 不按住按钮时的效果
                     button1.setBackgroundResource(R.drawable.retouch_2022122214163714);
                     button1.setAlpha(0.75f);
                     try {
                         player.prepare();
-                    } catch (IllegalStateException e) {
-// TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (IOException e) {
-// TODO Auto-generated catch block
+                    } catch (IllegalStateException | IOException e) {
                         e.printStackTrace();
                     }
                     player.start();
@@ -135,7 +124,7 @@ public class FloatingWindowService extends Service {
         }
     }
 
-    @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
+    @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables", "InflateParams", "RtlHardcoded"})
     public void startFloatingWindow2() {
         mService = this;
         isFloatingWindow2Showing = true;
@@ -164,35 +153,43 @@ public class FloatingWindowService extends Service {
         LinearLayout linearLayout = floatingWindow2.findViewById(R.id.menu_list);
         linearLayout.post(() -> {
             ArrayList<List> shopList = getShop.getShopList();
-            Button[] buttons = new Button[shopList.size()];
-            for (int i = 0; i < shopList.size(); i++) {
-                Button button = new Button(this);
-                button.setText((CharSequence) shopList.get(i).get(0));
-                button.setBackground(getResources().getDrawable(R.drawable.release_button_com_netease_x19));
-                ViewGroup.MarginLayoutParams layoutParams = new ViewGroup.MarginLayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                );
-                layoutParams.height=35;
-                layoutParams.bottomMargin=6;
-                button.setLayoutParams(layoutParams);
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+            if (shopList != null) {
+                Button[] buttons = new Button[shopList.size()];
+                for (int i = 0; i < shopList.size(); i++) {
+                    Button button = new Button(this);
+                    button.setText((CharSequence) shopList.get(i).get(0));
+                    button.setBackgroundResource(R.drawable.release_button_com_netease_x19);
+                    ViewGroup.MarginLayoutParams layoutParams = new ViewGroup.MarginLayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT
+                    );
+
+                    layoutParams.height = ConvertUtil.convertDpToPixel(35, getApplicationContext());
+                    layoutParams.bottomMargin = ConvertUtil.convertDpToPixel(6, getApplicationContext());
+                    button.setLayoutParams(layoutParams);
+                    button.setOnClickListener(v -> {
                         clickedButtonIndex = (int) v.getTag();
                         v.setEnabled(false);
+                        v.setBackgroundResource(R.drawable.pin_button_com_neteas_x19);
+                        try {
+                            player.prepare();
+                        } catch (IllegalStateException | IOException e) {
+                            e.printStackTrace();
+                        }
+                        player.start();
                         for (int j = 0; j < buttons.length; j++) {
                             if (j != clickedButtonIndex) {
                                 buttons[j].setEnabled(true);
+                                buttons[j].setBackgroundResource(R.drawable.release_button_com_netease_x19);
                             }
                         }
                         // 开启指定的界面
                         // ...
-                    }
-                });
-                button.setTag(i);
-                buttons[i] = button;
-                linearLayout.addView(button);
+                    });
+                    button.setTag(i);
+                    buttons[i] = button;
+                    linearLayout.addView(button);
+                }
             }
         });
         // 显示悬浮窗
@@ -202,11 +199,7 @@ public class FloatingWindowService extends Service {
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     try {
                         player.prepare();
-                    } catch (IllegalStateException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
+                    } catch (IllegalStateException | IOException e) {
                         e.printStackTrace();
                     }
                     player.start();
@@ -214,7 +207,9 @@ public class FloatingWindowService extends Service {
                     if (isFloatingWindow2Showing) {
                         windowManager.removeView(floatingWindow2);
                         isFloatingWindow2Showing = false;
-                        startXFCMain();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            startXFCMain();
+                        }
                     }
                 }
                 return false;
@@ -223,9 +218,8 @@ public class FloatingWindowService extends Service {
     }
     public static int getStatusBarHeight(@NonNull Context context) {
         Resources resources = context.getResources();
-        int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
-        int height = resources.getDimensionPixelSize(resourceId);
-        return height;
+        @SuppressLint({"DiscouragedApi", "InternalInsetResource"}) int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
+        return resources.getDimensionPixelSize(resourceId);
     }
     public static int getScreenHeight(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

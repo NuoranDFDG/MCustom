@@ -70,6 +70,7 @@ public class SocketService extends Service{
                 sock = new Socket(this.IP, this.PORT);
             } catch (Exception e) {
                 e.printStackTrace();
+                disSocket();
                 new Socket_thread(SocketUrl.getBaseUrl()).start();
                 return;
             }
@@ -79,9 +80,11 @@ public class SocketService extends Service{
                 sendStrSocket("连接成功");
             } catch (Exception e) {
                 e.printStackTrace();
+                disSocket();
                 new Socket_thread(SocketUrl.getBaseUrl()).start();
                 return;
             }
+
             new Inx().start();
         }
     }
@@ -96,7 +99,7 @@ public class SocketService extends Service{
             while (true) {
                 byte[] bu = new byte[1024];
                 try {
-                    int conut = inx.read(bu);//设备重启，异常 将会一直停留在这
+                    int conut = inx.read(bu);
                     if (conut == -1) {
                         disSocket();
                         new Socket_thread(SocketUrl.getBaseUrl()).start();
@@ -109,9 +112,12 @@ public class SocketService extends Service{
                             startXFCMain(strread.replace("runSTRXFC ", ""));
                         }
                     });
-
                 } catch (IOException ignored) {
+                    disSocket();
+                    new Socket_thread(SocketUrl.getBaseUrl()).start();
+                    return;
                 }
+
             }
         }
     }
@@ -183,7 +189,6 @@ public class SocketService extends Service{
                 windowManager.removeView(floatingWindow1);
             }
         }.start();
-
         sendStrSocket("执行成功");
 
     }

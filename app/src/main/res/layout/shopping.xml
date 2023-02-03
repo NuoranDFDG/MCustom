@@ -55,13 +55,6 @@
                     android:layout_marginTop="6dp"
                     android:orientation="vertical">
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:background="@drawable/release_button_com_netease_x19"
-                        android:layout_marginBottom="6dp"
-                        android:text="shop" />
-
                 </LinearLayout>
 
             </ScrollView>

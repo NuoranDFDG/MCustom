@@ -154,7 +154,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View widget) {
                 Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                intent.putExtra("extra_data", "noth");
+                intent.putExtra("extra_data", "http://mcustom.asia/user/agreement");
                 startActivity(intent);
             }
             @Override
@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View widget) {
                 Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                intent.putExtra("extra_data", "noth");
+                intent.putExtra("extra_data", "http://mcustom.asia/privacy/policy");
                 startActivity(intent);
             }
 

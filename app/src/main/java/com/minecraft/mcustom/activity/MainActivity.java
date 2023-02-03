@@ -29,7 +29,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Context context;
+    private long backPressedTime;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
         LoginActivity.instance.finish();
-        context = this;
+        Context context = this;
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("MCustom");
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-                intent.putExtra("extra_data", "http://124.222.157.95:7913");
+                intent.putExtra("extra_data", "http://mcustom.asia/document");
                 startActivity(intent);
             }
         });
@@ -96,18 +96,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode== KeyEvent.KEYCODE_BACK){
-            long time = 0;
-            if(System.currentTimeMillis()-time>2000){
-                time=System.currentTimeMillis();
-            }else{
-                moveTaskToBack(true);
-            }
-            return true;
+    public void onBackPressed() {
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - backPressedTime > 2000) {
+            Toast.makeText(this, "再按一次返回主页", Toast.LENGTH_SHORT).show();
+            backPressedTime = currentTime;
+        } else {
+            super.onBackPressed();
+            Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+            homeIntent.addCategory(Intent.CATEGORY_HOME);
+            homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(homeIntent);
         }
-        return super.onKeyDown(keyCode, event);
     }
+
 
 }
 
