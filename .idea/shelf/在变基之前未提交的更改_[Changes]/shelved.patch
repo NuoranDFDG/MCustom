@@ -1,0 +1,434 @@
+Index: app/src/main/java/com/minecraft/mcustom/util/RSAUtils.java
+===================================================================
+diff --git a/app/src/main/java/com/minecraft/mcustom/util/RSAUtils.java b/app/src/main/java/com/minecraft/mcustom/util/RSAUtils.java
+deleted file mode 100644
+--- a/app/src/main/java/com/minecraft/mcustom/util/RSAUtils.java	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
++++ /dev/null	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
+@@ -1,96 +0,0 @@
+-package com.minecraft.mcustom.util;
+-
+-import javax.crypto.Cipher;
+-import java.security.*;
+-import java.security.spec.PKCS8EncodedKeySpec;
+-import java.security.spec.X509EncodedKeySpec;
+-import com.minecraft.mcustom.util.base.BASE64Decoder;
+-import com.minecraft.mcustom.util.base.BASE64Encoder;
+-
+-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+-
+-/**
+- * RSA加解密工具类
+- */
+-public class RSAUtils {
+-    //公钥加密
+-    public static String encrypt(String content, PublicKey publicKey) {
+-        try{
+-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");//java默认"RSA"="RSA/ECB/PKCS1Padding"
+-            cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+-            byte[] output = cipher.doFinal(content.getBytes());
+-            BASE64Encoder encoder = new BASE64Encoder();
+-            return encoder.encode(output);
+-        }catch (Exception e){
+-            e.printStackTrace();
+-        }
+-        return null;
+-    }
+-
+-    //公钥加密
+-    public static byte[] encrypt(byte[] content, PublicKey publicKey) {
+-        try{
+-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");//java默认"RSA"="RSA/ECB/PKCS1Padding"
+-            cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+-            return  cipher.doFinal(content);
+-        }catch (Exception e){
+-            e.printStackTrace();
+-        }
+-        return null;
+-    }
+-
+-    //私钥解密
+-    public static byte[] decrypt(byte[] content, PrivateKey privateKey) {
+-        try {
+-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+-            cipher.init(Cipher.DECRYPT_MODE, privateKey);
+-            return cipher.doFinal(content);
+-        } catch (Exception e){
+-            e.printStackTrace();
+-            return null;
+-        }
+-    }
+-    //私钥解密
+-    public static String decrypt(String content, PrivateKey privateKey) {
+-        try {
+-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+-            cipher.init(Cipher.DECRYPT_MODE, privateKey);
+-            byte [] b = cipher.doFinal(content.getBytes());
+-            BASE64Encoder encoder = new BASE64Encoder();
+-            return encoder.encode(b);
+-        } catch (Exception e){
+-            e.printStackTrace();
+-            return null;
+-        }
+-    }
+-
+-    /**
+-     * String转公钥PublicKey
+-     * @param key
+-     * @return
+-     * @throws Exception
+-     */
+-    public static PublicKey getPublicKey(String key) throws Exception {
+-        byte[] keyBytes;
+-        keyBytes = (new BASE64Decoder()).decodeBuffer(key);
+-        X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
+-        KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+-        PublicKey publicKey = keyFactory.generatePublic(keySpec);
+-        return publicKey;
+-    }
+-
+-    /**
+-     * String转私钥PrivateKey
+-     * @param key
+-     * @return
+-     * @throws Exception
+-     */
+-    public static PrivateKey getPrivateKey(String key) throws Exception {
+-        byte[] keyBytes;
+-        keyBytes = (new BASE64Decoder()).decodeBuffer(key);
+-        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
+-        KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+-        PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
+-        return privateKey;
+-    }
+-}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AndroidLayouts\">\r\n    <shared>\r\n      <config>\r\n        <device id=\"_device_class_phone\" />\r\n        <device id=\"_device_class_tablet\" />\r\n        <device id=\"_device_class_desktop\" />\r\n        <device id=\"_device_class_foldable\" />\r\n        <option name=\"nonWearDeviceLastStateName\" value=\"landscape\" />\r\n      </config>\r\n    </shared>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"NONE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9f2ef662-2270-45cb-a7d3-cc48135c8605\" name=\"Changes\" comment=\"更新了Hach生成工具类\">\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/file-system.probe\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/file-system.probe\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_0/graph.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_0/graph.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_1/graph.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_1/graph.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/dex/release/mergeDexRelease/classes.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/dex/release/mergeDexRelease/classes.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$1.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$1.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$2.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$2.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$3.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$3.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$4.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$4.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$5.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$5.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$6.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$6.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$7.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$7.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity$2.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity$2.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/Result.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/Result.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/User.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/User.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/DatabaseUtil.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/DatabaseUtil.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$1.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$1.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$2.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$2.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$1.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$1.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$2.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$2.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$3.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$3.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$4.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$4.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$5.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$5.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$6.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$6.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$7.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$7.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/MainActivity$2.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/MainActivity$2.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/Result.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/Result.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/User.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/User.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/DatabaseUtil.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/DatabaseUtil.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$1.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$1.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$2.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$2.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService.dex\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService.dex\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/build/tmp/compileReleaseJavaWithJavac/previous-compilation-data.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/build/tmp/compileReleaseJavaWithJavac/previous-compilation-data.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/Result.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/Result.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/User.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/DatabaseUtil.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/DatabaseUtil.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/BASE64Decoder.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/BASE64Encoder.jar\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/BASE64Encoder.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CEFormatException.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CEStreamExhausted.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CharacterDecoder.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CharacterEncoder.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/getKey.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/websocket/SocketService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/websocket/SocketService.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"device_and_snapshot_combo_box_target[]\" />\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <task path=\"$PROJECT_DIR$/app\">\r\n          <activation />\r\n        </task>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"nuoran\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"nuoran\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"app\" type=\"2d1252cf:ModuleNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"nuoran\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"app\" type=\"2d1252cf:ModuleNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"nuoran\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"app\" type=\"2d1252cf:ModuleNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n                <item name=\"other\" type=\"c8890929:TasksNode$1\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"resourceFile\" />\r\n        <option value=\"layoutResourceFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"GenerateSignedApkSettings\">\r\n    <option name=\"KEY_STORE_PATH\" value=\"C:\\nuo.jks\" />\r\n    <option name=\"KEY_ALIAS\" value=\"nuoran\" />\r\n    <option name=\"REMEMBER_PASSWORDS\" value=\"true\" />\r\n    <option name=\"BUILD_TARGET_KEY\" value=\"apk\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GithubProjectSettings\">\r\n    <option name=\"branchProtectionPatterns\">\r\n      <list>\r\n        <option value=\"main\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2JC1s1mOHqfdlWVQwAs9Wtj30KU\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ApkExportedModule\": \"MCustom.app\",\n    \"ExportApk.ApkPathForMCustom.app\": \"C:\\\\Users\\\\Administrator\\\\StudioProjects\\\\MCustom\\\\app\",\n    \"ExportApk.ApkPathFornuoran.app\": \"C:\\\\Users\\\\Administrator\\\\StudioProjects\\\\MCustom\\\\app\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"android-custom-viewC:/Users/Administrator/StudioProjects/MCustom/app/src/main/java/com/minecraft/mcustom/ui/HorizontalProgressbar.java_SELECTED\": \"HorizontalProgressbar\",\n    \"cidr.known.project.marker\": \"true\",\n    \"com.google.services.firebase.aqiPopupShown\": \"true\",\n    \"last_directory_selection\": \"C:/Users/Administrator/StudioProjects/MCustom/app/src/main/res/drawable\",\n    \"settings.editor.selected.configurable\": \"preferences.lookFeel\"\n  },\n  \"keyToStringList\": {\n    \"ExportApk.BuildVariants\": [\n      \"release\"\n    ]\n  }\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"android.template.-395331335\">\r\n      <recent name=\"com.minecraft.mcustom.activity\" />\r\n      <recent name=\"com.minecraft.mcustom\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Administrator\\StudioProjects\\MCustom\\app\\src\\main\\res\\raw\" />\r\n      <recent name=\"C:\\Users\\Administrator\\StudioProjects\\MCustom\\app\\src\\main\\res\\drawable\" />\r\n      <recent name=\"C:\\Users\\Administrator\\StudioProjects\\MCustom\\app\\libs\" />\r\n      <recent name=\"C:\\Users\\Administrator\\AndroidStudioProjects\\nuoran\\app\\libs\" />\r\n      <recent name=\"C:\\Users\\Administrator\\AndroidStudioProjects\\nuoran\\app\\src\\main\\java\\com\\minecraft\\nuoran\\util\\base\" />\r\n    </key>\r\n    <key name=\"android.template.1340895190\">\r\n      <recent name=\"com.minecraft.mcustom\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Android App.app\">\r\n    <configuration name=\"app\" type=\"AndroidRunConfigurationType\" factoryName=\"Android App\">\r\n      <module name=\"MCustom.app.main\" />\r\n      <option name=\"DEPLOY\" value=\"true\" />\r\n      <option name=\"DEPLOY_APK_FROM_BUNDLE\" value=\"false\" />\r\n      <option name=\"DEPLOY_AS_INSTANT\" value=\"false\" />\r\n      <option name=\"ARTIFACT_NAME\" value=\"\" />\r\n      <option name=\"PM_INSTALL_OPTIONS\" value=\"\" />\r\n      <option name=\"ALL_USERS\" value=\"false\" />\r\n      <option name=\"ALWAYS_INSTALL_WITH_PM\" value=\"false\" />\r\n      <option name=\"CLEAR_APP_STORAGE\" value=\"false\" />\r\n      <option name=\"DYNAMIC_FEATURES_DISABLED_LIST\" value=\"\" />\r\n      <option name=\"ACTIVITY_EXTRA_FLAGS\" value=\"\" />\r\n      <option name=\"MODE\" value=\"default_activity\" />\r\n      <option name=\"CLEAR_LOGCAT\" value=\"false\" />\r\n      <option name=\"SHOW_LOGCAT_AUTOMATICALLY\" value=\"false\" />\r\n      <option name=\"INSPECTION_WITHOUT_ACTIVITY_RESTART\" value=\"false\" />\r\n      <option name=\"TARGET_SELECTION_MODE\" value=\"DEVICE_AND_SNAPSHOT_COMBO_BOX\" />\r\n      <option name=\"SELECTED_CLOUD_MATRIX_CONFIGURATION_ID\" value=\"-1\" />\r\n      <option name=\"SELECTED_CLOUD_MATRIX_PROJECT_ID\" value=\"\" />\r\n      <option name=\"DEBUGGER_TYPE\" value=\"Auto\" />\r\n      <Auto>\r\n        <option name=\"USE_JAVA_AWARE_DEBUGGER\" value=\"false\" />\r\n        <option name=\"SHOW_STATIC_VARS\" value=\"true\" />\r\n        <option name=\"WORKING_DIR\" value=\"\" />\r\n        <option name=\"TARGET_LOGGING_CHANNELS\" value=\"lldb process:gdb-remote packets\" />\r\n        <option name=\"SHOW_OPTIMIZED_WARNING\" value=\"true\" />\r\n      </Auto>\r\n      <Hybrid>\r\n        <option name=\"USE_JAVA_AWARE_DEBUGGER\" value=\"false\" />\r\n        <option name=\"SHOW_STATIC_VARS\" value=\"true\" />\r\n        <option name=\"WORKING_DIR\" value=\"\" />\r\n        <option name=\"TARGET_LOGGING_CHANNELS\" value=\"lldb process:gdb-remote packets\" />\r\n        <option name=\"SHOW_OPTIMIZED_WARNING\" value=\"true\" />\r\n      </Hybrid>\r\n      <Java />\r\n      <Native>\r\n        <option name=\"USE_JAVA_AWARE_DEBUGGER\" value=\"false\" />\r\n        <option name=\"SHOW_STATIC_VARS\" value=\"true\" />\r\n        <option name=\"WORKING_DIR\" value=\"\" />\r\n        <option name=\"TARGET_LOGGING_CHANNELS\" value=\"lldb process:gdb-remote packets\" />\r\n        <option name=\"SHOW_OPTIMIZED_WARNING\" value=\"true\" />\r\n      </Native>\r\n      <Profilers>\r\n        <option name=\"ADVANCED_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"STARTUP_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"STARTUP_CPU_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"STARTUP_CPU_PROFILING_CONFIGURATION_NAME\" value=\"Java/Kotlin Method Sample (legacy)\" />\r\n        <option name=\"STARTUP_NATIVE_MEMORY_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"NATIVE_MEMORY_SAMPLE_RATE_BYTES\" value=\"2048\" />\r\n      </Profilers>\r\n      <option name=\"DEEP_LINK\" value=\"\" />\r\n      <option name=\"ACTIVITY_CLASS\" value=\"\" />\r\n      <option name=\"SEARCH_ACTIVITY_IN_GLOBAL_SCOPE\" value=\"false\" />\r\n      <option name=\"SKIP_ACTIVITY_VALIDATION\" value=\"false\" />\r\n      <method v=\"2\">\r\n        <option name=\"Android.Gradle.BeforeRunTask\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"HelloChina\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.minecraft.mcustom.activity.HelloChina\" />\r\n      <module name=\"nuoran.app.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.minecraft.mcustom.activity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9f2ef662-2270-45cb-a7d3-cc48135c8605\" name=\"Changes\" comment=\"\" />\r\n      <created>1671567459228</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1671567459228</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Changes\">\r\n      <created>1674151680346</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674151680346</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Changes\">\r\n      <created>1674158962147</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674158962147</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Changes\">\r\n      <created>1674159050456</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674159050456</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Changes\">\r\n      <created>1674162682319</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674162682319</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Changes\">\r\n      <created>1674163099998</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674163099998</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"完善了about界面\">\r\n      <created>1674190896668</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674190896668</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"完善了about界面\">\r\n      <created>1674191573217</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674191573217</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"更新about界面\">\r\n      <created>1674193736761</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674193736761</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"更新about界面\">\r\n      <created>1674193800344</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674193800344</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"更新about界面\">\r\n      <created>1674213331135</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674213331135</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"更新about界面\">\r\n      <created>1674220602300</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674220602300</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"更新about界面，更新了WebViewActivity界面。\">\r\n      <created>1674242746278</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674242746278</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"更新了浮动窗口部分\">\r\n      <created>1674392730872</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674392730872</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"更新了浮动窗口部分\">\r\n      <created>1675129528632</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675129528632</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"更新了浮动窗口部分\">\r\n      <created>1675342450090</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675342450090</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"更新了浮动窗口部分\">\r\n      <created>1675419626060</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675419626060</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"更新了Hach生成工具类\">\r\n      <created>1675419701353</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675419701353</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"18\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"HEAD\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Changes\" />\r\n    <MESSAGE value=\"完善了about界面\" />\r\n    <MESSAGE value=\"更新about界面\" />\r\n    <MESSAGE value=\"更新about界面，更新了WebViewActivity界面。\" />\r\n    <MESSAGE value=\"更新了浮动窗口部分\" />\r\n    <MESSAGE value=\"更新了Hach生成工具类\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"更新了Hach生成工具类\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
++++ b/.idea/workspace.xml	(date 1675511071802)
+@@ -24,58 +24,28 @@
+       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_0/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_0/graph.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_1/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_1/graph.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/release/mergeDexRelease/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/release/mergeDexRelease/classes.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$1.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$2.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$3.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$4.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$5.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$6.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$7.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$5.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$6.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$7.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity$2.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/Result.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/User.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/DatabaseUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/DatabaseUtil.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$1.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$2.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService$Inx.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/websocket/SocketService.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$1.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$2.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$3.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$4.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$5.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$6.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$6.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$7.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$7.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/MainActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/MainActivity$2.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/Result.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/Result.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/User.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/User.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/DatabaseUtil.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/DatabaseUtil.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$1.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$2.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx$1.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService$Inx.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/websocket/SocketService.dex" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileReleaseJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileReleaseJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/RSAUtils.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/BASE64Decoder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/BASE64Encoder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CEFormatException.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CEStreamExhausted.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CharacterDecoder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CharacterEncoder.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/getKey.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/Result.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/entity/User.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/DatabaseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/DatabaseUtil.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/BASE64Decoder.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/BASE64Encoder.jar" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/BASE64Encoder.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CEFormatException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CEStreamExhausted.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CharacterDecoder.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/base/CharacterEncoder.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/getKey.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/websocket/SocketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/websocket/SocketService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/minecraft/mcustom/util/RSAUtils.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_layout.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -143,6 +113,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="GithubProjectSettings">
+     <option name="branchProtectionPatterns">
+@@ -163,27 +134,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ApkExportedModule": "MCustom.app",
+-    "ExportApk.ApkPathForMCustom.app": "C:\\Users\\Administrator\\StudioProjects\\MCustom\\app",
+-    "ExportApk.ApkPathFornuoran.app": "C:\\Users\\Administrator\\StudioProjects\\MCustom\\app",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.cidr.known.project.marker": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "android-custom-viewC:/Users/Administrator/StudioProjects/MCustom/app/src/main/java/com/minecraft/mcustom/ui/HorizontalProgressbar.java_SELECTED": "HorizontalProgressbar",
+-    "cidr.known.project.marker": "true",
+-    "com.google.services.firebase.aqiPopupShown": "true",
+-    "last_directory_selection": "C:/Users/Administrator/StudioProjects/MCustom/app/src/main/res/drawable",
+-    "settings.editor.selected.configurable": "preferences.lookFeel"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ApkExportedModule&quot;: &quot;MCustom.app&quot;,
++    &quot;ExportApk.ApkPathForMCustom.app&quot;: &quot;C:\\Users\\Administrator\\StudioProjects\\MCustom\\app&quot;,
++    &quot;ExportApk.ApkPathFornuoran.app&quot;: &quot;C:\\Users\\Administrator\\StudioProjects\\MCustom\\app&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;android-custom-viewC:/Users/Administrator/StudioProjects/MCustom/app/src/main/java/com/minecraft/mcustom/ui/HorizontalProgressbar.java_SELECTED&quot;: &quot;HorizontalProgressbar&quot;,
++    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
++    &quot;last_directory_selection&quot;: &quot;C:/Users/Administrator/StudioProjects/MCustom/app/src/main/res/drawable&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+   },
+-  "keyToStringList": {
+-    "ExportApk.BuildVariants": [
+-      "release"
++  &quot;keyToStringList&quot;: {
++    &quot;ExportApk.BuildVariants&quot;: [
++      &quot;release&quot;
+     ]
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="android.template.-395331335">
+       <recent name="com.minecraft.mcustom.activity" />
+@@ -401,7 +372,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1675419701353</updated>
+     </task>
+-    <option name="localTasksCounter" value="18" />
++    <task id="LOCAL-00018" summary="更新了Hach生成工具类">
++      <created>1675453020064</created>
++      <option name="number" value="00018" />
++      <option name="presentableId" value="LOCAL-00018" />
++      <option name="project" value="LOCAL" />
++      <updated>1675453020064</updated>
++    </task>
++    <task id="LOCAL-00019" summary="更新了Hach生成工具类">
++      <created>1675453048089</created>
++      <option name="number" value="00019" />
++      <option name="presentableId" value="LOCAL-00019" />
++      <option name="project" value="LOCAL" />
++      <updated>1675453048089</updated>
++    </task>
++    <option name="localTasksCounter" value="20" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Sat Feb 04 00:01:46 CST 2023\r\nbase.1=C\\:\\\\Users\\\\Administrator\\\\StudioProjects\\\\MCustom\\\\app\\\\build\\\\intermediates\\\\dex\\\\release\\\\mergeDexRelease\\\\classes2.dex\r\npath.1=classes2.dex\r\nbase.0=C\\:\\\\Users\\\\Administrator\\\\StudioProjects\\\\MCustom\\\\app\\\\build\\\\intermediates\\\\dex\\\\release\\\\mergeDexRelease\\\\classes.dex\r\nrenamed.1=classes2.dex\r\nrenamed.0=classes.dex\r\npath.0=classes.dex\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt b/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt
+--- a/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
++++ b/app/build/intermediates/incremental/packageRelease/tmp/release/dex-renamer-state.txt	(date 1675508820012)
+@@ -1,4 +1,4 @@
+-#Sat Feb 04 00:01:46 CST 2023
++#Sat Feb 04 19:07:00 CST 2023
+ base.1=C\:\\Users\\Administrator\\StudioProjects\\MCustom\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
+ path.1=classes2.dex
+ base.0=C\:\\Users\\Administrator\\StudioProjects\\MCustom\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+Index: app/src/main/res/layout/login_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:fitsSystemWindows=\"true\"\r\n    android:focusableInTouchMode=\"true\" >\r\n\r\n    <FrameLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <ImageView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:src=\"@drawable/login_background_img\" />\r\n\r\n    </FrameLayout>\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/linearLayout\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_alignParentTop=\"true\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginTop=\"80dp\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/gotham\"\r\n                android:text=\"Mine\"\r\n                android:textColor=\"#ffffff\"\r\n                android:textSize=\"32sp\" />\r\n\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/gotham\"\r\n                android:text=\"Custom\"\r\n                android:textColor=\"#ffffff\"\r\n                android:textSize=\"32sp\" />\r\n\r\n            <View\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"2dp\"\r\n                android:layout_marginTop=\"2dp\"\r\n                android:background=\"#deff00\" />\r\n\r\n        </LinearLayout>\r\n\r\n    </LinearLayout>\r\n\r\n    <Button\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"测试按钮跳过登录请在正式版删除\"\r\n        android:id=\"@+id/test55\" />\r\n\r\n    <TextView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/linearLayout\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginTop=\"4dp\"\r\n        android:fontFamily=\"@font/calibri\"\r\n        android:gravity=\"center\"\r\n        android:text=\"在我的世界租赁服中使用「 悬浮窗UI 」\"\r\n        android:textColor=\"#9affffff\"\r\n        android:textSize=\"10sp\"\r\n        tools:ignore=\"SmallSp\" />\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginBottom=\"32dp\"\r\n        android:orientation=\"vertical\"\r\n        android:paddingLeft=\"32dp\"\r\n        android:paddingRight=\"32dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/verification\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"16dp\"\r\n            android:fontFamily=\"@font/calibri\"\r\n            android:gravity=\"right\"\r\n            android:textColor=\"#96ffffff\"\r\n            android:textSize=\"13sp\" />\r\n\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textColorHint=\"#96ffffff\"\r\n            android:theme=\"@style/EditScreenTextInputLayoutStyle\">\r\n\r\n            <EditText\r\n                android:id=\"@+id/userID\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:drawablePadding=\"16dp\"\r\n                android:drawableEnd=\"@drawable/ic_email_white_24dp\"\r\n                android:fontFamily=\"@font/calibri\"\r\n                android:hint=\"邮箱/用户名\"\r\n                android:inputType=\"textEmailAddress\"\r\n                android:maxLines=\"1\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"16sp\" />\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textColorHint=\"#96ffffff\"\r\n            android:theme=\"@style/EditScreenTextInputLayoutStyle\">\r\n\r\n            <EditText\r\n                android:id=\"@+id/pwd\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:drawablePadding=\"16dp\"\r\n                android:drawableEnd=\"@drawable/ic_lock_white_24dp\"\r\n                android:fontFamily=\"@font/calibri\"\r\n                android:hint=\"密码\"\r\n                android:inputType=\"textPassword\"\r\n                android:maxLines=\"1\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"16sp\" />\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <TextView\r\n            android:id=\"@+id/forgetPassword\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"16dp\"\r\n            android:fontFamily=\"@font/calibri\"\r\n            android:gravity=\"right\"\r\n            android:textColor=\"#96ffffff\"\r\n            android:textSize=\"13sp\" />\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"16dp\"\r\n            android:layout_marginBottom=\"8dp\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"horizontal\">\r\n\r\n            <Button\r\n                android:id=\"@+id/login\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginEnd=\"16dp\"\r\n                android:background=\"@drawable/buttonshapewhitebg\"\r\n                android:fontFamily=\"@font/calibri\"\r\n                android:text=\"登录\"\r\n                android:textAllCaps=\"false\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"#96ffffff\"\r\n                android:textSize=\"16sp\" />\r\n\r\n        </LinearLayout>\r\n\r\n        <TextView\r\n            android:id=\"@+id/protocol\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"16dp\"\r\n            android:fontFamily=\"@font/calibri\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"#96ffffff\"\r\n            android:textSize=\"13sp\" />\r\n\r\n    </LinearLayout>\r\n\r\n</RelativeLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/login_layout.xml b/app/src/main/res/layout/login_layout.xml
+--- a/app/src/main/res/layout/login_layout.xml	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
++++ b/app/src/main/res/layout/login_layout.xml	(date 1675501031504)
+@@ -64,12 +64,6 @@
+ 
+     </LinearLayout>
+ 
+-    <Button
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="测试按钮跳过登录请在正式版删除"
+-        android:id="@+id/test55" />
+-
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+Index: app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minecraft.mcustom.activity;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport com.minecraft.mcustom.util.HashUtil;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.Toast;\r\nimport android.annotation.SuppressLint;\r\nimport android.content.pm.ActivityInfo;\r\nimport android.graphics.Color;\r\nimport android.text.SpannableString;\r\nimport android.text.Spanned;\r\nimport android.text.TextPaint;\r\nimport android.text.method.LinkMovementMethod;\r\nimport android.text.style.ClickableSpan;\r\nimport android.widget.TextView;\r\n\r\nimport com.minecraft.mcustom.R;\r\nimport com.minecraft.mcustom.entity.Result;\r\nimport com.minecraft.mcustom.entity.User;\r\nimport com.minecraft.mcustom.util.DatabaseUtil;\r\nimport com.minecraft.mcustom.util.jgeUtil;\r\nimport com.minecraft.mcustom.util.lisUtil;\r\n\r\npublic class LoginActivity extends AppCompatActivity {\r\n\r\n    @SuppressLint(\"StaticFieldLeak\")\r\n    public static LoginActivity instance = null;\r\n\r\n    @SuppressLint(\"MissingInflatedId\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n\r\n        new Thread(() -> {\r\n            // 交互\r\n            lisUtil.useDo.add(\"您于\" + lisUtil.getDate() + \"登录\");\r\n        }).start();\r\n\r\n        super.onCreate(savedInstanceState);\r\n        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);\r\n\r\n        //login\r\n        setContentView(R.layout.login_layout);\r\n        setTvLoginPrivacyPolicySpecialText();\r\n        setVerificationSkipText();\r\n        setForgetSkipText();\r\n        instance = this;\r\n        final Button test = findViewById(R.id.test55);\r\n        final Button login = findViewById(R.id.login);\r\n        final EditText userId = findViewById(R.id.userID);\r\n        final EditText pwd = findViewById(R.id.pwd);\r\n        test.setOnClickListener(view -> {\r\n            Intent intent = new Intent(LoginActivity.this, MainActivity.class);\r\n            startActivity(intent);\r\n        });\r\n        login.setOnClickListener(view -> {\r\n            String id = userId.getText().toString();\r\n            if(!jgeUtil.checkString(id)){\r\n                if (!id.equals(\"\")) {\r\n                    Toast.makeText(LoginActivity.this,\"用户名非法\",Toast.LENGTH_SHORT).show();\r\n                } else {\r\n                    Toast.makeText(LoginActivity.this,\"用户名为空\",Toast.LENGTH_SHORT).show();\r\n                }\r\n                return;\r\n            }\r\n            String userIDText = userId.getText().toString();\r\n            String passwordIDText = pwd.getText().toString();\r\n            String hash = HashUtil.getHash(userIDText+passwordIDText);\r\n            User user = new User(userIDText, passwordIDText, hash);\r\n            Result result=DatabaseUtil.other(user, \"user\", \"login\");\r\n\r\n            assert result != null;\r\n            boolean flag = result.getCode()==200;\r\n            Toast.makeText(LoginActivity.this, flag?\"登录成功\":\"用户名或密码错误\", Toast.LENGTH_SHORT).show();\r\n            if(flag){\r\n                Intent intent = new Intent(LoginActivity.this, MainActivity.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n    }\r\n\r\n    private void setForgetSkipText() {\r\n        TextView forgetSkip = findViewById(R.id.forgetPassword);\r\n        forgetSkip.setText(\" \");\r\n        SpannableString clickString1 = new SpannableString(\"忘记密码\");\r\n        clickString1.setSpan(new ClickableSpan() {\r\n            @Override\r\n            public void onClick(View widget) {\r\n                Toast.makeText(LoginActivity.this, \"页面跳转\", Toast.LENGTH_SHORT).show();\r\n                // Intent intent = new Intent(LoginActivity.this, ResetActivity.class);\r\n                // startActivity(intent);\r\n            }\r\n            @Override\r\n            public void updateDrawState(TextPaint ds) {\r\n                super.updateDrawState(ds);\r\n                ds.setColor(getResources().getColor(R.color.textButton));\r\n            }\r\n        }, 0, clickString1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n        forgetSkip.append(clickString1);\r\n        forgetSkip.setHighlightColor(Color.TRANSPARENT);\r\n        forgetSkip.setMovementMethod(LinkMovementMethod.getInstance());\r\n    }\r\n\r\n    private void setVerificationSkipText() {\r\n        TextView verificationSkip = findViewById(R.id.verification);\r\n        verificationSkip.setText(\" \");\r\n        SpannableString clickString1 = new SpannableString(\"验证码登录\");\r\n        clickString1.setSpan(new ClickableSpan() {\r\n            @Override\r\n            public void onClick(View widget) {\r\n                Toast.makeText(LoginActivity.this, \"页面跳转\", Toast.LENGTH_SHORT).show();\r\n            }\r\n            @Override\r\n            public void updateDrawState(TextPaint ds) {\r\n                super.updateDrawState(ds);\r\n                ds.setColor(getResources().getColor(R.color.textButton));\r\n            }\r\n        }, 0, clickString1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n        verificationSkip.append(clickString1);\r\n        verificationSkip.setHighlightColor(Color.TRANSPARENT);\r\n        verificationSkip.setMovementMethod(LinkMovementMethod.getInstance());\r\n    }\r\n    private void setTvLoginPrivacyPolicySpecialText() {\r\n        TextView tvLoginPrivacyPolicy = findViewById(R.id.protocol);\r\n        tvLoginPrivacyPolicy.setText(\"登录即表示您已阅读并同意\");\r\n        SpannableString clickString1 = new SpannableString(\"用户协议\");\r\n        clickString1.setSpan(new ClickableSpan() {\r\n            @Override\r\n            public void onClick(View widget) {\r\n                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);\r\n                intent.putExtra(\"extra_data\", \"http://101.43.157.180/user/agreement\");\r\n                startActivity(intent);\r\n            }\r\n            @Override\r\n            public void updateDrawState(TextPaint ds) {\r\n                super.updateDrawState(ds);\r\n                ds.setColor(getResources().getColor(R.color.textButton));\r\n            }\r\n        }, 0, clickString1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n        tvLoginPrivacyPolicy.append(clickString1);\r\n        tvLoginPrivacyPolicy.append(new SpannableString(\"和\"));\r\n        SpannableString clickString2 = new SpannableString(\"隐私策略\");\r\n        clickString2.setSpan(new ClickableSpan() {\r\n            @Override\r\n            public void onClick(View widget) {\r\n                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);\r\n                intent.putExtra(\"extra_data\", \"http://101.43.157.180/privacy/policy\");\r\n                startActivity(intent);\r\n            }\r\n\r\n            @Override\r\n            public void updateDrawState(TextPaint ds) {\r\n                super.updateDrawState(ds);\r\n                ds.setColor(getResources().getColor(R.color.textButton));\r\n            }\r\n        }, 0, clickString2.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n        tvLoginPrivacyPolicy.append(clickString2);\r\n        tvLoginPrivacyPolicy.setHighlightColor(Color.TRANSPARENT);\r\n        tvLoginPrivacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());\r\n\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java b/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java
+--- a/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
++++ b/app/src/main/java/com/minecraft/mcustom/activity/LoginActivity.java	(date 1675508809606)
+@@ -24,9 +24,12 @@
+ import com.minecraft.mcustom.entity.Result;
+ import com.minecraft.mcustom.entity.User;
+ import com.minecraft.mcustom.util.DatabaseUtil;
++import com.minecraft.mcustom.util.http.HttpUrl;
+ import com.minecraft.mcustom.util.jgeUtil;
+ import com.minecraft.mcustom.util.lisUtil;
+ 
++import java.util.List;
++
+ public class LoginActivity extends AppCompatActivity {
+ 
+     @SuppressLint("StaticFieldLeak")
+@@ -50,14 +53,9 @@
+         setVerificationSkipText();
+         setForgetSkipText();
+         instance = this;
+-        final Button test = findViewById(R.id.test55);
+         final Button login = findViewById(R.id.login);
+         final EditText userId = findViewById(R.id.userID);
+         final EditText pwd = findViewById(R.id.pwd);
+-        test.setOnClickListener(view -> {
+-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+-            startActivity(intent);
+-        });
+         login.setOnClickListener(view -> {
+             String id = userId.getText().toString();
+             if(!jgeUtil.checkString(id)){
+@@ -73,13 +71,25 @@
+             String hash = HashUtil.getHash(userIDText+passwordIDText);
+             User user = new User(userIDText, passwordIDText, hash);
+             Result result=DatabaseUtil.other(user, "user", "login");
+-
+             assert result != null;
+-            boolean flag = result.getCode()==200;
+-            Toast.makeText(LoginActivity.this, flag?"登录成功":"用户名或密码错误", Toast.LENGTH_SHORT).show();
+-            if(flag){
+-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+-                startActivity(intent);
++            switch (result.getCode()) {
++                case 200:
++                    Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
++                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
++                    startActivity(intent);
++                    break;
++                case 600:
++                    pwd.setText("");
++                    pwd.setError("账号或密码错误");
++                    break;
++                case 287:
++                    List<String> request = (List<String>) result.getResult();
++                    if (HashUtil.getHash(request.get(0) + request.get(1)).equals(request.get(2))) {
++                        Intent intent2 = new Intent(LoginActivity.this, WebViewActivity.class);
++                        intent2.putExtra("extra_data", HttpUrl.getBaseUrl()+"/verification?uuid="+request.get(1)+"&key="+request.get(2));
++                        startActivity(intent2);
++                    break;
++                }
+             }
+         });
+     }
+@@ -149,7 +159,7 @@
+             @Override
+             public void onClick(View widget) {
+                 Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
+-                intent.putExtra("extra_data", "http://101.43.157.180/privacy/policy");
++                intent.putExtra("extra_data", HttpUrl.getBaseUrl()+"/privacy/policy");
+                 startActivity(intent);
+             }
+ 
+Index: app/src/main/java/com/minecraft/mcustom/entity/Result.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minecraft.mcustom.entity;\r\n\r\npublic class Result {\r\n    private int code;\r\n    private String msg;\r\n    private Object result;\r\n\r\n    public int getCode() {\r\n        return code;\r\n    }\r\n\r\n    public void setCode(int code) {\r\n        this.code = code;\r\n    }\r\n\r\n    public String getMsg() {\r\n        return msg;\r\n    }\r\n\r\n    public void setMsg(String msg) {\r\n        this.msg = msg;\r\n    }\r\n\r\n    public Object getResult() {\r\n        return result;\r\n    }\r\n\r\n    public void setResult(Object result) {\r\n        this.result = result;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Result{\" +\r\n                \"code=\" + code +\r\n                \", msg='\" + msg + '\\'' +\r\n                \", result='\" + result + '\\'' +\r\n                '}';\r\n    }\r\n\r\n    public void setSuccess(String msg, Object result){\r\n        this.code=200;\r\n        this.msg=msg;\r\n        this.result=result;\r\n    }\r\n    public void setWarn(String msg, Object result){\r\n        this.code=400;\r\n        this.msg=msg;\r\n        this.result=result;\r\n    }\r\n    public void setErr(){\r\n        this.code=500;\r\n        this.msg=\"服务器在忙，请稍后再试一试吧！\";\r\n        this.result=null;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/minecraft/mcustom/entity/Result.java b/app/src/main/java/com/minecraft/mcustom/entity/Result.java
+--- a/app/src/main/java/com/minecraft/mcustom/entity/Result.java	(revision 1de9522ff2bbc2b7d400547e6d1168effd592917)
++++ b/app/src/main/java/com/minecraft/mcustom/entity/Result.java	(date 1675502221037)
+@@ -1,9 +1,11 @@
+ package com.minecraft.mcustom.entity;
+ 
++import java.util.List;
++
+ public class Result {
+     private int code;
+     private String msg;
+-    private Object result;
++    private List result;
+ 
+     public int getCode() {
+         return code;
+@@ -21,11 +23,11 @@
+         this.msg = msg;
+     }
+ 
+-    public Object getResult() {
++    public List getResult() {
+         return result;
+     }
+ 
+-    public void setResult(Object result) {
++    public void setResult(List result) {
+         this.result = result;
+     }
+ 
+@@ -38,12 +40,12 @@
+                 '}';
+     }
+ 
+-    public void setSuccess(String msg, Object result){
++    public void setSuccess(String msg, List result){
+         this.code=200;
+         this.msg=msg;
+         this.result=result;
+     }
+-    public void setWarn(String msg, Object result){
++    public void setWarn(String msg, List result){
+         this.code=400;
+         this.msg=msg;
+         this.result=result;

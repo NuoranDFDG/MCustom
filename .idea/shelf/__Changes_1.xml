@@ -1,0 +1,204 @@
+<changelist name="在变基之前未提交的更改_[Changes]1" date="1675511362777" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="在变基之前未提交的更改 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$4.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/Result.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/entity/Result.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/Result.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$3.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$3.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$3.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CEFormatException.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$5.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.4/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.4/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$3.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/BASE64Decoder.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CEStreamExhausted.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$1.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$1.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$1.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/Result.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/entity/Result.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/Result.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.4/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.4/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$2.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$1.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/dex/release/mergeDexRelease/classes.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/dex/release/mergeDexRelease/classes.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/classes.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$5.dex" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.4/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.4/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/tmp/compileReleaseJavaWithJavac/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="app/build/tmp/compileReleaseJavaWithJavac/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$2.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$2.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$2.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/getKey.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/RSAUtils.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$4.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$4.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity$4.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_1/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_1/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/graph.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/BASE64Encoder.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$7.dex" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.4/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.4/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$7.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CharacterEncoder.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.4/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.4/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/DatabaseUtil.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/DatabaseUtil.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/DatabaseUtil.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/activity/LoginActivity$6.dex" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity$6.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/DatabaseUtil.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/release/out/com/minecraft/mcustom/util/DatabaseUtil.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/DatabaseUtil.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/MainActivity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/MainActivity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_0/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/release/out/currentProject/dirs_bucket_0/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/graph1.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/util/base/CharacterDecoder.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/release/classes/com/minecraft/mcustom/activity/LoginActivity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[Changes]1/LoginActivity.class" />
+  </binary>
+</changelist>
