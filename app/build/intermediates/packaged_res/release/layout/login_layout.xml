@@ -64,12 +64,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试按钮跳过登录请在正式版删除"
-        android:id="@+id/test55" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
