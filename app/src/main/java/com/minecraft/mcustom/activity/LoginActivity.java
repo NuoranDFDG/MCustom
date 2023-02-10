@@ -2,9 +2,11 @@ package com.minecraft.mcustom.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.minecraft.mcustom.ui.Register;
 import com.minecraft.mcustom.util.HashUtil;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,11 +33,14 @@ public class LoginActivity extends AppCompatActivity {
 
     @SuppressLint("StaticFieldLeak")
     public static LoginActivity instance = null;
+    private boolean isRefuse;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Aauthority.instance.finish();
+        }
         new Thread(() -> {
             // 交互
             lisUtil.useDo.add("您于" + lisUtil.getDate() + "登录");
@@ -50,21 +55,16 @@ public class LoginActivity extends AppCompatActivity {
         setVerificationSkipText();
         setForgetSkipText();
         instance = this;
-        final Button test = findViewById(R.id.test55);
         final Button login = findViewById(R.id.login);
         final EditText userId = findViewById(R.id.userID);
         final EditText pwd = findViewById(R.id.pwd);
-        test.setOnClickListener(view -> {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-        });
         login.setOnClickListener(view -> {
             String id = userId.getText().toString();
             if(!jgeUtil.checkString(id)){
                 if (!id.equals("")) {
-                    Toast.makeText(LoginActivity.this,"用户名非法",Toast.LENGTH_SHORT).show();
+                    userId.setError("用户名非法");
                 } else {
-                    Toast.makeText(LoginActivity.this,"用户名为空",Toast.LENGTH_SHORT).show();
+                    userId.setError("用户名为空");
                 }
                 return;
             }
@@ -109,11 +109,13 @@ public class LoginActivity extends AppCompatActivity {
     private void setVerificationSkipText() {
         TextView verificationSkip = findViewById(R.id.verification);
         verificationSkip.setText(" ");
-        SpannableString clickString1 = new SpannableString("验证码登录");
+        SpannableString clickString1 = new SpannableString("验证码注册");
         clickString1.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                Toast.makeText(LoginActivity.this, "页面跳转", Toast.LENGTH_SHORT).show();
+                Register register = new Register();
+                register.setmActivity(LoginActivity.this);
+                register.show();
             }
             @Override
             public void updateDrawState(TextPaint ds) {
@@ -164,5 +166,6 @@ public class LoginActivity extends AppCompatActivity {
         tvLoginPrivacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
+
 
 }

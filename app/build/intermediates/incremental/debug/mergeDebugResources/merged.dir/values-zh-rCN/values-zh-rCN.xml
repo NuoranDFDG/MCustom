@@ -35,7 +35,9 @@
     <string name="character_counter_content_description">输入了 %1$d 个字符（上限为 %2$d 个）</string>
     <string name="character_counter_overflowed_content_description">超出字符数限制（共 %1$d 个，上限为 %2$d 个）</string>
     <string name="clear_text_end_icon_content_description">清除文字</string>
+    <string msgid="6083905920877235314" name="copy">"复制"</string>
     <string name="error_icon_content_description">错误</string>
+    <string msgid="2427401033573778270" name="expand_button_title">"高级"</string>
     <string name="exposed_dropdown_menu_content_description">显示下拉菜单</string>
     <string name="icon_content_description">对话框图标</string>
     <string name="item_view_role_description">标签页</string>
@@ -84,7 +86,12 @@
     <string name="mtrl_picker_toggle_to_day_selection">点按即可切换到选择某天</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">切换到文本字段输入模式</string>
     <string name="mtrl_picker_toggle_to_year_selection">点按即可切换到选择某年</string>
+    <string msgid="6573031135582639649" name="not_set">"未设置"</string>
     <string name="password_toggle_content_description">显示密码</string>
+    <string msgid="6685851473431805375" name="preference_copied">"已将“<ns1:g id="SUMMARY">%1$s</ns1:g>”复制到剪贴板。"</string>
     <string msgid="6264217191555673260" name="search_menu_title">"搜索"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="9167775378838880170" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>、<ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="3140233346420563315" name="v7_preference_off">"已关闭"</string>
+    <string msgid="89551595707643515" name="v7_preference_on">"已开启"</string>
 </resources>

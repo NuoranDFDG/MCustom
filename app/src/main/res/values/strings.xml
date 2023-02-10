@@ -30,4 +30,16 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="yzm">验证码注册</string>
+    <string name="need_authority">MCustom 需要权限</string>
+    <string name="mcustom">MCustom需要一些权限以便正确运行</string>
+    <string name="set">设置</string>
+    <string name="run_mcustom">运行MCustom</string>
+    <string name="about">关于</string>
+    <string name="jjdk">提供实验功能 plugin</string>
+    <string name="dx">读写手机存储权限</string>
+    <string name="hxfw">提供核心服务 mcustom</string>
+    <string name="fdclqx">浮动窗口权限</string>
+    <string name="yjsq">一键授权</string>
+    <string name="jx">继续</string>
 </resources>

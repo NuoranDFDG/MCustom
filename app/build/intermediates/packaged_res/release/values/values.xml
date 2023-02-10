@@ -13,6 +13,7 @@
     <color name="aboutColor">#EAE9F7</color>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#FFFFFF</color>
+    <color name="colorBuWr">#D4E3E4</color>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorWhite">#ffffff</color>
@@ -38,22 +39,32 @@
     <color name="white">#FFFFFFFF</color>
     <item name="statusbarutil_fake_status_bar_view" type="id"/>
     <item name="statusbarutil_translucent_view" type="id"/>
+    <string name="about">关于</string>
     <string name="app_name">MCustom</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_title">Download incoming attachments</string>
+    <string name="dx">读写手机存储权限</string>
+    <string name="fdclqx">浮动窗口权限</string>
     <string name="fghj">  请输入内容</string>
+    <string name="hxfw">提供核心服务 mcustom</string>
     <string name="hyfl">会员福利</string>
+    <string name="jjdk">提供实验功能 plugin</string>
     <string name="jrth">今日特惠</string>
+    <string name="jx">继续</string>
     <string name="l1">连接服务器</string>
     <string name="l2">获取当前坐标</string>
     <string name="l3">地形</string>
     <string name="l4">命令执行</string>
     <string name="l5">调用函数</string>
     <string name="l6">最小化</string>
+    <string name="mcustom">MCustom需要一些权限以便正确运行</string>
     <string name="messages_header">Messages</string>
+    <string name="need_authority">MCustom 需要权限</string>
     <string name="reply_title">Default reply action</string>
+    <string name="run_mcustom">运行MCustom</string>
+    <string name="set">设置</string>
     <string name="sh"><![CDATA[< 商店]]></string>
     <string name="signature_title">Your signature</string>
     <string name="sync_header">Sync</string>
@@ -62,6 +73,8 @@
     <string name="todo">TODO</string>
     <string name="xshd">限时活动</string>
     <string name="xycj">幸运抽奖</string>
+    <string name="yjsq">一键授权</string>
+    <string name="yzm">验证码注册</string>
     <string name="zscz">钻石充值</string>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:fontFamily">@font/minecraft</item>
@@ -76,6 +89,14 @@
         <item name="colorControlHighlight">@color/textInputLayout</item>
         <item name="colorAccent">@color/textInputLayout</item>
         <item name="android:textColorHint">@color/textInputLayout</item>
+
+    </style>
+    <style name="EditScreenTextInputLayoutStyleBlack" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/github_color</item>
+        <item name="colorControlActivated">@color/github_color</item>
+        <item name="colorControlHighlight">@color/github_color</item>
+        <item name="colorAccent">@color/github_color</item>
+        <item name="android:textColorHint">@color/github_color</item>
 
     </style>
     <style name="InputDialogStyle" parent="android:Theme.Holo.Light.Dialog">

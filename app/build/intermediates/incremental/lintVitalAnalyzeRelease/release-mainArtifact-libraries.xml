@@ -8,6 +8,32 @@
       jars="C:\Users\Administrator\StudioProjects\MCustom\app\libs\bcprov-jdk15on-1.70.jar"
       resolved="__local_aars__:C:\Users\Administrator\StudioProjects\MCustom\app\libs\bcprov-jdk15on-1.70.jar:unspecified"/>
   <library
+      name="com.github.tbruyelle:rxpermissions:0.10.2@aar"
+      jars="C:\Users\Administrator\.gradle\caches\transforms-3\e490a13e60e2f804d4ca1251437ce88f\transformed\jetified-rxpermissions-0.10.2\jars\classes.jar"
+      resolved="com.github.tbruyelle:rxpermissions:0.10.2"
+      folder="C:\Users\Administrator\.gradle\caches\transforms-3\e490a13e60e2f804d4ca1251437ce88f\transformed\jetified-rxpermissions-0.10.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.github.gjygit:editext:3.0@aar"
+      jars="C:\Users\Administrator\.gradle\caches\transforms-3\f653a8328b24f99339eecfc00af68605\transformed\jetified-editext-3.0\jars\classes.jar"
+      resolved="com.github.gjygit:editext:3.0"
+      folder="C:\Users\Administrator\.gradle\caches\transforms-3\f653a8328b24f99339eecfc00af68605\transformed\jetified-editext-3.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="com.rengwuxian.materialedittext:library:2.1.4@aar"
       jars="C:\Users\Administrator\.gradle\caches\transforms-3\11fd9c8135998e6b76aaf3aff9401834\transformed\jetified-library-2.1.4\jars\classes.jar"
       resolved="com.rengwuxian.materialedittext:library:2.1.4"
@@ -153,6 +179,27 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
+  <library
+      name="io.reactivex.rxjava2:rxandroid:2.1.1@aar"
+      jars="C:\Users\Administrator\.gradle\caches\transforms-3\4bf3d2fbcbdc6a0c6452f4b1cb235bfb\transformed\jetified-rxandroid-2.1.1\jars\classes.jar"
+      resolved="io.reactivex.rxjava2:rxandroid:2.1.1"
+      folder="C:\Users\Administrator\.gradle\caches\transforms-3\4bf3d2fbcbdc6a0c6452f4b1cb235bfb\transformed\jetified-rxandroid-2.1.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.reactivex.rxjava2:rxjava:2.2.10@jar"
+      jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.2.10\18e9edc67e0abaa03713eeb9ca2cb0e30c859de4\rxjava-2.2.10.jar"
+      resolved="io.reactivex.rxjava2:rxjava:2.2.10"/>
+  <library
+      name="org.reactivestreams:reactive-streams:1.0.2@jar"
+      jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.2\323964c36556eb0e6209f65c1cef72b53b461ab8\reactive-streams-1.0.2.jar"
+      resolved="org.reactivestreams:reactive-streams:1.0.2"/>
   <library
       name="com.github.bumptech.glide:gifdecoder:4.14.2@aar"
       jars="C:\Users\Administrator\.gradle\caches\transforms-3\62a5f644a39d7f4ce1f8074c73932406\transformed\jetified-gifdecoder-4.14.2\jars\classes.jar"
@@ -720,27 +767,6 @@
       name="org.jetbrains.kotlin:kotlin-stdlib-common:1.6.0@jar"
       jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.6.0\7857e365f925cfa060f941c1357cda1f8790502c\kotlin-stdlib-common-1.6.0.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.6.0"/>
-  <library
-      name="io.reactivex.rxjava2:rxandroid:2.1.1@aar"
-      jars="C:\Users\Administrator\.gradle\caches\transforms-3\4bf3d2fbcbdc6a0c6452f4b1cb235bfb\transformed\jetified-rxandroid-2.1.1\jars\classes.jar"
-      resolved="io.reactivex.rxjava2:rxandroid:2.1.1"
-      folder="C:\Users\Administrator\.gradle\caches\transforms-3\4bf3d2fbcbdc6a0c6452f4b1cb235bfb\transformed\jetified-rxandroid-2.1.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="io.reactivex.rxjava2:rxjava:2.2.10@jar"
-      jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.2.10\18e9edc67e0abaa03713eeb9ca2cb0e30c859de4\rxjava-2.2.10.jar"
-      resolved="io.reactivex.rxjava2:rxjava:2.2.10"/>
-  <library
-      name="org.reactivestreams:reactive-streams:1.0.2@jar"
-      jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.2\323964c36556eb0e6209f65c1cef72b53b461ab8\reactive-streams-1.0.2.jar"
-      resolved="org.reactivestreams:reactive-streams:1.0.2"/>
   <library
       name="com.github.bumptech.glide:disklrucache:4.14.2@jar"
       jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\disklrucache\4.14.2\543524781bc197fb64e1c2df1756a8ec17ff05ba\disklrucache-4.14.2.jar"

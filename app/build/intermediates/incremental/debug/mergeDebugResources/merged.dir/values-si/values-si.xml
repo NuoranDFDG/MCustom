@@ -35,7 +35,9 @@
     <string name="character_counter_content_description">අනුලකුණු %2$dන් %1$dක් ඇතුළු කෙරිණි</string>
     <string name="character_counter_overflowed_content_description">අනුලකුණු සීමාව %2$dකින් %1$d ඉක්ම විය</string>
     <string name="clear_text_end_icon_content_description">පෙළ හිස් කරන්න</string>
+    <string msgid="6083905920877235314" name="copy">"පිටපත් කරන්න"</string>
     <string name="error_icon_content_description">දෝෂය</string>
+    <string msgid="2427401033573778270" name="expand_button_title">"උසස්"</string>
     <string name="exposed_dropdown_menu_content_description">පතන මෙනුව පෙන්වන්න</string>
     <string name="icon_content_description">සංවාද නිරූපකය</string>
     <string name="item_view_role_description">ටැබය</string>
@@ -84,7 +86,12 @@
     <string name="mtrl_picker_toggle_to_day_selection">දිනයක් තේරීමට මාරු වීමට තට්ටු කරන්න</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">පෙළ ආදාන ප්‍රකාරයට මාරු වන්න</string>
     <string name="mtrl_picker_toggle_to_year_selection">වසරක් තේරීමට මාරු වීමට තට්ටු කරන්න</string>
+    <string msgid="6573031135582639649" name="not_set">"සකසා නැත"</string>
     <string name="password_toggle_content_description">මුරපදය පෙන්වන්න</string>
+    <string msgid="6685851473431805375" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" පසුරු පුවරුවට පිටපත් කරන ලදී."</string>
     <string msgid="6264217191555673260" name="search_menu_title">"සෙවීම"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="9167775378838880170" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="3140233346420563315" name="v7_preference_off">"ක්‍රියාවිරහිතයි"</string>
+    <string msgid="89551595707643515" name="v7_preference_on">"ක්‍රියාත්මකයි"</string>
 </resources>

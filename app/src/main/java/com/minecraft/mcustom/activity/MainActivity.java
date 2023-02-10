@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
                     if (!FloatingWindowService.isFloatingWindowShowing) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             if (!Settings.canDrawOverlays(this)) {
-                                Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT).show();
-                                startActivityForResult(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())), 0);
+                                Intent intent = new Intent(this, Aauthority.class);
+                                startService(intent);
                             } else {
                                 startService(new Intent(MainActivity.this, FloatingWindowService.class));
                                 Intent websocketServiceIntent = new Intent(this, SocketService.class);

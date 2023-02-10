@@ -380,6 +380,7 @@
                 app:cardCornerRadius="30dp">
 
                 <LinearLayout
+                    android:id="@+id/pluginAbout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/linerlayout_water_selector"
@@ -421,7 +422,6 @@
                                 tools:ignore="RtlHardcoded" />
 
                             <TextView
-                                android:id="@+id/pluginAbout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/gotham"

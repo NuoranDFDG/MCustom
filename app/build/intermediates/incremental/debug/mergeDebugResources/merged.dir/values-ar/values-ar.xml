@@ -39,7 +39,9 @@
     <string name="character_counter_content_description">تمّ إدخال %1$d حرف من إجمالي %2$d.</string>
     <string name="character_counter_overflowed_content_description">تجاوز عدد الأحرف المسموح به %1$d من %2$d.</string>
     <string name="clear_text_end_icon_content_description">محو النص</string>
+    <string msgid="6083905920877235314" name="copy">"نسخ"</string>
     <string name="error_icon_content_description">خطأ</string>
+    <string msgid="2427401033573778270" name="expand_button_title">"إعدادات متقدمة"</string>
     <string name="exposed_dropdown_menu_content_description">عرض القائمة المنسدلة</string>
     <string name="icon_content_description">رمز مربع الحوار</string>
     <string name="item_view_role_description">علامة تبويب</string>
@@ -88,7 +90,12 @@
     <string name="mtrl_picker_toggle_to_day_selection">انقر للتبديل إلى اختيار يوم</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">التبديل إلى وضع \"إدخال النص\"</string>
     <string name="mtrl_picker_toggle_to_year_selection">انقر للتبديل إلى اختيار عام</string>
+    <string msgid="6573031135582639649" name="not_set">"لم يتمّ تحديد قيمة."</string>
     <string name="password_toggle_content_description">عرض كلمة المرور</string>
+    <string msgid="6685851473431805375" name="preference_copied">"تم نسخ \"<ns1:g id="SUMMARY">%1$s</ns1:g>\" إلى الحافظة."</string>
     <string msgid="6264217191555673260" name="search_menu_title">"البحث"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="9167775378838880170" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>، <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="3140233346420563315" name="v7_preference_off">"إيقاف"</string>
+    <string msgid="89551595707643515" name="v7_preference_on">"مفعّلة"</string>
 </resources>

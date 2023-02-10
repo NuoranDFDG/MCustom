@@ -19,6 +19,15 @@
 
     </style>
 
+    <style name="EditScreenTextInputLayoutStyleBlack" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/github_color</item>
+        <item name="colorControlActivated">@color/github_color</item>
+        <item name="colorControlHighlight">@color/github_color</item>
+        <item name="colorAccent">@color/github_color</item>
+        <item name="android:textColorHint">@color/github_color</item>
+
+    </style>
+
     <style name="InputDialogStyle" parent="android:Theme.Holo.Light.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>

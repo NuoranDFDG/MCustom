@@ -35,7 +35,9 @@
     <string name="character_counter_content_description">입력된 글자 %1$d/%2$d</string>
     <string name="character_counter_overflowed_content_description">글자 수 제한이 초과되었습니다(%1$d/%2$d).</string>
     <string name="clear_text_end_icon_content_description">텍스트 삭제</string>
+    <string msgid="6083905920877235314" name="copy">"복사"</string>
     <string name="error_icon_content_description">오류</string>
+    <string msgid="2427401033573778270" name="expand_button_title">"고급"</string>
     <string name="exposed_dropdown_menu_content_description">드롭다운 메뉴 표시</string>
     <string name="icon_content_description">대화상자 아이콘</string>
     <string name="item_view_role_description">탭</string>
@@ -84,7 +86,12 @@
     <string name="mtrl_picker_toggle_to_day_selection">탭하여 요일 선택으로 전환</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">텍스트 입력 모드로 전환</string>
     <string name="mtrl_picker_toggle_to_year_selection">탭하여 연도 선택으로 전환</string>
+    <string msgid="6573031135582639649" name="not_set">"설정되지 않음"</string>
     <string name="password_toggle_content_description">비밀번호 표시</string>
+    <string msgid="6685851473431805375" name="preference_copied">"\'<ns1:g id="SUMMARY">%1$s</ns1:g>\'이(가) 클립보드에 복사되었습니다."</string>
     <string msgid="6264217191555673260" name="search_menu_title">"검색"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="9167775378838880170" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="3140233346420563315" name="v7_preference_off">"사용 안함"</string>
+    <string msgid="89551595707643515" name="v7_preference_on">"사용"</string>
 </resources>

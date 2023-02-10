@@ -36,7 +36,9 @@
     <string name="character_counter_content_description">Uneseno znakova: %1$d od %2$d</string>
     <string name="character_counter_overflowed_content_description">Ograničenje broja znakova premašuje %1$d od %2$d</string>
     <string name="clear_text_end_icon_content_description">Obriši tekst</string>
+    <string msgid="6083905920877235314" name="copy">"Kopiraj"</string>
     <string name="error_icon_content_description">Greška</string>
+    <string msgid="2427401033573778270" name="expand_button_title">"Napredno"</string>
     <string name="exposed_dropdown_menu_content_description">Prikaži padajući meni</string>
     <string name="icon_content_description">ikona dijaloškog okvira</string>
     <string name="item_view_role_description">Kartica</string>
@@ -85,7 +87,12 @@
     <string name="mtrl_picker_toggle_to_day_selection">Dodirnite da prebacite na odabir dana</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Prebacivanje na način unosa teksta</string>
     <string name="mtrl_picker_toggle_to_year_selection">Dodirnite da prebacite na odabir godine</string>
+    <string msgid="6573031135582639649" name="not_set">"Nije postavljeno"</string>
     <string name="password_toggle_content_description">Prikaži lozinku</string>
+    <string msgid="6685851473431805375" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" kopirano u međumemoriju."</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Pretražite"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="9167775378838880170" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="3140233346420563315" name="v7_preference_off">"ISKLJUČENO"</string>
+    <string msgid="89551595707643515" name="v7_preference_on">"UKLJUČENO"</string>
 </resources>

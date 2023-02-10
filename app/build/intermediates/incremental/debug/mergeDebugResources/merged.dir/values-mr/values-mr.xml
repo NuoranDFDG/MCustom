@@ -35,7 +35,9 @@
     <string name="character_counter_content_description">%2$d पैकी %1$d वर्ण एंटर केले आहे</string>
     <string name="character_counter_overflowed_content_description">%2$d पैकी %1$d वर्णमर्यादा ओलांडली आहे</string>
     <string name="clear_text_end_icon_content_description">मजकूर साफ करा</string>
+    <string msgid="6083905920877235314" name="copy">"कॉपी करा"</string>
     <string name="error_icon_content_description">एरर</string>
+    <string msgid="2427401033573778270" name="expand_button_title">"प्रगत"</string>
     <string name="exposed_dropdown_menu_content_description">ड्रॉपडाउन मेनू दाखवा</string>
     <string name="icon_content_description">डायलॉग आयकन</string>
     <string name="item_view_role_description">टॅब</string>
@@ -84,7 +86,12 @@
     <string name="mtrl_picker_toggle_to_day_selection">दिवस निवडण्यासाठी स्विच करा वर टॅप करा</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">मजकूर इनपुट मोडवर स्विच करा</string>
     <string name="mtrl_picker_toggle_to_year_selection">वर्ष निवडण्यासाठी स्विच करा वर टॅप करा</string>
+    <string msgid="6573031135582639649" name="not_set">"सेट केलेले नाही"</string>
     <string name="password_toggle_content_description">पासवर्ड दाखवा</string>
+    <string msgid="6685851473431805375" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" क्लिपबोर्डवर कॉपी केली."</string>
     <string msgid="6264217191555673260" name="search_menu_title">"शोध"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"९९९+"</string>
+    <string msgid="9167775378838880170" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="3140233346420563315" name="v7_preference_off">"बंद"</string>
+    <string msgid="89551595707643515" name="v7_preference_on">"सुरू"</string>
 </resources>

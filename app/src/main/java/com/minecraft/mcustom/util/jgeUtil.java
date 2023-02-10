@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 
 public class jgeUtil {
 
-    private static final String EMAIL_REGEX = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^\\\\.-]*+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)";
-    private static final String NAME_REGEX = "^[a-zA-Z0-9_]+$";
+    private static final String EMAIL_REGEX = "^[a-zA-Z\\d_!#$%&'*+/=?`{|}~^\\\\.-]*+@[a-zA-Z\\d-]+(?:\\.[a-zA-Z\\d-]+)";
+    private static final String NAME_REGEX = "^\\w+$";
 
     public static boolean checkString(String str) {
         if (Pattern.compile(EMAIL_REGEX).matcher(str).matches()) {
@@ -15,4 +15,10 @@ public class jgeUtil {
         }
 
     }
+
+    public static boolean isInteger(String str) {
+        Pattern pattern = Pattern.compile("^[-+]?d*$");
+        return pattern.matcher(str).matches();
+    }
+
 }
