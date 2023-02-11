@@ -129,7 +129,7 @@
                                 android:stateListAnimator="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="绑定邮箱"
+                                android:text="@string/bdyx"
                                 app:cornerRadius="25dp"
                                 app:icon="@drawable/mailbox"
                                 app:backgroundTint="#4556B4"

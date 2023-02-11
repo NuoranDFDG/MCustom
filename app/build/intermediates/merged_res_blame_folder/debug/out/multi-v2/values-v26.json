@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.minecraft.mcustom.app-mergeDebugResources-31:/values-v26/values-v26.xml",
+            "outputFile": "com.minecraft.mcustom.app-mergeDebugResources-30:/values-v26/values-v26.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\c9231f61ffc2ed8722bea521977306ff\\transformed\\appcompat-1.4.1\\res\\values-v26\\values-v26.xml",

@@ -446,6 +446,11 @@
     </attr>
     <attr format="reference" name="polarRelativeTo"/>
     <attr format="reference" name="popupMenuBackground"/>
+    <attr format="enum" name="popupTextAlignment">
+        <enum name="start" value="0"/>
+        <enum name="end" value="1"/>
+        <enum name="center" value="2"/>
+    </attr>
     <attr format="string|reference|enum" name="quantizeMotionInterpolator">
         <enum name="easeInOut" value="0"/>
         <enum name="easeIn" value="1"/>
@@ -618,6 +623,7 @@
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#FFFFFF</color>
+    <color name="colorBuWr">#D4E3E4</color>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorWhite">#ffffff</color>
@@ -671,6 +677,7 @@
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="ic_nuoran_background">#B64B4B</color>
+    <color name="light_gray">#fff5f5f5</color>
     <color name="m3_ref_palette_error0">#ff000000</color>
     <color name="m3_ref_palette_error10">#ff410e0b</color>
     <color name="m3_ref_palette_error100">#ffffffff</color>
@@ -854,6 +861,8 @@
     <color name="textButton">#9C8EAEAB</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="text_Grey">#c1c1c2</color>
+    <color name="text_border_focused">#FDB890</color>
+    <color name="text_border_normal">#E5E5E5</color>
     <color name="tmblack">#99000000</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
@@ -1431,6 +1440,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="one_and_a_half_grid_unit">12dp</dimen>
     <dimen name="preference_dropdown_padding_start">0dp</dimen>
     <dimen name="preference_icon_minWidth">0dp</dimen>
     <dimen name="preference_seekbar_padding_horizontal">0dp</dimen>
@@ -1451,6 +1461,7 @@
     <dimen name="test_navigation_bar_label_padding">10dp</dimen>
     <dimen name="test_navigation_bar_shadow_height">1dp</dimen>
     <dimen name="test_navigation_bar_text_size">12sp</dimen>
+    <dimen name="three_grid_unit">24dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -1501,7 +1512,6 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="androidx_window_activity_scope" type="id"/>
-    <item name="dataBinding" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
@@ -1525,8 +1535,6 @@
     <item name="navigation_bar_item_labels_group" type="id"/>
     <item name="navigation_bar_item_large_label_view" type="id"/>
     <item name="navigation_bar_item_small_label_view" type="id"/>
-    <item name="onAttachStateChangeListener" type="id"/>
-    <item name="onDateChanged" type="id"/>
     <item name="parent_matrix" type="id"/>
     <item name="preferences_detail" type="id"/>
     <item name="preferences_header" type="id"/>
@@ -1558,7 +1566,6 @@
     <item name="tag_window_insets_animation_callback" type="id"/>
     <item name="text" type="id"/>
     <item name="text2" type="id"/>
-    <item name="textWatcher" type="id"/>
     <item name="text_input_error_icon" type="id"/>
     <item name="textinput_counter" type="id"/>
     <item name="textinput_error" type="id"/>
@@ -1658,6 +1665,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about">关于</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="app_name">MCustom</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
@@ -1665,6 +1673,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_title">Download incoming attachments</string>
+    <string name="bdyx">绑定邮箱</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an action that a user of an accessibility service can perform to expand a bottomsheet halfway to its full height. [CHAR LIMIT=25]" name="bottomsheet_action_expand_halfway">Expand halfway</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
@@ -1673,17 +1682,23 @@
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="copy">Copy</string>
+    <string name="dx">读写手机存储权限</string>
     <string name="error_icon_content_description">Error</string>
     <string name="expand_button_title">Advanced</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fdclqx">浮动窗口权限</string>
     <string name="fghj">  请输入内容</string>
+    <string name="fsyzm">发送验证码</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="hxfw">提供核心服务 mcustom</string>
     <string name="hyfl">会员福利</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
+    <string name="jjdk">提供实验功能 plugin</string>
     <string name="jrth">今日特惠</string>
+    <string name="jx">继续</string>
     <string name="l1">连接服务器</string>
     <string name="l2">获取当前坐标</string>
     <string name="l3">地形</string>
@@ -1735,6 +1750,7 @@
     <string description="Suffix for time in 12-hour standard, after noon. [CHAR_LIMIT=2]" name="material_timepicker_pm">PM</string>
     <string description="Title for the dialog with a time picker. [CHAR_LIMIT=32]" name="material_timepicker_select_time">Select time</string>
     <string name="material_timepicker_text_input_mode_description">Switch to text input mode for the time input.</string>
+    <string name="mcustom">MCustom需要一些权限以便正确运行</string>
     <string name="messages_header">Messages</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string description="Content description for a close icon that lets the user remove content from the screen" name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
@@ -1772,6 +1788,7 @@
     <string description="a11y string to indicate this button changes the input mode to a text field [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
+    <string name="need_authority">MCustom 需要权限</string>
     <string name="not_set">Not set</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
@@ -1781,8 +1798,11 @@
     <string name="preference_copied">
         \"<ns2:g example="Version 1.1" id="summary">%1$s</ns2:g>\" copied to clipboard.
     </string>
+    <string name="qxzwjm">请选择玩家名</string>
     <string name="reply_title">Default reply action</string>
+    <string name="run_mcustom">运行MCustom</string>
     <string name="search_menu_title">Search</string>
+    <string name="set">设置</string>
     <string name="sh"><![CDATA[< 商店]]></string>
     <string name="signature_title">Your signature</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -1795,6 +1815,7 @@
     <string name="v7_preference_on">ON</string>
     <string name="xshd">限时活动</string>
     <string name="xycj">幸运抽奖</string>
+    <string name="yjsq">一键授权</string>
     <string name="yzm">验证码注册</string>
     <string name="zscz">钻石充值</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
@@ -11296,6 +11317,16 @@
     
     <attr format="dimension" name="drawerLayoutCornerSize"/>
   </declare-styleable>
+    <declare-styleable name="NiceSpinner">
+        <attr format="color" name="arrowTint"/>
+        <attr format="boolean" name="hideArrow"/>
+        <attr format="reference|color" name="arrowDrawable"/>
+        <attr format="dimension" name="dropDownListPaddingBottom"/>
+        <attr format="integer" name="backgroundSelector"/>
+        <attr format="color" name="textTint"/>
+        <attr name="popupTextAlignment"/>
+        <attr format="reference" name="entries"/>
+    </declare-styleable>
     <declare-styleable name="OnClick">
         <attr name="targetId"/>
         <attr name="clickAction">
@@ -12416,44 +12447,12 @@
         <attr format="dimension" name="region_heightMoreThan"/>
         <attr name="constraints"/>
     </declare-styleable>
-    <declare-styleable name="VerificationCodeInputView">
-        
-        <attr format="integer" name="vciv_et_number"/>
-        
-        <attr name="vciv_et_inputType">
-            <enum name="number" value="0"/>
-            <enum name="numberPassword" value="1"/>
-            <enum name="text" value="2"/>
-            <enum name="textPassword" value="3"/>
-        </attr>
-        
-        <attr format="dimension" name="vciv_et_width"/>
-        
-        <attr format="dimension" name="vciv_et_height"/>
-        
-        <attr format="color" name="vciv_et_text_color"/>
-        
-        <attr format="dimension" name="vciv_et_text_size"/>
-        
-        <attr format="dimension" name="vciv_et_spacing"/>
-        
-        <attr format="reference|color" name="vciv_et_background"/>
-        
-        <attr format="reference|color" name="vciv_et_foucs_background"/>
-        
-        <attr format="dimension" name="vciv_et_cursor_width"/>
-        
-        <attr format="dimension" name="vciv_et_cursor_height"/>
-        
-        <attr format="color" name="vciv_et_cursor_color"/>
-        
-        <attr format="dimension" name="vciv_et_underline_height"/>
-        
-        <attr format="color" name="vciv_et_underline_default_color"/>
-        
-        <attr format="color" name="vciv_et_underline_focus_color"/>
-        
-        <attr format="boolean" name="vciv_et_underline_show"/>
+    <declare-styleable name="Verificationcode">
+        <attr format="color" name="code_text_color"/>//验证码字体颜色
+        <attr format="dimension" name="code_text_size"/>//验证码字体大小
+        <attr format="integer" name="code_number"/>//验证码数量 4位  6位
+        <attr format="color" name="line_color_default"/>//验证码下面线的默认颜色
+        <attr format="color" name="line_color_focus"/>//验证码下面线选中后的颜色
     </declare-styleable>
     <declare-styleable name="View">
         

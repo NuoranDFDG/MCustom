@@ -2,6 +2,7 @@ package com.minecraft.mcustom.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -86,8 +87,19 @@ public class Aauthority extends AppCompatActivity {
                             @Override
                             public void accept(Boolean aBoolean) throws Exception {
                                 if (aBoolean) {
-                                    rightCC.setBackgroundResource(R.drawable.circle3);
-                                    rightCC.setImageDrawable(getResources().getDrawable(R.drawable.baseline_check_24));
+                                    RxPermissions permissions = new RxPermissions(instance);
+                                    permissions.setLogging(true);
+                                    permissions.request(Manifest.permission.READ_EXTERNAL_STORAGE)
+                                            .subscribe(new Consumer<Boolean>() {
+                                                @SuppressLint("UseCompatLoadingForDrawables")
+                                                @Override
+                                                public void accept(Boolean aBoolean) throws Exception {
+                                                    if (aBoolean) {
+                                                        rightCC.setBackgroundResource(R.drawable.circle3);
+                                                        rightCC.setImageDrawable(getResources().getDrawable(R.drawable.baseline_check_24));
+                                                    }
+                                                }
+                                            });
                                 }
                             }
                         });

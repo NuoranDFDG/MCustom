@@ -42,4 +42,7 @@
     <string name="fdclqx">浮动窗口权限</string>
     <string name="yjsq">一键授权</string>
     <string name="jx">继续</string>
+    <string name="qxzwjm">请选择玩家名</string>
+    <string name="fsyzm">发送验证码</string>
+    <string name="bdyx">绑定邮箱</string>
 </resources>

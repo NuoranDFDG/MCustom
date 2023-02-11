@@ -45,9 +45,11 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_title">Download incoming attachments</string>
+    <string name="bdyx">绑定邮箱</string>
     <string name="dx">读写手机存储权限</string>
     <string name="fdclqx">浮动窗口权限</string>
     <string name="fghj">  请输入内容</string>
+    <string name="fsyzm">发送验证码</string>
     <string name="hxfw">提供核心服务 mcustom</string>
     <string name="hyfl">会员福利</string>
     <string name="jjdk">提供实验功能 plugin</string>
@@ -62,6 +64,7 @@
     <string name="mcustom">MCustom需要一些权限以便正确运行</string>
     <string name="messages_header">Messages</string>
     <string name="need_authority">MCustom 需要权限</string>
+    <string name="qxzwjm">请选择玩家名</string>
     <string name="reply_title">Default reply action</string>
     <string name="run_mcustom">运行MCustom</string>
     <string name="set">设置</string>

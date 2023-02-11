@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.minecraft.mcustom.app-mergeDebugResources-31:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.minecraft.mcustom.app-mergeDebugResources-30:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\f135425267c911d6dc1cd95dbb25d72d\\transformed\\preference-1.2.0\\res\\values-en-rGB\\values-en-rGB.xml",

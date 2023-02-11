@@ -93,6 +93,7 @@ id github_main
 id linearLayout
 id login
 id menu_list
+id player_name
 id pluginAbout
 id point_text
 id progressBar
@@ -144,9 +145,11 @@ string app_name
 string attachment_summary_off
 string attachment_summary_on
 string attachment_title
+string bdyx
 string dx
 string fdclqx
 string fghj
+string fsyzm
 string hxfw
 string hyfl
 string jjdk
@@ -161,6 +164,7 @@ string l6
 string mcustom
 string messages_header
 string need_authority
+string qxzwjm
 string reply_title
 string run_mcustom
 string set
