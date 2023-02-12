@@ -1,12 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/AppTheme"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="6dp" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="忘记密码"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/water"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:paddingStart="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="150dp"
+        tools:ignore="InvalidId,RtlSymmetry">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle3"
+                android:scaleType="center"
+                android:src="@drawable/user_icon"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/calibri"
+                android:text="@string/ggmm"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlHardcoded"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#96272029"
+                android:theme="@style/EditScreenTextInputLayoutStyleBlack">
+
+                <EditText
+                    android:id="@+id/user_mailbox_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/calibri"
+                    android:hint="@string/zhbdyx"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/colorBuWr"
+                    android:textSize="16sp"
+                    android:autofillHints="" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mailbox_verification_change"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/gotham"
+                android:stateListAnimator="@null"
+                android:text="@string/yz"
+                app:backgroundTint="#4556B4"
+                app:cornerRadius="10dp"
+                app:iconGravity="start"
+                tools:ignore="InvalidId,RtlHardcoded" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.example.gjylibrary.GjySerialnumberLayout
+                android:id="@+id/verification_code_change"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                app:code_number="4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mailbox_verification_change"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/gotham"
+                android:stateListAnimator="@null"
+                android:text="@string/jx"
+                app:backgroundTint="#4556B4"
+                app:cornerRadius="10dp"
+                app:iconGravity="start"
+                tools:ignore="DuplicateIds,InvalidId,RtlHardcoded" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

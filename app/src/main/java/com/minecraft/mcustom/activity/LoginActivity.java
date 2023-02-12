@@ -53,12 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
         new Thread(() -> {
-            String token = DataFileUtility.readFileToData("fixBer", getApplicationContext());
-            if (token!=null) {
-                Intent intent = new Intent(this, InformationActivity.class);
-                intent.putExtra("extra_data","off");
-                startActivity(intent);
-            }
+
             String tokenUser = DataFileUtility.readFileToData("token", getApplicationContext());
             if (tokenUser!=null) {
                 new Thread(()->{
@@ -80,6 +75,13 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 }).start();
+            } else {
+                String token = DataFileUtility.readFileToData("fixBer", getApplicationContext());
+                if (token!=null) {
+                    Intent intent = new Intent(this, InformationActivity.class);
+                    intent.putExtra("extra_data","off");
+                    startActivity(intent);
+                }
             }
         }).start();
 

@@ -68,4 +68,6 @@
     <string name="qd">启动</string>
     <string name="gymcustom">关于 MCustom</string>
     <string name="ljrhkf">了解如何开发 MCustom 组件</string>
+    <string name="hfzhhjsxx">用于恢复账号和接受消息</string>
+    <string name="zhbdyx">账号绑定邮箱</string>
 </resources>

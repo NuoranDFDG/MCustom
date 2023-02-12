@@ -24,6 +24,7 @@ import com.minecraft.mcustom.FloatingWindowService;
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.entity.Result;
 import com.minecraft.mcustom.ui.About;
+import com.minecraft.mcustom.ui.Mailbox;
 import com.minecraft.mcustom.util.file.DataFileUtility;
 import com.minecraft.mcustom.util.gson.JsonBean;
 import com.minecraft.mcustom.util.http.HttpAddress;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView startIcon;
     private TextView startText;
 
-    @SuppressLint({"ClickableViewAccessibility", "NonConstantResourceId"})
+    @SuppressLint({"ClickableViewAccessibility", "NonConstantResourceId", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -88,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
                     mainList.postDelayed(() -> {
                         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View cardViewLayout = inflater.inflate(R.layout.mailbox_binding, mainList, false);
-                        cardViewLayout.findViewById(R.id.binding_mailbox).setOnClickListener(view -> {
+                        cardViewLayout.findViewById(R.id.binding_mailbox_android).setOnClickListener(view -> {
+                            Mailbox mailbox = new Mailbox();
+                            mailbox.setmActivity(MainActivity.this);
+                            mailbox.show();
                         });
                         mainList.addView(cardViewLayout);
                     }, 10);
@@ -106,25 +110,20 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.action_run:
-                    RxView.clicks(this.findViewById(R.id.action_run))
-                            .throttleFirst(1000L, TimeUnit.MILLISECONDS) // 1秒内只有第一次点击有效
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(x -> {
-                                if (!FloatingWindowService.isFloatingWindowShowing) {
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        if (!Settings.canDrawOverlays(this)) {
-                                            Intent intent2 = new Intent(this, Aauthority.class);
-                                            startService(intent2);
-                                        } else {
-                                            start_info(true);
-                                            startService(new Intent(MainActivity.this, FloatingWindowService.class));
-                                            Intent websocketServiceIntent = new Intent(this, SocketService.class);
-                                            startService(websocketServiceIntent);
+                    if (!FloatingWindowService.isFloatingWindowShowing) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (!Settings.canDrawOverlays(this)) {
+                                Intent intent2 = new Intent(this, Aauthority.class);
+                                startService(intent2);
+                            } else {
+                                start_info(true);
+                                startService(new Intent(MainActivity.this, FloatingWindowService.class));
+                                Intent websocketServiceIntent = new Intent(this, SocketService.class);
+                                startService(websocketServiceIntent);
 
-                                        }
-                                    }
-                                }
-                            });
+                            }
+                        }
+                    }
                     break;
                 case R.id.action_about:
                     About about = new About();
@@ -170,10 +169,12 @@ public class MainActivity extends AppCompatActivity {
             startIcon.setBackgroundResource(R.drawable.circle3);
             startIcon.setImageResource(R.drawable.start_icon);
             startText.setText("MCustom 正在运行");
+            findViewById(R.id.start_mcustom).setEnabled(false);
         } else {
             startIcon.setBackgroundResource(R.drawable.circle2);
             startIcon.setImageResource(R.drawable.mcustom_stopped);
             startText.setText("MCustom 没有运行");
+            findViewById(R.id.start_mcustom).setEnabled(true);
         }
     }
 

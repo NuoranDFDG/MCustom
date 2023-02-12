@@ -2822,7 +2822,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
-id binding_mailbox
+id binding_mailbox_android
 id blocking
 id bottom
 id bounce
@@ -2982,12 +2982,14 @@ id linear
 id linearLayout
 id listMode
 id list_item
-id list_main1
+id list_main2
 id ll_code_content
 id locale
 id login
 id ltr
 id mailbox_verification
+id mailbox_verification_get
+id mailbox_verification_run
 id main_run
 id masked
 id match_constraint
@@ -3248,12 +3250,13 @@ id useLogo
 id userID
 id user_id
 id user_mailbox
+id user_mailbox_get
 id user_pwd
 id verification
 id verification_about
 id verification_code
+id verification_code_get
 id vertical_only
-id view_main
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3363,6 +3366,7 @@ layout activity_information
 layout activity_main
 layout activity_web_view
 layout authority
+layout binding_mailbox_page
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3547,6 +3551,7 @@ string fsyzm
 string gdrrsn
 string ggmm
 string gymcustom
+string hfzhhjsxx
 string hide_bottom_view_on_scroll_behavior
 string hxfw
 string hyfl

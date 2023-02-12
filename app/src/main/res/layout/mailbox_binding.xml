@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="20dp"
     android:theme="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -58,7 +59,7 @@
                 tools:ignore="UselessParent">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/binding_mailbox"
+                    android:id="@+id/binding_mailbox_android"
                     android:clickable="true"
                     android:drawablePadding="6dp"
                     android:elevation="4dp"
