@@ -2,7 +2,6 @@ package com.minecraft.mcustom.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -23,15 +22,11 @@ import androidx.appcompat.widget.Toolbar;
 import com.minecraft.mcustom.R;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import io.reactivex.functions.Consumer;
-
-
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class Aauthority extends AppCompatActivity {
 
+    @SuppressLint("StaticFieldLeak")
     public static Aauthority instance = null;
-    private LinearLayout rightSuspend;
-    private LinearLayout rightSave;
 
     private ImageView rightFD;
 
@@ -49,6 +44,7 @@ public class Aauthority extends AppCompatActivity {
                 if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(Aauthority.this, LoginActivity.class);
+                    intent.putExtra("extra_data","off");
                     startActivity(intent);
                 }
             }
@@ -58,8 +54,8 @@ public class Aauthority extends AppCompatActivity {
 
             rightFD = findViewById(R.id.right_fd);
             rightCC = findViewById(R.id.right_cc);
-            rightSuspend = findViewById(R.id.float_right);
-            rightSave = findViewById(R.id.save_right);
+            LinearLayout rightSuspend = findViewById(R.id.float_right);
+            LinearLayout rightSave = findViewById(R.id.save_right);
             @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final Button rightAll = findViewById(R.id.right_all);
             @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final Button rightContinue = findViewById(R.id.continue_right);
             if (Settings.canDrawOverlays(this)) {
@@ -82,25 +78,17 @@ public class Aauthority extends AppCompatActivity {
                 RxPermissions permissions = new RxPermissions(this);
                 permissions.setLogging(true);
                 permissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        .subscribe(new Consumer<Boolean>() {
-                            @SuppressLint("UseCompatLoadingForDrawables")
-                            @Override
-                            public void accept(Boolean aBoolean) throws Exception {
-                                if (aBoolean) {
-                                    RxPermissions permissions = new RxPermissions(instance);
-                                    permissions.setLogging(true);
-                                    permissions.request(Manifest.permission.READ_EXTERNAL_STORAGE)
-                                            .subscribe(new Consumer<Boolean>() {
-                                                @SuppressLint("UseCompatLoadingForDrawables")
-                                                @Override
-                                                public void accept(Boolean aBoolean) throws Exception {
-                                                    if (aBoolean) {
-                                                        rightCC.setBackgroundResource(R.drawable.circle3);
-                                                        rightCC.setImageDrawable(getResources().getDrawable(R.drawable.baseline_check_24));
-                                                    }
-                                                }
-                                            });
-                                }
+                        .subscribe(aBoolean -> {
+                            if (aBoolean) {
+                                RxPermissions permissions1 = new RxPermissions(instance);
+                                permissions1.setLogging(true);
+                                permissions1.request(Manifest.permission.READ_EXTERNAL_STORAGE)
+                                        .subscribe(aBoolean1 -> {
+                                            if (aBoolean1) {
+                                                rightCC.setBackgroundResource(R.drawable.circle3);
+                                                rightCC.setImageDrawable(getResources().getDrawable(R.drawable.baseline_check_24));
+                                            }
+                                        });
                             }
                         });
             });
@@ -118,6 +106,7 @@ public class Aauthority extends AppCompatActivity {
                     if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                             == PackageManager.PERMISSION_GRANTED) {
                         Intent intent = new Intent(Aauthority.this, LoginActivity.class);
+                        intent.putExtra("extra_data","off");
                         startActivity(intent);
                     } else {
                         Toast.makeText(this, "权限不完整", Toast.LENGTH_SHORT).show();
@@ -148,13 +137,10 @@ public class Aauthority extends AppCompatActivity {
                 RxPermissions permissions = new RxPermissions(this);
                 permissions.setLogging(true);
                 permissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        .subscribe(new Consumer<Boolean>() {
-                            @Override
-                            public void accept(Boolean aBoolean) throws Exception {
-                                if (aBoolean) {
-                                    rightCC.setBackgroundResource(R.drawable.circle3);
-                                    rightCC.setImageDrawable(getResources().getDrawable(R.drawable.baseline_check_24));
-                                }
+                        .subscribe(aBoolean -> {
+                            if (aBoolean) {
+                                rightCC.setBackgroundResource(R.drawable.circle3);
+                                rightCC.setImageDrawable(getResources().getDrawable(R.drawable.baseline_check_24));
                             }
                         });
             }

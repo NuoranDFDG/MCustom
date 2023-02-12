@@ -8,6 +8,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_baseline_switch_account_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\baseline_switch_account_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\xml_shopping_list_button.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\xml\\shopping_list_button.xml"
     },
@@ -62,6 +66,14 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable-v24_retouch_2022122219030731.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable-v24\\retouch_2022122219030731.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_baseline_portrait_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\baseline_portrait_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_baseline_mail_outline_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\baseline_mail_outline_24.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
@@ -160,6 +172,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\baseline_beenhere_24.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\layout_mailbox_binding.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\layout\\mailbox_binding.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_buttonshapewhitebg.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\buttonshapewhitebg.xml"
     },
@@ -214,6 +230,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_guidebook.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\guidebook.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\layout_activity_information.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\layout\\activity_information.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_setting.xml.flat",
@@ -332,6 +352,14 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-pngs-27:\\drawable-xxhdpi\\baseline_ballot_24.png"
     },
     {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_activity_main.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_baseline_password_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\baseline_password_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\mipmap-xxhdpi_ic_nuoran_background.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\mipmap-xxhdpi\\ic_nuoran_background.png"
     },
@@ -402,10 +430,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\layout_authority.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\layout\\authority.xml"
-    },
-    {
-        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_register.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-33:/layout/register.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable-v24_retouch_2022122214163714.png.flat",

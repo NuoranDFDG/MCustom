@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -29,9 +30,11 @@ import com.bumptech.glide.Glide;
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.activity.WebViewActivity;
 
+import java.io.IOException;
+
 public class About extends DialogFragment {
 
-
+    private MediaPlayer mediaPlayer;
     protected FragmentActivity mActivity;
 
     public void setmActivity(FragmentActivity mActivity) {
@@ -75,6 +78,14 @@ public class About extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.about,container,false);
+        mediaPlayer = new MediaPlayer();
+        try {
+            mediaPlayer.setDataSource("http://music.163.com/song/media/outer/url?id=425828457.mp3");
+            mediaPlayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mediaPlayer.start();
         ImageView about1 = view.findViewById(R.id.github_about1);
         Glide.with(this).load("https://avatars.githubusercontent.com/nuoranDFDG").into(about1);
 
@@ -176,6 +187,14 @@ public class About extends DialogFragment {
         Window window = dialog.getWindow();
         window.setGravity(Gravity.BOTTOM);
         return dialog;
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
     }
     
 }

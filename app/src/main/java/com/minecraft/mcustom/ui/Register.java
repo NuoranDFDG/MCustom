@@ -27,9 +27,11 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.gjylibrary.GjySerialnumberLayout;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.minecraft.mcustom.R;
+import com.minecraft.mcustom.activity.InformationActivity;
 import com.minecraft.mcustom.entity.AllPlayer;
-import com.minecraft.mcustom.util.jgeUtil;
+import com.minecraft.mcustom.util.file.DataFileUtility;
 import com.minecraft.mcustom.activity.WebViewActivity;
 import com.minecraft.mcustom.entity.Result;
 import com.minecraft.mcustom.util.gson.JsonBean;
@@ -37,7 +39,6 @@ import com.minecraft.mcustom.util.http.HttpUrl;
 import com.minecraft.mcustom.util.http.OKHttpUtil;
 
 import org.angmarch.views.NiceSpinner;
-import org.angmarch.views.OnSpinnerItemSelectedListener;
 
 import java.util.List;
 import java.util.Objects;
@@ -54,7 +55,6 @@ public class Register extends DialogFragment {
         this.mActivity = mActivity;
     }
 
-    //自定义样式，注：此处主要设置弹窗的宽高
     @Override
     public int getTheme() {
         return R.style.InputDialogStyle;
@@ -91,72 +91,96 @@ public class Register extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.register,container,false);
+        NiceSpinner niceSpinner = view.findViewById(R.id.player_name);
         new Thread(()->{
             String jsonAllPlayer = OKHttpUtil.getAsyncRequest(HttpUrl.getBaseUrl(), "get", "all_player");
             if (jsonAllPlayer == null) {
                 Toast.makeText(getActivity(), "服务器异常", Toast.LENGTH_SHORT).show();
             } else{
-                NiceSpinner niceSpinner = view.findViewById(R.id.player_name);
-                AllPlayer allPlayer = gson.fromJson(jsonAllPlayer,AllPlayer.class);
+                AllPlayer allPlayer = null;
+                try {
+                    allPlayer = gson.fromJson(jsonAllPlayer,AllPlayer.class);
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+                assert allPlayer != null;
+
                 if (allPlayer.getCode() == 200) {
                     List allPlayerList = allPlayer.getPlayer();
                     allPlayerList.add(0, "请选择玩家");
-                    niceSpinner.attachDataSource(allPlayerList);
-                }
-                niceSpinner.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(NiceSpinner parent, View view, int position, long id) {
-                        String item = (String) parent.getItemAtPosition(position);
-                        playerName = item;
-                        if (!Objects.equals(item, "请选择玩家")) {
-                            new Thread(()->{
-                                String json = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'code':200,'playerID':'"+item+"'}", "send", "verification");
-                                Result result = gson.fromJson(json, Result.class);
-                                switch (result.getCode()) {
-                                    case 200:
-                                        Toast.makeText(getActivity(), "验证码发送成功,请在10分钟内使用", Toast.LENGTH_SHORT).show();
-                                        break;
-                                    case 800:
-                                        Toast.makeText(getActivity(), "玩家不存在,请刷新", Toast.LENGTH_SHORT).show();
-                                        break;
-                                    case 878:
-                                        String date = (String) result.getResult();
-                                        Toast.makeText(getActivity(), "验证码已发送,请等待"+date+"秒", Toast.LENGTH_SHORT).show();
-                                        break;
+                    niceSpinner.postDelayed(() -> {
+                        niceSpinner.attachDataSource(allPlayerList);
+                        niceSpinner.setOnSpinnerItemSelectedListener((parent, view1, position, id) -> {
+                            String item = (String) parent.getItemAtPosition(position);
+                            playerName = item;
+                            if (!Objects.equals(item, "请选择玩家")) {
+                                new Thread(()->{
+                                    String json = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'code':200,'playerID':'"+item+"'}", "send", "verification");
+                                    if (json!=null) {
+                                        Result result = gson.fromJson(json, Result.class);
+                                        niceSpinner.postDelayed(() -> {
+                                            switch (result.getCode()) {
+                                                case 200:
+                                                    Toast.makeText(getActivity(), "验证码发送成功,可能会有10秒延迟", Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                case 800:
+                                                    Toast.makeText(getActivity(), "玩家不存在,请刷新", Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                case 878:
+                                                    String date = (String) result.getResult();
+                                                    Toast.makeText(getActivity(), "验证码已发送,请等待" + date + "秒", Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                }
+                                            }, 10);
+                                        }
+                                    }).start();
                                 }
-                            }).start();
-                        }
-                    }
-                });
+                            });
+                        }, 10);
+                }
             }
         }).start();
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) GjySerialnumberLayout wind = view.findViewById(R.id.verification_code);
-        wind.setOnInputListener(new GjySerialnumberLayout.OnInputListener() {
-            @Override
-            public void onSucess(String code) {
-                if (code.length()==6&&jgeUtil.isInteger(code)) {
-                    new Thread(()->{
-                        Gson gson= JsonBean.getGson();
+        wind.setOnInputListener(code -> {
+            if (code.length()==6&&!Objects.equals(playerName, "请选择玩家")) {
+                new Thread(()->{
+                    Gson gson= JsonBean.getGson();
+                    if (!code.contains("0")) {
                         String post = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'code':" + code
                                 + ",'id':'"
                                 + playerName
                                 + "'}", "register", "code");
                         if (post!=null) {
-                            Result result = gson.fromJson(post, Result.class);
-                            switch (result.getCode()) {
-                                case 200:
-                                    String token = (String) result.getResult();
-                                    break;
-                                case 400:
-                                case 800:
-                                    Toast.makeText(getActivity(), "验证码错误", Toast.LENGTH_SHORT).show();
-                                    break;
+                            Result result = null;
+                            try {
+                                result = gson.fromJson(post, Result.class);
+                            } catch (JsonSyntaxException e) {
+                                e.printStackTrace();
                             }
+                            assert result != null;
+                            Result finalResult = result;
+                            wind.postDelayed(() -> {
+                                switch (finalResult.getCode()) {
+                                    case 200:
+                                        String token = (String) finalResult.getResult();
+                                        DataFileUtility.saveFileToData("fixBer", token, getContext());
+                                        Intent intent = new Intent(getActivity(), InformationActivity.class);
+                                        intent.putExtra("extra_data","off");
+                                        startActivity(intent);
+                                        break;
+                                    case 400:
+                                        Toast.makeText(getActivity(), "玩家不存在", Toast.LENGTH_SHORT).show();
+                                        break;
+                                    case 800:
+                                        Toast.makeText(getActivity(), "验证码错误", Toast.LENGTH_SHORT).show();
+                                        break;
+                                }
+                            },10);
                         }
-                    }).start();
+                    }
 
-                }
+                }).start();
             }
         });
 

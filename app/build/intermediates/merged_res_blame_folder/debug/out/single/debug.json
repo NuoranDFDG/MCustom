@@ -8,6 +8,10 @@
         "source": "com.minecraft.mcustom.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_baseline_switch_account_24.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/drawable/baseline_switch_account_24.xml"
+    },
+    {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_pin_button_com_neteas_x19.png.flat",
         "source": "com.minecraft.mcustom.app-main-34:/drawable/pin_button_com_neteas_x19.png"
     },
@@ -34,6 +38,14 @@
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_item_shape.xml.flat",
         "source": "com.minecraft.mcustom.app-main-34:/drawable/item_shape.xml"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_mailbox_binding.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/layout/mailbox_binding.xml"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_baseline_mail_outline_24.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/drawable/baseline_mail_outline_24.xml"
     },
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/mipmap-hdpi_ic_nuoran_round.png.flat",
@@ -184,6 +196,10 @@
         "source": "com.minecraft.mcustom.app-main-34:/drawable/ic_email_black_24dp.xml"
     },
     {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_activity_information.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/layout/activity_information.xml"
+    },
+    {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/xml_root_preferences.xml.flat",
         "source": "com.minecraft.mcustom.app-main-34:/xml/root_preferences.xml"
     },
@@ -210,6 +226,10 @@
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/mipmap-xxxhdpi_ic_nuoran_background.png.flat",
         "source": "com.minecraft.mcustom.app-main-34:/mipmap-xxxhdpi/ic_nuoran_background.png"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_baseline_portrait_24.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/drawable/baseline_portrait_24.xml"
     },
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_guidebook.xml.flat",
@@ -262,6 +282,10 @@
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/font_gotham.ttf.flat",
         "source": "com.minecraft.mcustom.app-main-34:/font/gotham.ttf"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_baseline_password_24.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/drawable/baseline_password_24.xml"
     },
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_question.xml.flat",
@@ -424,12 +448,12 @@
         "source": "com.minecraft.mcustom.app-main-34:/drawable/password_icon.xml"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_ic_email_white_24dp.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-34:/drawable/ic_email_white_24dp.xml"
-    },
-    {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/mipmap-xhdpi_ic_nuoran_round.png.flat",
         "source": "com.minecraft.mcustom.app-main-34:/mipmap-xhdpi/ic_nuoran_round.png"
+    },
+    {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/drawable_ic_email_white_24dp.xml.flat",
+        "source": "com.minecraft.mcustom.app-main-34:/drawable/ic_email_white_24dp.xml"
     },
     {
         "merged": "com.minecraft.mcustom.app-merged_res-32:/mipmap-hdpi_ic_launcher.webp.flat",

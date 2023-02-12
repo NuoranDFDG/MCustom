@@ -2,6 +2,8 @@ package com.minecraft.mcustom.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.minecraft.mcustom.ui.Register;
 import com.minecraft.mcustom.util.HashUtil;
 
@@ -26,35 +28,71 @@ import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.entity.Result;
 import com.minecraft.mcustom.entity.User;
 import com.minecraft.mcustom.util.DatabaseUtil;
+import com.minecraft.mcustom.util.file.DataFileUtility;
+import com.minecraft.mcustom.util.gson.JsonBean;
+import com.minecraft.mcustom.util.http.HttpUrl;
+import com.minecraft.mcustom.util.http.OKHttpUtil;
 import com.minecraft.mcustom.util.jgeUtil;
-import com.minecraft.mcustom.util.lisUtil;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
     @SuppressLint("StaticFieldLeak")
     public static LoginActivity instance = null;
-    private boolean isRefuse;
+
+    final private static Gson gson= JsonBean.getGson();
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            Aauthority.instance.finish();
+            Intent intent = getIntent();
+            if (Objects.equals(intent.getStringExtra("extra_data"), "off")) {
+                Aauthority.instance.finish();
+            }
         }
         new Thread(() -> {
-            // 交互
-            lisUtil.useDo.add("您于" + lisUtil.getDate() + "登录");
+            String token = DataFileUtility.readFileToData("fixBer", getApplicationContext());
+            if (token!=null) {
+                Intent intent = new Intent(this, InformationActivity.class);
+                intent.putExtra("extra_data","off");
+                startActivity(intent);
+            }
+            String tokenUser = DataFileUtility.readFileToData("token", getApplicationContext());
+            if (tokenUser!=null) {
+                new Thread(()->{
+                    String result = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'token':'"
+                    + tokenUser
+                    + "'}", "verification", "token");
+                    if (result!=null){
+                        Result rs = null;
+                        try {
+                            rs = gson.fromJson(result, Result.class);
+                        } catch (JsonSyntaxException e) {
+                            e.printStackTrace();
+                        }
+                        assert rs != null;
+                        if (rs.getCode()==200) {
+                            Intent intent = new Intent(this, MainActivity.class);
+                            intent.putExtra("extra_data","off");
+                            startActivity(intent);
+                        }
+                    }
+                }).start();
+            }
         }).start();
 
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        instance = this;
 
         //login
         setContentView(R.layout.login_layout);
         setTvLoginPrivacyPolicySpecialText();
         setVerificationSkipText();
         setForgetSkipText();
-        instance = this;
+
         final Button login = findViewById(R.id.login);
         final EditText userId = findViewById(R.id.userID);
         final EditText pwd = findViewById(R.id.pwd);
@@ -79,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, flag?"登录成功":"用户名或密码错误", Toast.LENGTH_SHORT).show();
             if(flag){
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("extra_data","off");
                 startActivity(intent);
             }
         });

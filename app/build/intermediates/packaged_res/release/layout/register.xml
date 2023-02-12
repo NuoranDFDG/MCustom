@@ -30,14 +30,21 @@
             android:textSize="20sp"
             android:fontFamily="@font/gotham" />
 
-        <org.angmarch.views.NiceSpinner
-            android:text="@string/qxzwjm"
-            android:fontFamily="@font/gotham"
-            android:id="@+id/player_name"
+        <androidx.cardview.widget.CardView
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp" />
+            app:cardCornerRadius="30dp">
+
+            <org.angmarch.views.NiceSpinner
+                android:text="@string/qxzwjm"
+                android:fontFamily="@font/gotham"
+                android:id="@+id/player_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_marginStart="30dp"

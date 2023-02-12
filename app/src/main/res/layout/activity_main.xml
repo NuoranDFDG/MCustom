@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/view_main"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/AppTheme"
@@ -22,48 +22,66 @@
         android:paddingRight="8dp">
 
         <LinearLayout
+            android:id="@+id/view_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:divider="@drawable/divider_line"
             android:orientation="vertical"
             android:showDividers="middle">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
+                android:id="@+id/list_main1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="30dp">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/linerlayout_water_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:paddingStart="15dp"
-                    android:paddingTop="25dp"
-                    android:paddingBottom="25dp"
-                    tools:ignore="RtlSymmetry">
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/circle"
-                        android:scaleType="center"
-                        android:src="@drawable/mcustom_stopped" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/linerlayout_water_selector"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingStart="15dp"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
+                        tools:ignore="RtlSymmetry">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="20dp"
-                        android:fontFamily="@font/calibri"
-                        android:text="MCustom 没有运行"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:id="@+id/main_run"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/circle"
+                            android:scaleType="center"
+                            android:src="@drawable/mcustom_stopped"
+                            android:contentDescription="@string/todo" />
 
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/start_main_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/calibri"
+                            android:text="@string/mcustommyyx"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
 
-            </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/list_main2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -93,7 +111,8 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/circle2"
                             android:scaleType="center"
-                            android:src="@drawable/question" />
+                            android:src="@drawable/mcustom_run"
+                            android:contentDescription="@string/todo" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -101,87 +120,10 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="20dp"
                             android:fontFamily="@font/calibri"
-                            android:text="邮箱账号未绑定"
+                            android:text="@string/tgfdckqd"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="15dp">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:clickable="true"
-                                android:drawablePadding="6dp"
-                                android:elevation="4dp"
-                                android:focusable="true"
-                                android:fontFamily="@font/gotham"
-                                android:paddingStart="20dp"
-                                android:paddingEnd="20dp"
-                                android:stateListAnimator="@null"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/bdyx"
-                                app:cornerRadius="25dp"
-                                app:icon="@drawable/mailbox"
-                                app:backgroundTint="#4556B4"
-                                app:iconGravity="start" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:cardCornerRadius="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/linerlayout_water_selector"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:orientation="vertical"
-                    android:paddingStart="15dp"
-                    android:paddingTop="25dp"
-                    android:paddingBottom="25dp"
-                    tools:ignore="RtlSymmetry">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/circle2"
-                            android:scaleType="center"
-                            android:src="@drawable/mcustom_run" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="20dp"
-                            android:fontFamily="@font/calibri"
-                            android:text="通过浮动窗口启动"
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"
+                            tools:ignore="HardcodedText" />
 
                     </LinearLayout>
 
@@ -195,32 +137,13 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/gotham"
                             android:paddingTop="25dp"
-                            android:text="通过浮动窗口来使用MCustom。\n可视化界面操作，以及悬浮聊天室和隔空投放。" />
+                            android:text="@string/mcustom_n" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:paddingTop="30dp">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="6dp"
-                                android:clickable="true"
-                                android:drawablePadding="6dp"
-                                android:elevation="4dp"
-                                android:focusable="true"
-                                android:fontFamily="@font/gotham"
-                                android:paddingStart="20dp"
-                                android:paddingEnd="20dp"
-                                android:stateListAnimator="@null"
-                                android:text="分步指南"
-                                android:textColor="@android:color/white"
-                                app:cornerRadius="25dp"
-                                app:icon="@drawable/guidebook"
-                                app:backgroundTint="#4556B4"
-                                app:iconGravity="start" />
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/start_mcustom"
@@ -234,7 +157,7 @@
                                 android:paddingStart="20dp"
                                 android:paddingEnd="20dp"
                                 android:stateListAnimator="@null"
-                                android:text="启动"
+                                android:text="@string/qd"
                                 android:textColor="@android:color/white"
                                 app:cornerRadius="25dp"
                                 app:icon="@drawable/start_icon"
@@ -277,7 +200,8 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/circle3"
                             android:scaleType="center"
-                            android:src="@drawable/user_icon" />
+                            android:src="@drawable/user_icon"
+                            android:contentDescription="@string/todo" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -285,7 +209,7 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="20dp"
                             android:fontFamily="@font/calibri"
-                            android:text="账号管理"
+                            android:text="@string/zhgl"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
 
@@ -301,7 +225,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/gotham"
                             android:paddingTop="25dp"
-                            android:text="设置账号信息以便更多人认识你。" />
+                            android:text="@string/gdrrsn" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -321,7 +245,7 @@
                                 android:paddingStart="20dp"
                                 android:paddingEnd="20dp"
                                 android:stateListAnimator="@null"
-                                android:text="账号信息"
+                                android:text="@string/zhxx"
                                 android:textColor="@android:color/white"
                                 app:cornerRadius="25dp"
                                 app:icon="@drawable/information_user"
@@ -340,7 +264,7 @@
                                 android:paddingStart="20dp"
                                 android:paddingEnd="20dp"
                                 android:stateListAnimator="@null"
-                                android:text="更改密码"
+                                android:text="@string/ggmm"
                                 android:textColor="@android:color/white"
                                 app:cornerRadius="25dp"
                                 app:icon="@drawable/password_icon"
@@ -358,7 +282,7 @@
                                 android:paddingStart="20dp"
                                 android:paddingEnd="20dp"
                                 android:stateListAnimator="@null"
-                                android:text="账号注销"
+                                android:text="@string/zhzx"
                                 android:textColor="@android:color/white"
                                 app:cornerRadius="25dp"
                                 app:icon="@drawable/cancel_icon"
@@ -395,14 +319,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UselessParent">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/circle"
                             android:scaleType="center"
-                            android:src="@drawable/question" />
+                            android:src="@drawable/question"
+                            android:contentDescription="@string/todo" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -416,7 +342,7 @@
                                 android:layout_gravity="left"
                                 android:fontFamily="@font/calibri"
                                 android:gravity="left"
-                                android:text="关于 MCustom"
+                                android:text="@string/gymcustom"
                                 android:textColor="@color/black"
                                 android:textSize="18sp"
                                 tools:ignore="RtlHardcoded" />
@@ -425,7 +351,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/gotham"
-                                android:text="了解如何开发 MCustom 组件" />
+                                android:text="@string/ljrhkf" />
 
                         </LinearLayout>
 

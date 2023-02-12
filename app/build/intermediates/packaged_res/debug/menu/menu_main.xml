@@ -7,21 +7,21 @@
         android:id="@+id/action_setting"
         android:icon="@drawable/setting"
         android:orderInCategory="80"
-        android:title="设置"
-        app:showAsAction="always|withText"
+        android:title="@string/set"
+        app:showAsAction="ifRoom|withText"
         android:background="@drawable/item_shape" />
 
     <item
         android:id="@+id/action_run"
         android:orderInCategory="80"
         app:showAsAction="never|withText"
-        android:title="运行MCustom"
+        android:title="@string/run_mcustom"
         android:background="@drawable/item_shape"/>
 
     <item
         android:id="@+id/action_about"
         android:orderInCategory="80"
-        android:title="关于"
+        android:title="@string/about"
         app:showAsAction="never|withText"
         android:background="@drawable/item_shape" />
 </menu>

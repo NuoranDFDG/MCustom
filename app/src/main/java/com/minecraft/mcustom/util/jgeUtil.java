@@ -16,9 +16,12 @@ public class jgeUtil {
 
     }
 
-    public static boolean isInteger(String str) {
-        Pattern pattern = Pattern.compile("^[-+]?d*$");
-        return pattern.matcher(str).matches();
+    public static boolean checkUserString(String str) {
+        return str.matches(NAME_REGEX);
+    }
+
+    public static boolean checkMailboxString(String str) {
+        return Pattern.compile(EMAIL_REGEX).matcher(str).matches();
     }
 
 }

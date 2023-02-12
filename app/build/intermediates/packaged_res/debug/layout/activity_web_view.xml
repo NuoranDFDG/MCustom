@@ -1,52 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.minecraft.mcustom.activity.WebViewActivity"
+    android:orientation="vertical">
 
-    android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp"
-    tools:context="com.minecraft.mcustom.activity.">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/custom_progress" />
 
-    <!-- 获取网站的标题-->
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""/>
-
-    <!--开始加载提示-->
-    <TextView
-        android:id="@+id/text_beginLoading"
-        android:layout_below="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""/>
-
-    <!--获取加载进度-->
-    <TextView
-        android:layout_below="@+id/text_beginLoading"
-        android:id="@+id/text_Loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""/>
-
-    <!--结束加载提示-->
-    <TextView
-        android:layout_below="@+id/text_Loading"
-        android:id="@+id/text_endLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""/>
-
-    <!--显示网页区域-->
     <WebView
         android:id="@+id/webView1"
-        android:layout_below="@+id/text_endLoading"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="10dp" />
-</RelativeLayout>
+        android:layout_below="@+id/progressBar"
+        tools:ignore="WebViewLayout">
+
+    </WebView>
+
+</LinearLayout>

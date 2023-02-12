@@ -45,4 +45,27 @@
     <string name="qxzwjm">请选择玩家名</string>
     <string name="fsyzm">发送验证码</string>
     <string name="bdyx">绑定邮箱</string>
+    <string name="wsxx">完善信息</string>
+    <string name="yhm">用户名*</string>
+    <string name="yhmm">用户名</string>
+    <string name="wsyxxx">在成为正式用户前,你需要完善一些信息</string>
+    <string name="yhmbdzw">用户名中不得出现中文字符</string>
+    <string name="pwdd">密码*</string>
+    <string name="pwd">密码</string>
+    <string name="mmfzx">请保证密码的复杂性</string>
+    <string name="yx">邮箱</string>
+    <string name="zstgyx">用于恢复账号,可以暂时跳过</string>
+    <string name="yz">验证</string>
+    <string name="yxzhebd">邮箱账号未绑定</string>
+    <string name="tgfdckqd">通过浮动窗口启动</string>
+    <string name="mcustommyyx">MCustom 没有运行</string>
+    <string name="mcustom_n">通过浮动窗口来使用MCustom。\n可视化界面操作，以及悬浮聊天室和隔空投放。</string>
+    <string name="zhgl">账号管理</string>
+    <string name="gdrrsn">设置账号信息以便更多人认识你。</string>
+    <string name="zhxx">账号信息</string>
+    <string name="ggmm">更改密码</string>
+    <string name="zhzx">账号注销</string>
+    <string name="qd">启动</string>
+    <string name="gymcustom">关于 MCustom</string>
+    <string name="ljrhkf">了解如何开发 MCustom 组件</string>
 </resources>
