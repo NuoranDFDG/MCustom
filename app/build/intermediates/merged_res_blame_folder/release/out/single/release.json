@@ -32,10 +32,6 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-pngs-27:\\drawable-xxxhdpi\\baseline_ballot_24.png"
     },
     {
-        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_mailbox_binding.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-33:/layout/mailbox_binding.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\mipmap-xxhdpi_ic_nuoran_round.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\mipmap-xxhdpi\\ic_nuoran_round.png"
     },
@@ -154,10 +150,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable-hdpi_baseline_ballot_24.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-pngs-27:\\drawable-hdpi\\baseline_ballot_24.png"
-    },
-    {
-        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_binding_mailbox_page.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-33:/layout/binding_mailbox_page.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_github_icon.xml.flat",
@@ -296,6 +288,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\layout\\forget.xml"
     },
     {
+        "merged": "com.minecraft.mcustom.app-merged_res-32:/raw_mc.bks.flat",
+        "source": "com.minecraft.mcustom.app-main-33:/raw/mc.bks"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_shopping_com_netease_x19.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-main-33:\\drawable\\shopping_com_netease_x19.png"
     },
@@ -362,10 +358,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable-xxhdpi_baseline_ballot_24.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-pngs-27:\\drawable-xxhdpi\\baseline_ballot_24.png"
-    },
-    {
-        "merged": "com.minecraft.mcustom.app-merged_res-32:/layout_activity_main.xml.flat",
-        "source": "com.minecraft.mcustom.app-main-33:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\7.4\\com.minecraft.mcustom.app-merged_res-32:\\drawable_baseline_password_24.xml.flat",

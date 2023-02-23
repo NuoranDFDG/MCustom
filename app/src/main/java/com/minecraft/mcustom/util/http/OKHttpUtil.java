@@ -1,10 +1,7 @@
 package com.minecraft.mcustom.util.http;
 
-
-
-import android.net.Uri;
+import android.annotation.SuppressLint;
 import android.util.Log;
-import com.minecraft.mcustom.util.http.OkHttpCallback;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -34,11 +31,10 @@ import okhttp3.ResponseBody;
  */
 public class OKHttpUtil {
     private static Request request = null;
-    private static int TimeOut = 120;
+    private static final int TimeOut = 300;
     //单例获取ohttp3对象
     private static OkHttpClient client = null;
-
-    private static String code="500";
+    private static final String code="500";
     /**
      * OkHttpClient的构造方法，通过线程锁的方式构造
      * @return OkHttpClient对象
@@ -265,29 +261,29 @@ public class OKHttpUtil {
      * @param args 请求的参数    args[]=new String[]{"user","getUser","123"}
      * @return
      */
-    public static String postAsyncRequest(String url,String json,String... args){
-        List<String> result=new ArrayList<>();
-        String address=url;
-        for(int i=0;i<args.length;i++){
-            address=address+"/"+args[i];
+    public static String postAsyncRequest(String url,String json,String... args) {
+        List<String> result = new ArrayList<>();
+        StringBuilder address = new StringBuilder(url);
+        for (String arg : args) {
+            address.append("/").append(arg);
         }
-        final String finalAddress = address;
-        client=getInstance();
+        final String finalAddress = address.toString();
+        client = getInstance();
         FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
-        formBody.add("json",json);
+        formBody.add("json", json);
         request = new Request.Builder()
                 .url(finalAddress)
                 .post(formBody.build())
                 .addHeader("device-platform", "android")
                 .build();
-        Call call=client.newCall(request);
+        Call call = client.newCall(request);
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("HttpUtil","post fail");
+                        Log.d("HttpUtil", "post fail");
                     }
                 }).start();
             }
@@ -536,7 +532,7 @@ public class OKHttpUtil {
     }
     private static String getTime(){
         Date date=new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         return formatter.format(date);
     }
 }

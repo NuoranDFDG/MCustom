@@ -1,7 +1,7 @@
 package com.minecraft.mcustom.util.http;
 
 public class HttpUrl {
-    final private static String baseUrl="http://101.43.157.180";
+    final private static String baseUrl="https://mcustom.asia/api";
 
     public static String getBaseUrl() {
         return baseUrl;

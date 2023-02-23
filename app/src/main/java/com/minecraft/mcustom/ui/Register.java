@@ -36,7 +36,7 @@ import com.minecraft.mcustom.activity.WebViewActivity;
 import com.minecraft.mcustom.entity.Result;
 import com.minecraft.mcustom.util.gson.JsonBean;
 import com.minecraft.mcustom.util.http.HttpUrl;
-import com.minecraft.mcustom.util.http.OKHttpUtil;
+import com.minecraft.mcustom.util.https.HttpsUtil;
 
 import org.angmarch.views.NiceSpinner;
 
@@ -93,51 +93,55 @@ public class Register extends DialogFragment {
         View view = inflater.inflate(R.layout.register,container,false);
         NiceSpinner niceSpinner = view.findViewById(R.id.player_name);
         new Thread(()->{
-            String jsonAllPlayer = OKHttpUtil.getAsyncRequest(HttpUrl.getBaseUrl(), "get", "all_player");
-            if (jsonAllPlayer == null) {
-                Toast.makeText(getActivity(), "服务器异常", Toast.LENGTH_SHORT).show();
-            } else{
-                AllPlayer allPlayer = null;
-                try {
-                    allPlayer = gson.fromJson(jsonAllPlayer,AllPlayer.class);
-                } catch (JsonSyntaxException e) {
-                    e.printStackTrace();
-                }
-                assert allPlayer != null;
+            String jsonAllPlayer;
+            try {
+                jsonAllPlayer = HttpsUtil.HttpsPost("", getContext(), "get", "all_player");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            AllPlayer allPlayer = null;
+            try {
+                allPlayer = gson.fromJson(jsonAllPlayer,AllPlayer.class);
+            } catch (JsonSyntaxException e) {
+                e.printStackTrace();
+            }
+            assert allPlayer != null;
 
-                if (allPlayer.getCode() == 200) {
-                    List allPlayerList = allPlayer.getPlayer();
-                    allPlayerList.add(0, "请选择玩家");
-                    niceSpinner.postDelayed(() -> {
-                        niceSpinner.attachDataSource(allPlayerList);
-                        niceSpinner.setOnSpinnerItemSelectedListener((parent, view1, position, id) -> {
-                            String item = (String) parent.getItemAtPosition(position);
-                            playerName = item;
-                            if (!Objects.equals(item, "请选择玩家")) {
-                                new Thread(()->{
-                                    String json = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'code':200,'playerID':'"+item+"'}", "send", "verification");
-                                    if (json!=null) {
-                                        Result result = gson.fromJson(json, Result.class);
-                                        niceSpinner.postDelayed(() -> {
-                                            switch (result.getCode()) {
-                                                case 200:
-                                                    Toast.makeText(getActivity(), "验证码发送成功,可能会有10秒延迟", Toast.LENGTH_SHORT).show();
-                                                    break;
-                                                case 800:
-                                                    Toast.makeText(getActivity(), "玩家不存在,请刷新", Toast.LENGTH_SHORT).show();
-                                                    break;
-                                                case 878:
-                                                    String date = (String) result.getResult();
-                                                    Toast.makeText(getActivity(), "验证码已发送,请等待" + date + "秒", Toast.LENGTH_SHORT).show();
-                                                    break;
-                                                }
-                                            }, 10);
-                                        }
-                                    }).start();
+            if (allPlayer.getCode() == 200) {
+                List allPlayerList = allPlayer.getPlayer();
+                allPlayerList.add(0, "请选择玩家");
+                niceSpinner.postDelayed(() -> {
+                    niceSpinner.attachDataSource(allPlayerList);
+                    niceSpinner.setOnSpinnerItemSelectedListener((parent, view1, position, id) -> {
+                        String item = (String) parent.getItemAtPosition(position);
+                        playerName = item;
+                        if (!Objects.equals(item, "请选择玩家")) {
+                            new Thread(()->{
+                                String json;
+                                try {
+                                    json = HttpsUtil.HttpsPost("{'code':200,'playerID':'"+item+"'}", getContext(), "send", "verification");
+                                } catch (Exception e) {
+                                    throw new RuntimeException(e);
                                 }
-                            });
-                        }, 10);
-                }
+                                Result result = gson.fromJson(json, Result.class);
+                                niceSpinner.postDelayed(() -> {
+                                    switch (result.getCode()) {
+                                        case 200:
+                                            Toast.makeText(getActivity(), "验证码发送成功,可能会有10秒延迟", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        case 800:
+                                            Toast.makeText(getActivity(), "玩家不存在,请刷新", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        case 878:
+                                            String date = (String) result.getResult();
+                                            Toast.makeText(getActivity(), "验证码已发送,请等待" + date + "秒", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        }
+                                    }, 10);
+                            }).start();
+                            }
+                        });
+                    }, 10);
             }
         }).start();
 
@@ -147,37 +151,43 @@ public class Register extends DialogFragment {
                 new Thread(()->{
                     Gson gson= JsonBean.getGson();
                     if (!code.contains("0")) {
-                        String post = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'code':" + code
-                                + ",'id':'"
-                                + playerName
-                                + "'}", "register", "code");
-                        if (post!=null) {
-                            Result result = null;
-                            try {
-                                result = gson.fromJson(post, Result.class);
-                            } catch (JsonSyntaxException e) {
-                                e.printStackTrace();
-                            }
-                            assert result != null;
-                            Result finalResult = result;
-                            wind.postDelayed(() -> {
-                                switch (finalResult.getCode()) {
-                                    case 200:
-                                        String token = (String) finalResult.getResult();
-                                        DataFileUtility.saveFileToData("fixBer", token, getContext());
-                                        Intent intent = new Intent(getActivity(), InformationActivity.class);
-                                        intent.putExtra("extra_data","off");
-                                        startActivity(intent);
-                                        break;
-                                    case 400:
-                                        Toast.makeText(getActivity(), "玩家不存在", Toast.LENGTH_SHORT).show();
-                                        break;
-                                    case 800:
-                                        Toast.makeText(getActivity(), "验证码错误", Toast.LENGTH_SHORT).show();
-                                        break;
-                                }
-                            },10);
+                        String post;
+                        try {
+                            post = HttpsUtil.HttpsPost("{'code':" + code
+                                    + ",'id':'"
+                                    + playerName
+                                    + "'}", getContext(), "register", "code");
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
                         }
+                        Result result = null;
+                        try {
+                            result = gson.fromJson(post, Result.class);
+                        } catch (JsonSyntaxException e) {
+                            e.printStackTrace();
+                        }
+                        assert result != null;
+                        Result finalResult = result;
+                        wind.postDelayed(() -> {
+                            switch (finalResult.getCode()) {
+                                case 200:
+                                    String token = (String) finalResult.getResult();
+                                    DataFileUtility.saveFileToData("fixBer", token, getContext());
+                                    Intent intent = new Intent(getActivity(), InformationActivity.class);
+                                    intent.putExtra("extra_data","off");
+                                    startActivity(intent);
+                                    break;
+                                case 400:
+                                    Toast.makeText(getActivity(), "玩家不存在", Toast.LENGTH_SHORT).show();
+                                    break;
+                                case 800:
+                                    Toast.makeText(getActivity(), "验证码错误", Toast.LENGTH_SHORT).show();
+                                    break;
+                                case 878:
+                                    Toast.makeText(getActivity(), "玩家已注册", Toast.LENGTH_SHORT).show();
+                                    break;
+                            }
+                        },10);
                     }
 
                 }).start();
@@ -191,7 +201,7 @@ public class Register extends DialogFragment {
             @Override
             public void onClick(View widget) {
                 Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                intent.putExtra("extra_data", "http://101.43.157.180/user/agreement");
+                intent.putExtra("extra_data", HttpUrl.getBaseUrl());
                 startActivity(intent);
             }
             @Override
@@ -207,7 +217,7 @@ public class Register extends DialogFragment {
             @Override
             public void onClick(View widget) {
                 Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                intent.putExtra("extra_data", "http://101.43.157.180/privacy/policy");
+                intent.putExtra("extra_data", HttpUrl.getBaseUrl());
                 startActivity(intent);
             }
 

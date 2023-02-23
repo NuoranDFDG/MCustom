@@ -24,12 +24,12 @@ import com.minecraft.mcustom.FloatingWindowService;
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.entity.Result;
 import com.minecraft.mcustom.ui.About;
+import com.minecraft.mcustom.ui.Forget;
 import com.minecraft.mcustom.ui.Mailbox;
 import com.minecraft.mcustom.util.file.DataFileUtility;
 import com.minecraft.mcustom.util.gson.JsonBean;
-import com.minecraft.mcustom.util.http.HttpAddress;
 import com.minecraft.mcustom.util.http.HttpUrl;
-import com.minecraft.mcustom.util.http.OKHttpUtil;
+import com.minecraft.mcustom.util.https.HttpsUtil;
 import com.minecraft.mcustom.util.websocket.SocketService;
 
 import java.util.Objects;
@@ -74,9 +74,14 @@ public class MainActivity extends AppCompatActivity {
         mainList = findViewById(R.id.list_main2);
 
         new Thread(()->{
-            String result = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'token':'"
-                    + token
-                    + "'}", "mailbox", "situation");
+            String result;
+            try {
+                result = HttpsUtil.HttpsPost("{'token':'"
+                        + token
+                        + "'}", MainActivity.this, "mailbox", "situation");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
             if (!Objects.equals(result, "")) {
                 Result rs = null;
                 try {
@@ -135,8 +140,13 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.pluginAbout).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-            intent.putExtra("extra_data", "http://mcustom.asia/document");
+            intent.putExtra("extra_data", HttpUrl.getBaseUrl());
             startActivity(intent);
+        });
+        findViewById(R.id.main_change_pwd).setOnClickListener(v -> {
+            Forget forget = new Forget();
+            forget.setmActivity(MainActivity.this);
+            forget.show();
         });
         runMCustom();
     }

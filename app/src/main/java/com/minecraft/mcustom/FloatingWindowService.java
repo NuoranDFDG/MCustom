@@ -152,7 +152,12 @@ public class FloatingWindowService extends Service {
         }
         LinearLayout linearLayout = floatingWindow2.findViewById(R.id.menu_list);
         linearLayout.post(() -> {
-            ArrayList<List> shopList = getShop.getShopList();
+            ArrayList<List> shopList;
+            try {
+                shopList = getShop.getShopList(getApplicationContext());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
             if (shopList != null) {
                 Button[] buttons = new Button[shopList.size()];
                 for (int i = 0; i < shopList.size(); i++) {

@@ -2988,8 +2988,11 @@ id locale
 id login
 id ltr
 id mailbox_verification
+id mailbox_verification_change
+id mailbox_verification_change_info
 id mailbox_verification_get
 id mailbox_verification_run
+id main_change_pwd
 id main_run
 id masked
 id match_constraint
@@ -3250,11 +3253,14 @@ id useLogo
 id userID
 id user_id
 id user_mailbox
+id user_mailbox_change
 id user_mailbox_get
 id user_pwd
+id user_pwd_change
 id verification
 id verification_about
 id verification_code
+id verification_code_change
 id verification_code_get
 id vertical_only
 id view_offset_helper
@@ -3494,6 +3500,7 @@ mipmap ic_nuoran_background
 mipmap ic_nuoran_round
 plurals mtrl_badge_content_description
 raw main
+raw mc
 raw u1nz5_geywz
 raw xbox_live_notification
 string abc_action_bar_home_description
@@ -3682,6 +3689,7 @@ string v7_preference_off
 string v7_preference_on
 string wsxx
 string wsyxxx
+string xmm
 string xshd
 string xycj
 string yhm
@@ -3692,6 +3700,7 @@ string yx
 string yxzhebd
 string yz
 string yzm
+string zhbdyx
 string zhgl
 string zhxx
 string zhzx

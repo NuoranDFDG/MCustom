@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.minecraft.mcustom.ui.Forget;
 import com.minecraft.mcustom.ui.Register;
-import com.minecraft.mcustom.util.HashUtil;
 
 import android.content.Intent;
 import android.os.Build;
@@ -26,12 +26,10 @@ import android.widget.TextView;
 
 import com.minecraft.mcustom.R;
 import com.minecraft.mcustom.entity.Result;
-import com.minecraft.mcustom.entity.User;
-import com.minecraft.mcustom.util.DatabaseUtil;
 import com.minecraft.mcustom.util.file.DataFileUtility;
 import com.minecraft.mcustom.util.gson.JsonBean;
 import com.minecraft.mcustom.util.http.HttpUrl;
-import com.minecraft.mcustom.util.http.OKHttpUtil;
+import com.minecraft.mcustom.util.https.HttpsUtil;
 import com.minecraft.mcustom.util.jgeUtil;
 
 import java.util.Objects;
@@ -42,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     public static LoginActivity instance = null;
 
     final private static Gson gson= JsonBean.getGson();
+
+    private boolean flag;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -57,22 +57,25 @@ public class LoginActivity extends AppCompatActivity {
             String tokenUser = DataFileUtility.readFileToData("token", getApplicationContext());
             if (tokenUser!=null) {
                 new Thread(()->{
-                    String result = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'token':'"
-                    + tokenUser
-                    + "'}", "verification", "token");
-                    if (result!=null){
-                        Result rs = null;
-                        try {
-                            rs = gson.fromJson(result, Result.class);
-                        } catch (JsonSyntaxException e) {
-                            e.printStackTrace();
-                        }
-                        assert rs != null;
-                        if (rs.getCode()==200) {
-                            Intent intent = new Intent(this, MainActivity.class);
-                            intent.putExtra("extra_data","off");
-                            startActivity(intent);
-                        }
+                    String result;
+                    try {
+                        result = HttpsUtil.HttpsPost("{'token':'"
+                        + tokenUser
+                        + "'}", getApplicationContext(), "verification", "token");
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    Result rs = null;
+                    try {
+                        rs = gson.fromJson(result, Result.class);
+                    } catch (JsonSyntaxException e) {
+                        e.printStackTrace();
+                    }
+                    assert rs != null;
+                    if (rs.getCode()==200) {
+                        Intent intent = new Intent(this, MainActivity.class);
+                        intent.putExtra("extra_data","off");
+                        startActivity(intent);
                     }
                 }).start();
             } else {
@@ -100,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText pwd = findViewById(R.id.pwd);
         login.setOnClickListener(view -> {
             String id = userId.getText().toString();
-            if(!jgeUtil.checkString(id)){
+            if (!jgeUtil.checkString(id)) {
                 if (!id.equals("")) {
                     userId.setError("用户名非法");
                 } else {
@@ -108,18 +111,32 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 return;
             }
-            String userIDText = userId.getText().toString();
-            String passwordIDText = pwd.getText().toString();
-            String hash = HashUtil.getHash(userIDText+passwordIDText);
-            User user = new User(userIDText, passwordIDText, hash);
-            Result result=DatabaseUtil.other(user, "user", "login");
-
-            assert result != null;
-            boolean flag = result.getCode()==200;
-            Toast.makeText(LoginActivity.this, flag?"登录成功":"用户名或密码错误", Toast.LENGTH_SHORT).show();
-            if(flag){
+            new Thread(() -> {
+                String userIDText = userId.getText().toString();
+                String passwordIDText = pwd.getText().toString();
+                String result;
+                try {
+                    result = HttpsUtil.HttpsPost("{'id':'"
+                            + userIDText
+                            + "','password':'"
+                            + passwordIDText
+                            + "'}", LoginActivity.this, "user", "login");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                Result rs = null;
+                try {
+                    rs = gson.fromJson(result, Result.class);
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+                assert rs != null;
+                flag = rs.getCode() == 200;
+            });
+            Toast.makeText(LoginActivity.this, flag ? "登录成功" : "用户名或密码错误", Toast.LENGTH_SHORT).show();
+            if (flag) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("extra_data","off");
+                intent.putExtra("extra_data", "off");
                 startActivity(intent);
             }
         });
@@ -132,15 +149,16 @@ public class LoginActivity extends AppCompatActivity {
         clickString1.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                Toast.makeText(LoginActivity.this, "页面跳转", Toast.LENGTH_SHORT).show();
-                // Intent intent = new Intent(LoginActivity.this, ResetActivity.class);
-                // startActivity(intent);
+                Forget forget = new Forget();
+                forget.setmActivity(LoginActivity.this);
+                forget.show();
             }
             @Override
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setColor(getResources().getColor(R.color.textButton));
             }
+
         }, 0, clickString1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         forgetSkip.append(clickString1);
         forgetSkip.setHighlightColor(Color.TRANSPARENT);
@@ -176,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View widget) {
                 Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                intent.putExtra("extra_data", "http://101.43.157.180/user/agreement");
+                intent.putExtra("extra_data", HttpUrl.getBaseUrl());
                 startActivity(intent);
             }
             @Override
@@ -192,7 +210,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View widget) {
                 Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                intent.putExtra("extra_data", "http://101.43.157.180/privacy/policy");
+                intent.putExtra("extra_data", HttpUrl.getBaseUrl());
                 startActivity(intent);
             }
 

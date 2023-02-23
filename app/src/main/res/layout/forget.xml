@@ -91,6 +91,35 @@
         </LinearLayout>
 
         <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#96272029"
+                android:theme="@style/EditScreenTextInputLayoutStyleBlack">
+
+                <EditText
+                    android:id="@+id/user_pwd_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:fontFamily="@font/calibri"
+                    android:hint="@string/xmm"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/colorBuWr"
+                    android:textSize="16sp"
+                    android:autofillHints="" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
@@ -101,7 +130,7 @@
                 app:code_number="4" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/mailbox_verification_change"
+                android:id="@+id/mailbox_verification_change_info"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:clickable="true"
@@ -115,6 +144,8 @@
                 tools:ignore="DuplicateIds,InvalidId,RtlHardcoded" />
 
         </LinearLayout>
+
+
 
     </LinearLayout>
 

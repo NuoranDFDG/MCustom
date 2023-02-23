@@ -17,12 +17,10 @@ import com.example.gjylibrary.GjySerialnumberLayout;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.minecraft.mcustom.R;
-import com.minecraft.mcustom.entity.Data;
 import com.minecraft.mcustom.entity.Result;
 import com.minecraft.mcustom.util.file.DataFileUtility;
 import com.minecraft.mcustom.util.gson.JsonBean;
-import com.minecraft.mcustom.util.http.HttpUrl;
-import com.minecraft.mcustom.util.http.OKHttpUtil;
+import com.minecraft.mcustom.util.https.HttpsUtil;
 import com.minecraft.mcustom.util.jgeUtil;
 
 import java.util.Objects;
@@ -66,75 +64,81 @@ public class InformationActivity extends AppCompatActivity {
             if (!user_text.equals("") &&jgeUtil.checkUserString(user_text)) {
                 if (!pwd_text.equals("") &&jgeUtil.checkUserString(pwd_text)) {
                     new Thread(() -> {
-                        String result = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'name':'"
-                                + user.getText().toString()
-                                + "','pwd':'"
-                                + pwd.getText().toString()
-                                + "','token':'"
-                                + token
-                                + "'}", "set", "info");
-                        if (result != null) {
-                            Result rs = null;
-                            try {
-                                rs = gson.fromJson(result, Result.class);
-                            } catch (JsonSyntaxException e) {
-                                e.printStackTrace();
-                            }
-                            assert rs != null;
-                            switch (rs.getCode()) {
-                                case 200:
-                                    String tokenUser = (String) rs.getResult();
-                                    DataFileUtility.saveFileToData("token", tokenUser, getApplicationContext());
-                                    if (!mail.getText().toString().equals("") &&code.length()==4) {
-                                        new Thread(()->{
-                                            String resultMailbox = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'mailbox':'"
+                        String result;
+                        try {
+                            result = HttpsUtil.HttpsPost("{'name':'"
+                                    + user.getText().toString()
+                                    + "','pwd':'"
+                                    + pwd.getText().toString()
+                                    + "','token':'"
+                                    + token
+                                    + "'}", getApplicationContext(), "set", "info");
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        Result rs = null;
+                        try {
+                            rs = gson.fromJson(result, Result.class);
+                        } catch (JsonSyntaxException e) {
+                            e.printStackTrace();
+                        }
+                        assert rs != null;
+                        switch (rs.getCode()) {
+                            case 200:
+                                String tokenUser = (String) rs.getResult();
+                                DataFileUtility.saveFileToData("token", tokenUser, getApplicationContext());
+                                if (!mail.getText().toString().equals("") &&code.length()==4) {
+                                    new Thread(()->{
+                                        String resultMailbox;
+                                        try {
+                                            resultMailbox = HttpsUtil.HttpsPost("{'mailbox':'"
                                                             + mail.getText().toString()
                                                             + "','code':'"
                                                             + code
                                                             + "','token':'"
                                                             + token
-                                                            + "'}", "verification", "mailbox");
-                                            if (resultMailbox!=null) {
-                                                Result rsMailbox = null;
-                                                try {
-                                                    rsMailbox = gson.fromJson(resultMailbox, Result.class);
-                                                } catch (JsonSyntaxException e) {
-                                                    e.printStackTrace();
+                                                            + "'}", InformationActivity.this, "verification", "mailbox");
+                                        } catch (Exception e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                        Result rsMailbox = null;
+                                        try {
+                                            rsMailbox = gson.fromJson(resultMailbox, Result.class);
+                                        } catch (JsonSyntaxException e) {
+                                            e.printStackTrace();
+                                        }
+                                        assert rsMailbox != null;
+                                        switch (rsMailbox.getCode()) {
+                                            case 200:
+                                                boolean delete = DataFileUtility.deleteSingleFile("/data/data/com.minecraft.mcustom/files/fixBer");
+                                                if (delete) {
+                                                    view.postDelayed(() -> Toast.makeText(InformationActivity.this, "欢迎使用", Toast.LENGTH_SHORT).show(), 10);
                                                 }
-                                                assert rsMailbox != null;
-                                                switch (rsMailbox.getCode()) {
-                                                    case 200:
-                                                        boolean delete = DataFileUtility.deleteSingleFile("/data/data/com.minecraft.mcustom/files/fixBer");
-                                                        if (delete) {
-                                                            view.postDelayed(() -> Toast.makeText(InformationActivity.this, "欢迎使用", Toast.LENGTH_SHORT).show(), 10);
-                                                        }
-                                                        Intent intent = new Intent(InformationActivity.this, MainActivity.class);
-                                                        intent.putExtra("extra_data","offI");
-                                                        startActivity(intent);
-                                                        break;
-                                                    case 458:
-                                                        view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证码不存在或已过期", Toast.LENGTH_SHORT).show(), 10);
-                                                        break;
-                                                    case 800:
-                                                        Result finalRsMailbox = rsMailbox;
-                                                        view.postDelayed(() -> Toast.makeText((Context) InformationActivity.this, (CharSequence) finalRsMailbox.getResult(), Toast.LENGTH_SHORT).show(), 10);
-                                                        break;
-                                                }
-                                            }
-                                        }).start();
-                                    } else {
-                                        Intent intent = new Intent(InformationActivity.this, MainActivity.class);
-                                        intent.putExtra("extra_data","offI");
-                                        startActivity(intent);
-                                    }
-                                    break;
-                                case 400:
-                                    view.postDelayed(() -> Toast.makeText(InformationActivity.this, "格式错误", Toast.LENGTH_SHORT).show(), 10);
-                                    break;
-                                case 800:
-                                    view.postDelayed(() -> Toast.makeText(InformationActivity.this, "请求拒绝", Toast.LENGTH_SHORT).show(), 10);
-                                    break;
-                            }
+                                                Intent intent = new Intent(InformationActivity.this, MainActivity.class);
+                                                intent.putExtra("extra_data","offI");
+                                                startActivity(intent);
+                                                break;
+                                            case 458:
+                                                view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证码不存在或已过期", Toast.LENGTH_SHORT).show(), 10);
+                                                break;
+                                            case 800:
+                                                Result finalRsMailbox = rsMailbox;
+                                                view.postDelayed(() -> Toast.makeText((Context) InformationActivity.this, (CharSequence) finalRsMailbox.getResult(), Toast.LENGTH_SHORT).show(), 10);
+                                                break;
+                                        }
+                                    }).start();
+                                } else {
+                                    Intent intent = new Intent(InformationActivity.this, MainActivity.class);
+                                    intent.putExtra("extra_data","offI");
+                                    startActivity(intent);
+                                }
+                                break;
+                            case 400:
+                                view.postDelayed(() -> Toast.makeText(InformationActivity.this, "格式错误", Toast.LENGTH_SHORT).show(), 10);
+                                break;
+                            case 800:
+                                view.postDelayed(() -> Toast.makeText(InformationActivity.this, "请求拒绝", Toast.LENGTH_SHORT).show(), 10);
+                                break;
                         }
                     }).start();
                 } else {
@@ -154,33 +158,36 @@ public class InformationActivity extends AppCompatActivity {
         });
         mailbox.setOnClickListener(view -> new Thread(() -> {
             if (jgeUtil.checkMailboxString(mail.getText().toString())) {
-                String result = OKHttpUtil.postAsyncRequest(HttpUrl.getBaseUrl(), "{'mailbox':'"
-                        + mail.getText().toString()
-                        + "','token':'"
-                        + token
-                        + "'}", "send", "mailbox");
-                if (result != null) {
-                    Result rs = null;
-                    try {
-                        rs = gson.fromJson(result, Result.class);
-                    } catch (JsonSyntaxException e) {
-                        e.printStackTrace();
-                    }
-                    assert rs != null;
-                    switch (rs.getCode()) {
-                        case 200:
-                            view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证码已发送", Toast.LENGTH_SHORT).show(), 10);
-                            break;
-                        case 800:
-                            view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证失败", Toast.LENGTH_SHORT).show(), 10);
-                            break;
-                        case 878:
-                            String date = (String) rs.getResult();
-                            view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证码已发送,请等待" + date + "秒", Toast.LENGTH_SHORT).show(), 10);
-                            break;
-                        case 755:
-                            view.postDelayed(() -> Toast.makeText(InformationActivity.this, "此邮箱已被绑定", Toast.LENGTH_SHORT).show(), 10);
-                    }
+                String result;
+                try {
+                    result = HttpsUtil.HttpsPost("{'mailbox':'"
+                            + mail.getText().toString()
+                            + "','token':'"
+                            + token
+                            + "'}", InformationActivity.this, "send", "mailbox");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                Result rs = null;
+                try {
+                    rs = gson.fromJson(result, Result.class);
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+                assert rs != null;
+                switch (rs.getCode()) {
+                    case 200:
+                        view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证码已发送", Toast.LENGTH_SHORT).show(), 10);
+                        break;
+                    case 800:
+                        view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证失败", Toast.LENGTH_SHORT).show(), 10);
+                        break;
+                    case 878:
+                        String date = (String) rs.getResult();
+                        view.postDelayed(() -> Toast.makeText(InformationActivity.this, "验证码已发送,请等待" + date + "秒", Toast.LENGTH_SHORT).show(), 10);
+                        break;
+                    case 755:
+                        view.postDelayed(() -> Toast.makeText(InformationActivity.this, "此邮箱已被绑定", Toast.LENGTH_SHORT).show(), 10);
                 }
             } else {
                 view.postDelayed(() -> {

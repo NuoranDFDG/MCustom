@@ -101,8 +101,11 @@ id linearLayout
 id list_main2
 id login
 id mailbox_verification
+id mailbox_verification_change
+id mailbox_verification_change_info
 id mailbox_verification_get
 id mailbox_verification_run
+id main_change_pwd
 id main_run
 id menu_list
 id player_name
@@ -130,11 +133,14 @@ id toolbar_web
 id userID
 id user_id
 id user_mailbox
+id user_mailbox_change
 id user_mailbox_get
 id user_pwd
+id user_pwd_change
 id verification
 id verification_about
 id verification_code
+id verification_code_change
 id verification_code_get
 id webView1
 layout about
@@ -159,6 +165,7 @@ mipmap ic_nuoran
 mipmap ic_nuoran_background
 mipmap ic_nuoran_round
 raw main
+raw mc
 raw u1nz5_geywz
 raw xbox_live_notification
 string about
@@ -209,6 +216,7 @@ string title_activity_settings
 string todo
 string wsxx
 string wsyxxx
+string xmm
 string xshd
 string xycj
 string yhm
@@ -219,6 +227,7 @@ string yx
 string yxzhebd
 string yz
 string yzm
+string zhbdyx
 string zhgl
 string zhxx
 string zhzx

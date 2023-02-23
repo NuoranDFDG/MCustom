@@ -88,6 +88,7 @@
     <string name="todo">TODO</string>
     <string name="wsxx">完善信息</string>
     <string name="wsyxxx">在成为正式用户前,你需要完善一些信息</string>
+    <string name="xmm">新密码</string>
     <string name="xshd">限时活动</string>
     <string name="xycj">幸运抽奖</string>
     <string name="yhm">用户名*</string>
@@ -98,6 +99,7 @@
     <string name="yxzhebd">邮箱账号未绑定</string>
     <string name="yz">验证</string>
     <string name="yzm">验证码注册</string>
+    <string name="zhbdyx">账号绑定邮箱</string>
     <string name="zhgl">账号管理</string>
     <string name="zhxx">账号信息</string>
     <string name="zhzx">账号注销</string>

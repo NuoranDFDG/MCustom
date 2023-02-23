@@ -8,6 +8,35 @@
       jars="C:\Users\Administrator\StudioProjects\MCustom\app\libs\bcprov-jdk15on-1.70.jar"
       resolved="__local_aars__:C:\Users\Administrator\StudioProjects\MCustom\app\libs\bcprov-jdk15on-1.70.jar:unspecified"/>
   <library
+      name="__local_aars__:C:\Users\Administrator\StudioProjects\MCustom\app\libs\commons-codec.jar:unspecified@jar"
+      jars="C:\Users\Administrator\StudioProjects\MCustom\app\libs\commons-codec.jar"
+      resolved="__local_aars__:C:\Users\Administrator\StudioProjects\MCustom\app\libs\commons-codec.jar:unspecified"/>
+  <library
+      name="__local_aars__:C:\Users\Administrator\StudioProjects\MCustom\app\libs\khandroid-httpclient-4.2.3.jar:unspecified@jar"
+      jars="C:\Users\Administrator\StudioProjects\MCustom\app\libs\khandroid-httpclient-4.2.3.jar"
+      resolved="__local_aars__:C:\Users\Administrator\StudioProjects\MCustom\app\libs\khandroid-httpclient-4.2.3.jar:unspecified"/>
+  <library
+      name="org.apache.commons:commons-lang3:3.9@jar"
+      jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.9\122c7cee69b53ed4a7681c03d4ee4c0e2765da5\commons-lang3-3.9.jar"
+      resolved="org.apache.commons:commons-lang3:3.9"/>
+  <library
+      name="com.android.volley:volley:1.2.1@aar"
+      jars="C:\Users\Administrator\.gradle\caches\transforms-3\a8d4759f0ad5c3d27bbd8741bb9f816b\transformed\jetified-volley-1.2.1\jars\classes.jar"
+      resolved="com.android.volley:volley:1.2.1"
+      folder="C:\Users\Administrator\.gradle\caches\transforms-3\a8d4759f0ad5c3d27bbd8741bb9f816b\transformed\jetified-volley-1.2.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="org.apache.httpcomponents:httpcore:4.4.13@jar"
+      jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.13\853b96d3afbb7bf8cc303fe27ee96836a10c1834\httpcore-4.4.13.jar"
+      resolved="org.apache.httpcomponents:httpcore:4.4.13"/>
+  <library
       name="com.github.arcadefire:nice-spinner:1.4.4@aar"
       jars="C:\Users\Administrator\.gradle\caches\transforms-3\b4406694c9574696015cd24419d45d15\transformed\jetified-nice-spinner-1.4.4\jars\classes.jar"
       resolved="com.github.arcadefire:nice-spinner:1.4.4"
@@ -123,19 +152,6 @@
       name="com.google.code.gson:gson:2.9.0@jar"
       jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.9.0\8a1167e089096758b49f9b34066ef98b2f4b37aa\gson-2.9.0.jar"
       resolved="com.google.code.gson:gson:2.9.0"/>
-  <library
-      name="com.android.volley:volley:1.2.1@aar"
-      jars="C:\Users\Administrator\.gradle\caches\transforms-3\a8d4759f0ad5c3d27bbd8741bb9f816b\transformed\jetified-volley-1.2.1\jars\classes.jar"
-      resolved="com.android.volley:volley:1.2.1"
-      folder="C:\Users\Administrator\.gradle\caches\transforms-3\a8d4759f0ad5c3d27bbd8741bb9f816b\transformed\jetified-volley-1.2.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
   <library
       name="com.squareup.okhttp3:okhttp:4.9.0@jar"
       jars="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\4.9.0\8e17601d3bdc8cf57902c154de021931d2c27c1\okhttp-4.9.0.jar"
